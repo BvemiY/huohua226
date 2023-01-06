@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		i{
+			font-style: normal;
+		}
+		.cent{
+			margin: 0 auto;
+			width: 960px;
+			height: 920px;
+		}
+		header img{
+			display: block;
+			width: 960px;
+			height: 119px;
+		}
+		table{
+			width: 960px;
+			/*border-color: #6996c4;*/
+		}
+		td,th{
+			padding: 5px;
+			border: 1px solid #6996c4;
+			border-top: none;
+			font-size: 12px;
+			font-weight: 400;
+		}
+		td:first-child,th:first-child{
+			width: 160px;
+			text-align: right;
+			border-right: none;
+		}
+		th{
+			border: none;
+			background: #6996c4;
+			color: #fff;
+		}
+		th span,.add span{
+			color: red;
+		}
+		td span{
+			color: #880000;
+		}
+		td a{
+			color: red;
+		}
+		td input{
+			width: 196px;
+		}
+		td select{
+			width: 197px;
+		}
+		.addBtn,.imagessBtn{
+		    display: block;
+		    margin: 0 auto;
+		    margin-top: 10px;
+		    padding: 8px 12px;
+		    color: #fff;
+		    background: #00aced;
+			border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		    text-align: center;
+		}
+		.add i{
+			display: inline-block;
+			width: 105px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+		}
+		td p{
+			padding: 10px 5px;
+			color: red;
+			font-size: 11.5px;
+		}
+		.imagessBtn{
+			display: inline-block;
+			margin: 0;
+		}
+		.foot td{
+			text-align: center;
+			border: 1px solid #6996c4;
+			border-top: none;
+		}
+		.foot input{    
+			padding: 6px 12px;
+			margin-right: 8px;
+			width: 60px;
+			background: #ff6f05;
+			border: none;
+		    border-color: #ff4d00;
+			border-radius: 4px;
+		    color: #fff;
+    		cursor: pointer;
+		}
+		.bgBlue{
+			background: #f2fafd;
+		}
+	</style>
+</head>
+<body>
+	<div class="cent">
+		<header>
+			<img src="img/banner.jpg">
+		</header>
+		<div class="main">
+			<form action="">
+				<table cellspacing="0" cellpadding="0">
+					<tr>
+						<th>注册信息</th>
+						<th>填写信息（<span>*</span>必须填写）</th>
+					</tr>
+					<tr>
+						<td>用 户 名 :</td>
+						<td><input type="text" name="userName" autofocus required pattern="^\w{5,20}$"><span>&nbsp;*请填写5至20位数字、字母或下划线作为用户名，请不要输入汉字或其他符号</span></td>
+					</tr>
+					<tr class="bgBlue">
+						<td>密&emsp;&emsp;码 :</td>
+						<td><input type="password" name="password" autofocus required pattern="^[a-zA-Z0-9]{8,15}$"><span>&nbsp;*大写字母+小写字母+数字的8至15位字符组合</span></td>
+					</tr>
+					<tr>
+						<td>确认密码 :</td>
+						<td><input type="password" name="password" autofocus required><span>&nbsp;*</span></td>
+					</tr>
+					<tr class="bgBlue">
+						<td>考生姓名 :</td>
+						<td><input type="text" autofocus required pattern="^\S+$"><span>&nbsp;*姓名中间请不要输入空格,注册后不能修改！</span><a href="#">如姓名中含有生僻字或“·”，参见姓名中如何输入生僻字</a></td>
+					</tr>
+					<tr>
+						<td>证件类型 :</td>
+						<td>
+							<select>
+								<option>居民身份证</option>
+								<option>军官证</option>
+								<option>香港特区护照/身份证明</option>
+								<option>澳门特区护照/身份证明</option>
+								<option>台湾居民来往大陆通行证</option>
+								<option>境外永久居住证</option>
+								<option>护照</option>
+							</select>
+							<span>&nbsp;*注册后不得自行修改</span>
+						</td>
+					</tr>
+					<tr class="bgBlue">
+						<td>证件号码 :</td>
+						<td><input type="text" autofocus required pattern="^[1-9]\d{16}[X|\d]$"><span>&nbsp;*注册后不得自行修改</span></td>
+					</tr>
+					<tr class="bgBlue">
+						<td>学历 :</td>
+						<td class="add">
+							<button class="addBtn">添加学历信息</button>
+							<div>
+								<i>
+									<span>*</span>&nbsp;证书编号
+								</i>
+								<i>
+									<span>*</span>&nbsp;毕业院校
+								</i>
+								<i>
+									<span>*</span>&nbsp;毕业时间
+								</i>
+								<i>
+									<span>*</span>&nbsp;所学专业
+								</i>
+								<i>
+									<span>*</span>&nbsp;学历层次
+								</i>
+								<i>
+									<span>*</span>&nbsp;培养方式	
+								</i>
+								<i>
+									操作	
+								</i>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>学位 :</td>
+						<td class="add">
+							<button class="addBtn">添加学位信息</button>
+							<div>
+								<i>
+									<span>*</span>&nbsp;证书编号
+								</i>
+								<i>
+									<span>*</span>&nbsp;学校名称
+								</i>
+								<i>
+									<span>*</span>&nbsp;取得时间	
+								</i>
+								<i>
+									<span>*</span>&nbsp;专业
+								</i>
+								<i>
+									<span>*</span>&nbsp;学位层次
+								</i>
+								<i>
+									操作	
+								</i>
+							</div>
+						</td>
+					</tr>
+					<tr class="bgBlue">
+						<td>学历学位注意事项 :</td>
+						<td>
+							<p>1.系统对2002年至今大专以上（含大专）的学历信息、2008年9月至今的学位信息进行在线核验。</p>
+							<p>2.学历信息最少填写1条信息，最多可填写5条信息。 </p>
+							<p>3.学位信息最多可填写5条信息，无学位信息可不填写。</p>
+							<p>4.请如实准确填写学历、学位信息，保存后无法删除。</p>
+							<p>5.学历学位信息在线核验状态为“未核验”的，请24小时后，登录系统查看核验状态。</p>
+							<p>6.学历学位信息在线核验“未通过”或“需人工核查”的不会影响后续报名，须在报名开始后按报名地资格审核部门（机构）的规定进行人工核查。</p>
+						</td>
+					</tr>
+					<tr class="bgBlue">
+						<td>密码找回问题 :</td>
+						<td>
+							<select>
+								<option>--请选择--</option>
+								<option>我就读的第一所学校的名称？</option>
+								<option>我最喜欢的运动是什么？</option>
+								<option>我最喜欢的运动员是谁？</option>
+								<option>我最喜欢的物品名称？</option>
+								<option>我最喜欢的歌曲？</option>
+								<option>妈妈的生日是？</option>
+								<option>我最喜欢的食物是？</option>
+								<option>我最爱的人的名字？</option>
+								<option>我最爱的电影？</option>
+							</select>
+							<span>&nbsp;*</span>
+						</td>
+					</tr>
+					<tr>
+						<td>答案 :</td>
+						<td><input type="text" autofocus required><span>&nbsp;*请牢记问题答案，忘记密码需找回时要用到</span></td>
+					</tr>
+					<tr class="bgBlue">
+						<td>邮箱 :</td>
+						<td><input type="email" name="email" autofocus required pattern="^\w+@\w+\.\w+$"><span>&nbsp;*本人现用邮箱</span></td>
+					</tr>
+					<tr>
+						<td>手机号 :</td>
+						<td><input type="tel" name="tel" autofocus required pattern="^1[3-9]\d{9}$"><span>&nbsp;*注册后自动绑定手机，用于发送短信或重要操作身份认定，务必填写本人现用手机</span></td>
+					</tr>
+					<tr class="bgBlue">
+						<td>短信验证码 :</td>
+						<td><input type="text" autofocus required><span>&nbsp;*<button class="imagessBtn">获取短信验证码</button></span></td>
+					</tr>
+					<tr class="foot">
+						<td colspan="2">
+							<input type="submit" value="提交">
+							<input type="button" value="返回">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

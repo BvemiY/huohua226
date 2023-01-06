@@ -1,0 +1,35 @@
+.Journalism {
+    width: 1519px;
+    height: 600px;
+    padding: 40px 0px;
+}
+
+.Journalism .Journalism_img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.Journalism_img img {
+    width: 400px;
+    height: 200px;
+    transition: all 1s ease 0s;
+}
+
+.Journalism_img img:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1) translate(0px, 10px);
+}
+
+.Journalism_text {
+    text-align: left;
+    line-height: 30px;
+    background-color: white;
+}
+
+.Journalism_text p:nth-last-of-type(2) {
+    color: #99A6C4;
+}
+
+.Journalism_text p:last-child {
+    color: #666666;
+}

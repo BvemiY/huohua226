@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">点我！</div>
+
+    <script>
+        var box = document.getElementsByClassName('box')[0];
+
+        // box.onclick = function() {
+        //     console.log("1111快点我！！！");
+        // }
+        // box.onclick = function() {
+        //     console.log("2222快点我！！！");
+        // };
+        // 上面这种添加事件的方式  同一类型的事件如果添加多次的话，只执行最后一次的添加事件
+
+
+
+        box.addEventListener("click", function() {
+            console.log("继续点啊！！！");
+        }, true)
+        box.addEventListener("click", function() {
+            console.log("不要停，不要停！！！");
+        }, true)
+        box.addEventListener("click", function() {
+            console.log("你干嘛！！！");
+        }, true);
+        // 同一类型的事件可以多次添加  执行的顺序先添加的先执行 后面依次执行
+        // 第三个参数  规定时事件捕获true  还是事件冒泡false
+    </script>
+</body>
+
+</html>

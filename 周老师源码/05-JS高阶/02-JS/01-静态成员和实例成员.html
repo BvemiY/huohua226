@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //构造函数和普通函数
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.say = function () {
+        console.log(this);
+        console.log('开始说话');
+      }
+    }
+    var p = new Person('小好', 10); // 创建一个空对象, 初始化数据
+
+    // 实例成员: 只能通过创建的对象访问
+    p.say();
+    console.log(p.name);
+    console.log(p['age']);
+    console.log(p);
+
+    // 静态成员: 只能通过构造器访问
+    Person.sex = '女';
+    Person.study = function () {
+      console.log('好好学习');
+    }
+
+    Person.study();
+    console.log(Person.sex);
+    //console.log(Person.age);//构造器不能访问实例成员
+
+    console.log(p);
+
+
+  </script>
+</body>
+
+</html>

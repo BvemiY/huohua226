@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+
+<body>
+	<canvas id="canvas" width="1200" height="900">
+		浏览器不支持
+	</canvas>
+	<script>
+		// 获取画布对象
+		var mycanvas = document.querySelector('#canvas')
+		// 获取上下文对象
+		var ctx = mycanvas.getContext('2d');
+		console.log(ctx);
+		ctx.beginPath();
+
+		ctx.moveTo(100, 100);
+
+		ctx.lineTo(500, 100);
+		ctx.lineTo(500, 400);
+		ctx.lineTo(100, 400);
+
+		ctx.closePath();
+
+		// 填充色
+		ctx.fillStyle = "skyblue";
+		ctx.fill();
+
+		ctx.strokeStyle = "pink";
+		ctx.lineWidth = "10"
+		ctx.stroke();
+
+	</script>
+</body>
+
+</html>

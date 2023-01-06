@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 块元素 转换成 行内元素 */
+            display: inline;
+            width: 200px;
+            height: 200px;
+        }
+        
+        p {
+            /* 块元素 转换成 行内块元素 */
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+        
+        span {
+            display: block;
+            width: 600px;
+            height: 200px;
+        }
+        
+        b {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>块元素 转换成 行内元素 </div>
+
+    <span>行内元素 转换成 块元素 </span>
+
+    <p>块元素 转换成 行内块元素</p>
+
+    <b>行内元素 转换成 行内块元素</b>
+
+
+    <!-- 标签显示模式  display -->
+    <!-- 块级元素  block
+            独占一行
+            高度、宽度、行高、外边距以及内边距都可以控制（更改）
+            默认的宽度为百分百
+            可以容纳（包含）内联元素和其他块元素
+    -->
+    <!-- <h1>~<h6>、<p>、<div>、<ul>、<ol>、<li>等，其中<div>标签是最典型的块元素  -->
+
+
+    <!-- 行内标签  inline
+            不会独占一行
+            高、宽无效，但水平方向的padding和margin可以设置，垂直方向的无效
+            默认的宽度为它本身内容的宽度
+            行内元素只能容纳（包含）文本或则其他行内元素（a特殊）
+    -->
+    <!-- <a>、<b>、<em>、<i>、<del>、<s>、<u>、<span>等，其中<span>标签最典型的行内元素 -->
+
+
+    <!-- 行内块元素  inline-block
+            不会独占一行
+            高度、宽度、行高、外边距以及内边距都可以控制（更改）
+            默认的宽度为它本身内容的宽度
+            可以容纳（包含）内联元素和其他块元素
+    -->
+    <!-- img  table tr th td input -->
+
+</body>
+
+</html>

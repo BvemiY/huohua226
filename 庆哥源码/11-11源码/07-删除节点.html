@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <p id="box1">段落内容1</p>
+        <p id="box2">段落内容2</p>
+        <p id="box3">段落内容3</p>
+    </div>
+    <script>
+        var box3 = document.getElementById("box3");
+        var box2 = document.getElementById("box2");
+        var main = document.getElementById("main");
+
+
+        // 删除节点
+        main.removeChild(box3);
+        main.removeChild(box2);
+        // 父元素.removeChild(需要删除的元素)
+    </script>
+</body>
+
+</html>

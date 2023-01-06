@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.随机生成4位验证码,大写字母小写字母及数字可供随机选择(比如:nG3p)
+        var str = "";
+
+        for (var i = 1; i <= 4; i++) {
+            // a-z:[97-122] 
+            // max - min +1  + min
+            var suiji1 = Math.floor(Math.random() * 26 + 97);
+            // A-Z:[65-90]
+            var suiji2 = Math.floor(Math.random() * 26 + 65);
+            // [0-9]
+            var suiji3 = Math.floor(Math.random() * 10);
+
+            var arr = [String.fromCharCode(suiji1), String.fromCharCode(suiji2), suiji3];
+
+            // [0-2] 从大小写和数字中再次随机一个
+            var suiji4 = Math.floor(Math.random() * 3);
+
+            str += arr[suiji4];
+        }
+
+        console.log(str);
+
+        // 1l  1I 0o 0O
+    </script>
+</body>
+
+</html>

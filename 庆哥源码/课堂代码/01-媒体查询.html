@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        @media all and (max-width:550px) {
+            /* 屏幕最大宽度是550px  当屏幕小于等于550px的时候  使用下面的代码 */
+                .box{
+                width: 100%;
+                height: 300px;
+                background-color: rgb(245, 144, 144);
+            }
+        }
+
+
+
+        
+        @media all and (min-width:550px) {
+            /* 屏幕最小宽度是550px  当屏幕大于等于550px的时候  使用下面的代码 */
+            /* screen  添加 手机  平板  pc 等只能设备 */
+                .box{
+                width: 300px;
+                height: 300px;
+                background-color: rgb(171, 144, 245);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

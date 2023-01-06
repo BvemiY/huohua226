@@ -1,0 +1,16 @@
+{
+  "id": "3819263",
+  "name": "教育机构",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5180936",
+      "name": "铅笔",
+      "font_class": "qianbi",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    }
+  ]
+}

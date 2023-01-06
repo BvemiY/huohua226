@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            position: relative;
+        }
+        
+        .run {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(70, 237, 52);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="转起来" class="btn">
+    <div class="box">
+        <div class="run"></div>
+    </div>
+
+
+    <script>
+        // 获取元素
+        var btn = document.getElementsByClassName("btn")[0];
+        var run = document.getElementsByClassName("run")[0];
+
+        // 需要完成什么  需要满足什么条件
+        btn.onclick = function() {
+            // 满足条件之后会执行什么
+            // run.style.left = "100px";
+
+            // 一步一步的走  需要书写定时器
+            run.in = setInterval(function() {
+                // run.style.left = run.offsetLeft + 5 + "px";
+
+                if (run.offsetLeft < 450 && run.offsetTop == 0) {
+                    // 从左上角 到 右上角
+
+                    run.style.left = run.offsetLeft + 5 + "px";
+
+                } else if (run.offsetLeft >= 450 && run.offsetTop < 450) {
+                    // 从右上角 到 右下角
+
+                    run.style.top = run.offsetTop + 5 + "px";
+
+                } else if (run.offsetTop == 450 && run.offsetLeft > 0) {
+                    // 从右下角 到 左下角
+
+                    run.style.left = run.offsetLeft - 5 + "px";
+
+                } else if (run.offsetLeft == 0 && run.offsetTop > 0) {
+                    // 从左下角 到 左上角
+
+                    run.style.top = run.offsetTop - 5 + "px";
+
+                }
+            }, 10)
+        }
+    </script>
+</body>
+
+</html>

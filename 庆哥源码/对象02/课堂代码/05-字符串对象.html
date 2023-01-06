@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=q, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var str = "你好啊！";
+
+
+
+        // 1. 生成临时变量，把简单类型包装为复杂数据类型
+        var temp = new String('你好啊！');
+        // 2. 赋值给我们声明的字符变量
+        str = temp;
+        // 3. 销毁临时变量
+        temp = null;
+
+
+        console.log(str.length);
+    </script>
+</body>
+
+</html>

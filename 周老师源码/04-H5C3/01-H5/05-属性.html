@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- data- -->
+  <div class="box"></div>
+  <div class="box" data-name-title="kk"></div>
+  <div class="box"></div>
+  <script>
+    // var box = document.getElementsByClassName('box')[0];
+    // box.setAttribute('data-index', 1)
+    var boxs = document.getElementsByClassName('box');
+    for (var i = 0; i < boxs.length; i++) {
+      boxs[i].setAttribute('data-index', i);
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			background: pink;
+		}
+	</style>
+</head>
+
+<body>
+	<button>按钮</button>
+	<div class="box">添加事件</div>
+	<script src="./js/jquery-3.6.3.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@1.2.2/dist/jquery.js"></script> -->
+	<script>
+		$(function () {
+			//添加事件
+			// $('button').on('click mouseover', function (e) {
+			// 	console.log('添加事件');
+			// }).on('mouseout', function () {
+			// 	console.log('鼠标离开');
+			// })
+			// $('button').bind('click mouseover mouseout', function (e) {
+			// 	console.log('添加事件');
+			// })
+			// $('button').click(function () {
+			// 	$(this).unbind('mouseout mouseover');//去除鼠标离开事件
+			// })
+
+			// $('button').click(function () {
+			// 	$(this).off('mouseout mouseover');//去除鼠标离开事件
+			// })
+			// // 只添加一次事件
+			// $('div').one('click', function (e) {
+			// 	console.log('添加一次事件');
+			// })
+
+			//初始化(第一次)的时候添加数据
+			$('div').on('click mouseover', function (e, n, m) {
+				console.log('点击事件', n, m);
+				console.log(e);
+			}).trigger('click', [11, 88]);//类似于apply的参数()
+
+
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>点击事件</div>
+  <script>
+
+    // function show() {
+    //   console.log(this);//window
+    // }
+    // // show()
+    // function Person() {
+    //   this.say = function () {
+    //     console.log(this);// 当前实例化对象
+    //   }
+    // }
+    // var p = new Person();
+    // // p.say()
+
+    //事件
+    // var div = document.querySelector('div');
+    // div.onclick = function (e) {
+    //   console.log(this);// 当前事件源对象
+    // };
+
+    // setInterval(function () {
+    //   // console.log(this);//window
+    // }, 1000)
+
+    // 自执行函数
+    (function () {
+      console.log(this);// window
+    })()
+  </script>
+</body>
+
+</html>

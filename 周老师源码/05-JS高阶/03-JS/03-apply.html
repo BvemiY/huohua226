@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var p = {
+      name: '好谷'
+    }
+    function show(a, b) {
+      console.log(a + b);
+      console.log(this);
+    }
+    show(1, 2)
+    show.apply(p, [1, 2]);//直接调用
+  </script>
+</body>
+
+</html>

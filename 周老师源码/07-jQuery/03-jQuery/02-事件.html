@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <button>按钮</button>
+</body>
+<script src="./js/jquery-3.6.3.js"></script>
+<script>
+  $(function () {
+    $('.box').click(function (e, n, m) {
+      console.log('点击事件');
+      console.log(n, m);
+    })
+    $('button').click(function (e) {
+      $('.box').trigger('click', ['admin', 123])//可以给click事件添加数据(多次)
+    })
+  })
+</script>
+
+</html>

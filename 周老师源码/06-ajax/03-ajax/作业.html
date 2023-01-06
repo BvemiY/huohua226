@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    main {
+      margin: 0 auto;
+      width: 1200px;
+      height: 900px;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    a:link {
+      margin: 5px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .content {
+      height: 800px;
+      position: relative;
+    }
+
+    .c-new {
+      width: 1200px;
+      height: 800px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .c-hot {
+      width: 1200px;
+      height: 800px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+
+    .newL {
+      width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .newL li {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      width: 350px;
+      height: 500px;
+    }
+
+    .newL li h2 {
+      color: #d9d9d9;
+      font-size: 18px;
+      margin: 25px 0 17px 0;
+      font-weight: normal;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .newL li p {
+      font-size: 14px;
+      color: #606060;
+      margin: 10px 0 15px 0;
+    }
+
+    .newL li div p {
+      font-size: 12px;
+      color: #606060;
+    }
+
+    .pi1 {
+      background: url(https://game.gtimg.cn/images/tgideas/web201810/i-view.png) no-repeat;
+      width: 16px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -3px;
+      margin-right: 5px;
+    }
+
+    .pi2 {
+      background: url(https://game.gtimg.cn/images/tgideas/web201810/i-like.png) no-repeat;
+      width: 16px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -3px;
+      margin-right: 5px;
+    }
+
+    .zan {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    .hotL {
+      width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hotL li {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      width: 350px;
+      height: 500px;
+    }
+
+    .hotL li h2 {
+      color: #d9d9d9;
+      font-size: 18px;
+      margin: 25px 0 17px 0;
+      font-weight: normal;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .hotL li p {
+      font-size: 14px;
+      color: #606060;
+      margin: 10px 0 15px 0;
+    }
+
+    .hotL li div p {
+      font-size: 12px;
+      color: #606060;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="title">
+      <a href="javascript:void(0)" class="t-new">最新</a>
+      <a href="javascript:void(0)" class="t-hot">最热</a>
+    </div>
+    <div class="content">
+      <div class="c-new">
+        <ul class="newL"></ul>
+      </div>
+      <div class="c-hot">
+        <ul class="hotL"></ul>
+      </div>
+    </div>
+  </main>
+  <script>
+    var tNew = document.querySelector('.t-new');
+    var tHot = document.querySelector('.t-hot');
+    var cHot = document.querySelector('.c-hot');
+    var cNew = document.querySelector('.c-new');
+    var hotL = document.querySelector('.hotL');
+    var newL = document.querySelector('.newL');
+
+    tHot.onclick = function (e) {
+      cHot.style.display = "block";
+      cNew.style.display = "none";
+      hotData();
+    }
+    tNew.onclick = function (e) {
+      cHot.style.display = "none";
+      cNew.style.display = "block";
+      newData();
+    }
+    function hotData() {
+      // 1 创建XMLHttpRequest对象
+      var xhr = new XMLHttpRequest();
+      // 2  添加请求状态改变的 回调函数
+      xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState);// 请求状态
+        // 5 判断请求状态为4
+        if (xhr.readyState == 4) {
+          //6 判断 响应状态码 为200
+          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+
+            var dataObj = JSON.parse(xhr.responseText).msg.result;
+            console.log(dataObj);
+            var str = '';
+            dataObj.forEach(function (ele, i) {
+              str += `
+                <li>
+                  <img src="https:${ele.sIMG}" width="100%">
+                  <h2>${ele.sTitle}</h2>
+                  <p>品牌创意</p>
+                  <div class="zan">
+                      <p>
+                          <i class="pi1"></i>
+                          ${ele.iTotalPlay}
+                          <span>
+                              <i class="pi2"></i>
+                              77
+                          </span>
+                      </p>
+                      <p>
+                          <span>${ele.sAuthor}</span>
+                          ${ele.sCreated.slice(0, 9)}
+                      </p>
+                  </div>
+                </li>
+              `;
+            });
+            hotL.innerHTML = str;
+          }
+        }
+      }
+      // 3 打开连接, 设置请求方式和URL
+      xhr.open('GET', 'http://localhost:8080/wmp/v3.1/?p0=117&p1=searchNewsKeywordsList&pagesize=10&order=sIdxTime&r0=cors&r1=NewsObj&type=iTag&id=6521&source=web_PC&page=1')
+      //4 发送请求
+      xhr.send();
+    }
+
+    newData();
+    function newData() {
+      // 1 创建XMLHttpRequest对象
+      var xhr = new XMLHttpRequest();
+      // 2  添加请求状态改变的 回调函数
+      xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState);// 请求状态
+        // 5 判断请求状态为4
+        if (xhr.readyState == 4) {
+          //6 判断 响应状态码 为200
+          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+
+            var dataObj = JSON.parse(xhr.responseText).msg.result;
+            console.log(dataObj);
+            var str = '';
+            dataObj.forEach(function (ele, i) {
+              str += `
+                <li>
+                  <img src="https:${ele.sIMG}" width="100%">
+                  <h2>${ele.sTitle}</h2>
+                  <p>品牌创意</p>
+                  <div class="zan">
+                      <p>
+                          <i class="pi1"></i>
+                          ${ele.iTotalPlay}
+                          <span>
+                              <i class="pi2"></i>
+                              77
+                          </span>
+                      </p>
+                      <p>
+                          <span>${ele.sAuthor}</span>
+                          ${ele.sCreated.slice(0, 9)}
+                      </p>
+                  </div>
+                </li>
+              `;
+            });
+            newL.innerHTML = str;
+          }
+        }
+      }
+      // 3 打开连接, 设置请求方式和URL
+      xhr.open('GET', 'http://127.0.0.1:8080/wmp/v3.1/?p0=117&p1=searchNewsKeywordsList&pagesize=12&order=iTotalPlay&r0=cors&r1=NewsObj&type=iTag&id=6521&source=web_PC&page=1')
+      //4 发送请求
+      xhr.send();
+    }
+  </script>
+</body>
+
+</html>

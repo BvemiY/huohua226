@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="" method="get">
+    <div>
+      <!-- 邮箱: <input type="email" required placeholder="邮箱" name="email" id=""> -->
+      邮箱: <input type="email" autocomplete="off" tabindex="2" placeholder="邮箱" name="email" id="">
+      <!-- 保存之前输入过的内容, on 默认开启,  off关闭 -->
+    </div>
+    <div>
+      <!-- pattern和required一起使用 -->
+      <!-- 手机: <input type="tel" pattern="^1[356789]\d{9}$" required name="tel"> -->
+      手机: <input type="tel" autofocus tabindex="1" name="tel"> 获取焦点和tab一起使用
+    </div>
+    <div>
+      <!-- 快捷键: Alt+s -->
+      网址: <input type="url" tabindex="3" accesskey="s" name="url">
+    </div>
+    <div>
+      图片: <input type="file" data-name-kk="自定义属性" class="file" name="file" multiple> 可以选择多文件
+    </div>
+
+    <input type="submit" value="注册">
+  </form>
+  <script>
+    var file = document.getElementsByClassName('file')[0];
+    console.log(file.getAttribute('data-name-kk'));
+    file.setAttribute('data-name-kk', '新值');
+    file.setAttribute('data-index', 1)
+  </script>
+</body>
+
+</html>

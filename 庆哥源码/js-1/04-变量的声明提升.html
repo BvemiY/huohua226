@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // a = 20;
+        console.log(a);
+        var a = 20;
+        // 打印undefined   未定义  有这个变量但是这个变量没有被赋值
+
+        // 1.浏览器会先暂停代码运行 然后去log下面查找有没有变量a的出现
+
+        // 2.会将var a = 20；  分解为   var a；   a=20； 两步
+
+        // 3.将var a；带到log带面的前面 然后在重新运行log
+        
+        var a;
+        console.log(a);
+        a = 20;
+    </script>
+</body>
+
+</html>

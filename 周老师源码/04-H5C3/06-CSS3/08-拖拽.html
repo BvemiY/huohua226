@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .top,
+    .bot {
+      width: 400px;
+      height: 300px;
+      border: 1px solid orange;
+    }
+
+    p {
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top">
+    <p draggable="true">让河南学子创造中国互联网未来</p>
+  </div>
+  <div class="bot"></div>
+  <script>
+    var p = document.querySelector('p');
+    var bot = document.querySelector('.bot');
+    p.ondragstart = function () {
+      console.log('开始拖拽');
+    }
+    p.ondrag = function () {
+      console.log('拖拽中....');
+    }
+    p.ondragend = function () {
+      console.log('拖拽结束');
+    }
+    bot.ondragenter = function () {
+      console.log('进入元素');
+    }
+    bot.ondragover = function () {
+      console.log('悬停');
+      return false;
+    }
+    bot.ondragleave = function () {
+      console.log('离开');
+    }
+    bot.ondrop = function () {
+      console.log('松开');
+      // var p2 = p.cloneNode(true);
+      // console.log(p2);
+      bot.appendChild(p);
+    }
+
+  </script>
+</body>
+
+</html>

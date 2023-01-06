@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [5, 5, 9, 12, 22, 44, 66, 88, 99];
+
+        // slice(start, end)  复制原本数组的部分内容
+        // - 方法参数 --- 1.从哪一个位置开始复制    2.到哪一个位置结束复制(不包含最后的一个)
+        // - 返回值 ---返回复制之后的数组
+        // - 改变不改变原数组  ---不改变
+
+
+        // var arr2 = arr.slice(2, 6);
+
+        // console.log(arr2);
+
+        // var arr3 = arr.slice(0);
+        // 如果第二个参数不写 从开始位置一直到最后的元素
+        // console.log(arr3);
+
+
+        var arr4 = arr.slice(-3, -1);
+        // 负数表示从最后向前  -1最后一个   -2倒数第二个   从左向右开始复制
+        console.log(arr4);
+    </script>
+</body>
+
+</html>

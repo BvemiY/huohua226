@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [90, 90, 43, 2, 45, 67, 23, 5, 36];
+			var newArr = [];
+
+			//能不添加else, 尽量去掉
+			for (var i = 0; i < arr.length; i++) {
+				if (!newArr.includes(arr[i])) { //新数组不包含元素, 进行添加
+					newArr.push(arr[i]); //
+				}
+			}
+			console.log(arr);
+			console.log(newArr);
+			newArr.sort(function(a, b) {
+				return b - a; //a-b升序. b-a降序
+			});
+			console.log(newArr);
+			console.log(newArr[0]);
+			console.log(newArr[1]);
+		</script>
+	</body>
+</html>

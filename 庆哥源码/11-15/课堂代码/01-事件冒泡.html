@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .a {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 113, 113);
+        }
+        
+        .b {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(202, 255, 117);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <div class="b"></div>
+    </div>
+
+    <script>
+        var a = document.getElementsByClassName('a')[0];
+        var b = document.getElementsByClassName('b')[0];
+
+        a.onclick = function(e) {
+            // e.stopPropagation();
+            // 阻止事件传播
+            console.log("????");
+        }
+
+        b.onclick = function(e) {
+            e.stopPropagation();
+            // 阻止事件传播  需要从哪里阻止就写在哪里
+            console.log("!!!!!");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span{
+            border:1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        for (var i = 1; i <= 9; i++) {
+            var str = "";
+            for (var j = 1; j <= i; j++) {
+                var a = i * j;
+                str = str +"<span>"+ j + "*" + i + "=" + a +"</span>"+ "&nbsp;&nbsp;&nbsp;";
+                // str = str + j + "*" + i + "=" + a+ "  ";  第一种方法
+
+            }
+            str = str + "<br>";
+            document.write(str);
+            // console.log(str);  第一种方法
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+        }
+        
+        .box {
+            background-color: rgb(243, 64, 64);
+        }
+        
+        #bbb {
+            background-color: rgb(57, 220, 190);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">郑娇娇同学，请打开摄像头</div>
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+
+        // 方法一：
+        // box.getAttribute("id");
+        //getAttribute()   获取元素的属性值  参数书写你需要获取的属性  
+        // 返回值就是返回对应的属性值
+        // console.log(box.getAttribute("id"));
+
+        // setAttribute()  设置元素的属性值   参数第一个 需要设置的属性是哪一个 
+        //  第二个要设置成什么
+        // box.setAttribute("id", "mc");
+
+        //removeAttribute()  删除属性值  参数需要删除哪一个
+        // box.removeAttribute("id");
+
+        // box.setAttribute("id", "bbb");
+
+        // 方法二：
+        box.id = "acc";
+        // class  直接通过.来修改属性 需要加上name  classname
+        box.className = "box abb";
+    </script>
+</body>
+
+</html>

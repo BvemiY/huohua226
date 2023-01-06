@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    class Father {
+      constructor(uname, age) {
+        this.uname = uname;
+        this.age = age
+      }
+      say() {
+        console.log('父类说话');
+      }
+    }
+    class Son extends Father {
+      constructor(height, uname, age) {
+        super(uname, age);// 必须是子构造器的第一行, super父对象
+        this.height = height;
+      }
+      playGame() {
+        console.log('儿子玩游戏');
+        super.say();
+      }
+    }
+    var son = new Son(180, '好谷', 20);
+    console.log(son);
+
+    son.say()
+    son.playGame()
+
+  </script>
+</body>
+
+</html>

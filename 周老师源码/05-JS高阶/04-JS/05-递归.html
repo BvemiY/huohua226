@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 递归: 函数内部自己调用自己, 需要添加条件 -->
+  <script>
+
+    var v = 1000;
+    function show() {
+      console.log('函数', v);
+      v--;
+      if (v <= 0) {
+        return;
+      }
+      show();
+    }
+    show();
+
+    function jiCheng(n) {
+      if (n == 1) {
+        return 1;
+      }
+      return n * jiCheng(n - 1);
+    }
+    var x = jiCheng(5)
+    console.log(x);
+  </script>
+</body>
+
+</html>

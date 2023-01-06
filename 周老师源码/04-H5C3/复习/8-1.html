@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // window.setInterval(回调函数 callback,时间)
+    // 超时定时器
+    // var id1 = setTimeout(function () {
+    //   console.log(1);
+    // }, 2000);
+    // console.log(id1);
+    // var id2 = setTimeout(function () {
+    //   console.log(2);
+    // }, 2000);
+    // console.log(id2);
+    // clearTimeout(id2);
+    // 间歇定时器
+    var id3 = setInterval(function () {
+      console.log(3);
+    }, 1000);
+    console.log(id3);
+    console.log('---------');
+    clearInterval(id3);
+// window.alert()
+
+  </script>
+</body>
+
+</html>

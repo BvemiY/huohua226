@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 450px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 150px auto;
+            transform-style: preserve-3d;
+            /* 让子元素拥于父元素的3d效果 */
+            perspective: 2000px;
+            /* 透视效果  近大远小 */
+        }
+        .box_left{
+            width: 225px;
+            height: 300px;
+            background-color: rgb(100, 179, 221);
+            float: left;
+            transform-origin: left bottom;
+            /* perspective: 1000px; */
+            transition: all 5s ease 0s; 
+        }
+
+        .box_right{
+            width: 225px;
+            height: 300px;
+            background-color: rgb(221, 100, 205);
+            float: left;
+            transform-origin: right bottom;
+            /* perspective: 1000px; */
+            transition: all 5s ease 0s;    
+        }
+        .box:hover .box_left{
+            transform: rotateY(-180deg);
+        }
+        .box:hover .box_right{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_left">
+
+        </div>
+        <div class="box_right">
+
+        </div>
+    </div>
+</body>
+
+</html>

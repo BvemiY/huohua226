@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu {
+  width: 200px;
+  margin: 100px auto;
+}
+.menu_box {
+  background: #c0c0c0;
+}
+.item:hover .sub_menu_box {
+  height: 116px;
+}
+.item h3 {
+  padding: 6px 10px;
+}
+.sub_menu_box {
+  background: lightgray;
+  height: 0px;
+  overflow: hidden;
+  transition: all .5s linear;
+}
+.sub_menu_box li {
+  padding: 4px 17px;
+}

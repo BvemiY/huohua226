@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    section {
+      font-size: 40px;
+    }
+
+    /*
+    p元素必须是第一个和最后一个,否则无效
+    p:first-child {
+      color: red;
+    }
+    p:last-child {
+      color: blue;
+    } */
+    /*
+    只要是p元素的第一个和最后一个
+    p:first-of-type {
+      color: gold;
+    }
+    p:last-of-type {
+      color: orange;
+    } */
+    /* 包含其他元素 */
+    /* p:nth-child(even) {
+      color: gold;
+    } */
+    /* p:nth-last-child(even) {
+      color: gold;
+    } */
+    /* 只是p元素 */
+    /* p:nth-of-type(even) {
+      color: gold;
+    } */
+    p:nth-last-of-type(even) {
+      color: gold;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <span>火花40</span>
+    <p>小好</p>
+    <p>小谷</p>
+    <p>好谷</p>
+    <span>火花40</span>
+    <p>火花226</p>
+    <p>火花226</p>
+    <span>火花40</span>
+    <p>火花221</p>
+  </section>
+</body>
+
+</html>

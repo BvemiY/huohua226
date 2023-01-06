@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num1 = 10;
+        var num2 = 5;
+        var str1 = '你好'
+        var str2 = '我不好'
+        console.log(num2 + true);
+        console.log(num2 + false);
+        console.log(num1 + true + undefined + num2);
+        console.log(str1 - undefined);
+        //减法运算   没有任何花里胡晒的东西，就是最单纯的减法，如果遇到没法隐式转化位数字的变量的话就会打印成NaN
+        console.log(str1 * undefined);
+        //减法运算   没有任何花里胡晒的东西，就是最单纯的乘法，如果遇到没法隐式转化位数字的变量的话就会打印成NaN
+        console.log(str1 / undefined);
+        //减法运算   没有任何花里胡晒的东西，就是最单纯的除法，如果遇到没法隐式转化位数字的变量的话就会打印成NaN
+        //%  取余数
+        console.log(4 % 3);
+        //()提高计算优先级
+        console.log(num1 + (num2 + str1));
+    </script>
+</body>
+
+</html>

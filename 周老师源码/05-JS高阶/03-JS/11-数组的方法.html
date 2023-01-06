@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var arr = [1, 8, 24, 57, 73, 8, 23, 94];
+    console.log(arr);
+    for (var i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+    }
+    arr.forEach(function (v, i, array) {
+      console.log(v, i, array);
+    })
+
+    //返回新数组
+    var newArr = arr.map(function (v, i, array) {
+      console.log(v, i, array);
+      return v + 10;//进行算术运算
+    })
+    console.log(newArr);
+
+    //过滤条件 返回新数组
+    var newArr = arr.filter(function (v, i, array) {
+      console.log(v, i, array);
+      return v > 30;//进行逻辑运算
+    })
+    console.log(newArr);
+
+    //返回真假
+    var flag = arr.some(function (v, i, array) {
+      console.log(v, i, array);
+      return v > 900;// 其中一个
+    })
+    console.log(flag);
+
+    //返回真假
+    var flag = arr.every(function (v, i, a) {
+      return v > 8;//所有都满足
+    })
+    console.log(flag);
+
+    // 返回满足条件的元素
+    var flag = arr.find(function (v, i, a) {
+      return v > 7;//第一个满足条件
+    })
+    console.log(flag);
+
+    //求和
+    var sum = arr.reduce(function (total, v) {
+      total += v;
+      return total;
+    }, 0)
+    console.log(sum);
+
+
+  </script>
+</body>
+
+</html>

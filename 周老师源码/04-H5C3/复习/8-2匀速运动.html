@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .btn {
+      width: 500px;
+      margin: 0px auto;
+      margin-top: 200px;
+    }
+
+    .box {
+      margin: 0px auto;
+      width: 500px;
+      height: 400px;
+      border: 1px solid orange;
+      position: relative;
+    }
+
+    .small {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn">
+    <button class="b-left">向左</button>
+    <button class="b-right">向右</button>
+  </div>
+  <div class="box">
+    <div class="small"></div>
+  </div>
+  <script>
+    var bLeft = document.querySelector('.b-left'); //向左按钮
+    var bRight = document.querySelector('.b-right');//向右按钮
+    var box = document.querySelector('.box');//大盒子
+    var small = document.querySelector('.small');//小盒子
+
+    var id1; //右定时函数id
+    var id2;//左定时函数id
+    var x = 0
+    bRight.onclick = function (e) {
+      clearInterval(id2);//清楚左定时函数
+      id1 = setInterval(function () {
+        x += 10;
+        if (box.clientWidth - small.offsetWidth <= x) {
+          x = box.clientWidth - small.offsetWidth;
+          clearInterval(id1);//清除当前定时函数
+        }
+        small.style.left = x + 'px';
+      }, 30)
+    }
+    bLeft.onclick = function (e) {
+      clearInterval(id1);//清除向右定时函数,
+      id2 = setInterval(function () {
+        x -= 10;
+        if (x <= 0) {
+          x = 0;
+          clearInterval(id2);//清除自身定时函数
+        }
+        small.style.left = x + 'px';
+      }, 30)
+    }
+  </script>
+
+</body>
+
+</html>

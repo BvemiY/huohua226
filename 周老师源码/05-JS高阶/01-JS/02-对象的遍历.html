@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //1 字面量: 类似 JSON对象(字符串)
+    var p = {
+      name: '小谷',
+      age: 20,
+      say: function () {
+        console.log('好谷');
+      }
+    };
+
+    //2 Object
+    var p2 = new Object();
+    p2.name = '小好';
+    p2.age = 21;
+    p2.say = function () {
+      console.log('让河南学子创造中国互联网未来');
+    }
+
+    // console.log(p.name);// 访问对象的属性
+    // console.log(p['age']);// 对象名['属性名']
+
+    // 遍历属性  (可枚举的属性)
+    for (var key in p) {
+      console.log(key, p[key]);
+    }
+
+    var arr = Object.keys(p);// 返回 可枚举 属性的数组
+    console.log(arr);
+
+    var arr2 = Object.getOwnPropertyNames(p);// 返回 包含不可枚举 属性的数组(不包含symbol)
+    console.log(arr2);
+
+    if ('name' in p2) {//判断属性是否存在对象中
+      console.log('存在');
+    } else {
+      console.log('不存在');
+    }
+    console.log(p2);
+
+    delete p2.age;// 删除对象的某个属性
+    console.log(p2);
+
+  </script>
+</body>
+
+</html>

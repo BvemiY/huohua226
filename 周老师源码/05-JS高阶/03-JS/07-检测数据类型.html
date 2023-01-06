@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    console.log(Object.prototype.toString.call(12));//数值
+    console.log(Object.prototype.toString.call(true));//逻辑
+    console.log(Object.prototype.toString.call('12'));//
+    console.log(Object.prototype.toString.call(undefined));//
+    console.log(Object.prototype.toString.call(NaN));//
+
+    console.log(Object.prototype.toString.call(new Object()));//
+    console.log(Object.prototype.toString.call(function () { }));//
+    console.log(Object.prototype.toString.call(new Array()));//
+    console.log(Object.prototype.toString.call({ 'name': '小好' }));//
+    console.log(Object.prototype.toString.call(null));//
+
+    console.log(typeof 12);
+    console.log(typeof true);
+    console.log(typeof 'admin');
+    console.log(typeof undefined);
+    console.log(typeof new Object());
+    console.log(typeof function () { });
+    console.log(typeof new Array());
+
+    var v = 12;
+    console.log(v.constructor);
+    v = true;
+    console.log(v.constructor);
+    v = '12';
+    console.log(v.constructor);
+    v = new Object();
+    console.log(v.constructor);
+    v = new Array();
+    console.log(v.constructor);
+    v = function () { };
+    console.log(v.constructor);
+
+    v = new Number(12);
+    console.log(v instanceof Number);//必须是new的对象
+
+
+  </script>
+</body>
+
+</html>

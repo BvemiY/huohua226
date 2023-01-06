@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 查找字符串出现最多的字符和个数(封装函数),
+        // 通过var str='2akfdjaajajdaaaaasdjfskdjadfaj'测试结果
+
+        var str = '2akfdjaajajdaaaaasdjfskdjadfaj';
+        // 1.将每一个字符和出现的次数都存放在对象中
+
+        var obj = {};
+
+        for (var i = 0; i < str.length; i++) {
+
+            if (obj[str[i]]) {
+                // 判断当前的str[i]是否出现在了obj对象中  判断当前字符是否是第一次出现
+                obj[str[i]]++;
+                // 如果不是第一次出现 让对应的值进行自增
+            } else {
+
+                obj[str[i]] = 1;
+                // 如果是第一次出现 就直接赋值为1  记录为第一次出现
+            }
+        }
+        // 第一个for循环是用来遍历字符串的 然后记录每一个字符出现的次数的
+
+        var maxIndex = 0;
+        var maxValue = "";
+        // 一个用来记录当前的最大值  maxValue用来记录当前最大值对应的字符
+        for (var key in obj) {
+
+            if (obj[key] > maxIndex) {
+                maxIndex = obj[key];
+                maxValue = key;
+            }
+        }
+        // 第二个for in 找最大值的
+        console.log(obj);
+        console.log("当前出现次数最多的是" + maxValue + ",出现的次数是" + maxIndex);
+    </script>
+</body>
+
+</html>

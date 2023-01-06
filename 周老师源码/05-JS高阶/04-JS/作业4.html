@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 斐波那契题(兔子生兔子题目)--从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子对数为多少 // 产量分析：1， 1， 2， 3， 5， 8， 13， 21 。。。
+    // 第n个月的兔子总数  =  第n-1个月的兔子总数 + 第n-2个月的兔子总数 // 问题： 求任意月兔子的总数
+    /*
+    月份  兔子对数
+    1     1 x
+    2     1 y   x
+    3     2=1+1 z=x+y  y   x
+    4     3=2+1 z=x+y      y
+    5     5=3+2 z
+    6     8=5+3
+    7     13=8+5
+    8     21=13+8
+    9     34=21+13
+    10    55=34+21
+    */
+    function sum(month) {
+      if (month == 1 || month == 2) {
+        return 1;
+      }
+      return sum(month - 1) + sum(month - 2);
+    }
+    console.log(sum(10));
+
+    var x = 1, y = 1, z;
+    for (var m = 3; m <= 10; m++) {
+      z = x + y;
+      x = y;
+      y = z;
+    }
+    console.log(z);
+
+  </script>
+</body>
+
+</html>

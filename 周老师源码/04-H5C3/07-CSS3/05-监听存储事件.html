@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    window.onstorage = function (e) {
+      console.log(e.key);//添加或改变的键 key
+      console.log(e.oldValue);// 老值
+      console.log(e.newValue);// 新值
+      console.log(e.storageArea);// 当前本地存对象 localStorage 对象
+      console.log(e.url);// 当前url
+    }
+  </script>
+
+</body>
+
+</html>

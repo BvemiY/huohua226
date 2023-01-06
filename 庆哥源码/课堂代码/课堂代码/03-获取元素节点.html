@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="box">
+            <p>段落内容</p>
+        </div>
+        <div class="box">
+            <p>段落内容</p>
+        </div>
+        <div class="box">
+            <p>段落内容</p>
+        </div>
+    </div>
+
+    <span id="box">你好！</span>
+    <span class="oSpan">你好2</span>
+    <script>
+        var main_big = document.getElementById("main");
+        // 获取元素节点  通过id获取  document.getElementById
+        console.log(main_big);
+        // var box_one = document.getElementById("box");
+        // console.log(box_one);
+
+
+        var oSpan1 = document.getElementsByClassName("box");
+        var oSpan2 = document.getElementsByClassName("box");
+        // 获取元素节点  通过class获取  document.getElementsByClassName()
+        // 可重复的 如果直接获取会得到一个数组  但是之后操作元素不能对数组进行操作
+        console.log(oSpan1);
+        console.log(oSpan2[0]);
+        // HTMLCollection   伪数组
+
+
+        var oP = document.getElementsByTagName("p");
+        // 获取元素节点  通过标签名称获取  document.getElementsByTagName()
+        // 可重复的 如果直接获取会得到一个数组  但是之后操作元素不能对数组进行操作
+        console.log(oP);
+    </script>
+</body>
+
+</html>

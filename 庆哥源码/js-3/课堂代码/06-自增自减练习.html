@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 10;
+        var b = 20;
+        var c = 0;
+        var d = 0;
+
+        c = ++a + --b + a++ - a--;
+        // console.log("a等于"+a); //  11
+        // a    10  11
+        // console.log("b等于"+b); //  19
+        // b    19
+        // console.log("c等于"+c); // 29
+        // c    29  30  31  32
+
+        d = c++ - --c + b++ + ++a - b--;
+
+        console.log("a等于"+a);
+        // a   12  
+        console.log("b等于"+b); 
+        // b  19
+        console.log("c等于"+c); 
+        // c  29 
+        console.log("d等于"+d); 
+        // d  11
+    </script>
+</body>
+
+</html>

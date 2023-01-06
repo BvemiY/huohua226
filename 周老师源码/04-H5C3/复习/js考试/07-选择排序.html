@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: ;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var arr = [9, 5, 7, 3, 1, 23, 2, 43, 56, 1, 9];
+    console.log(arr);
+    //不考虑性能
+    for (var i = 0; i < arr.length - 1; i++) {
+      //每行比较的次数
+      for (var j = i + 1; j < arr.length; j++) {
+        if (arr[i] < arr[j]) {
+          [arr[i], arr[j]] = [arr[j], arr[i]]
+        }
+      }
+    }
+    //性能好
+    for (var i = 0; i < arr.length - 1; i++) {
+      var minIndex = i;
+      for (var j = i + 1; j < arr.length; j++) {
+        if (arr[minIndex] > arr[j]) {
+          minIndex = j;
+        }
+      }
+      [arr[minIndex], arr[i]] = [arr[i], arr[minIndex]]
+    }
+    console.log(arr);
+  </script>
+</body>
+
+</html>

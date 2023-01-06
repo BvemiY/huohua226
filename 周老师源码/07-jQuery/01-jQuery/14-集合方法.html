@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="container">
+			<div id="box0" class="box">box0</div>
+			<div id="box1" class="box">
+				<p>第1个段落</p>
+				<p>第2个段落</p>
+				<p>第3个段落</p>
+				<p>第4个段落</p>
+			</div>
+			<div id="box2" class="box">
+				<p>第5个段落</p>
+				<p>第6个段落</p>
+				<p>第7个段落</p>
+				<p>第8个段落</p>
+			</div>
+			<div id="box3" class="box">
+				<p class="paragraph">第9个段落</p>
+				<p class="paragraph">第10个段落</p>
+				<p>第<span>11</span>个段落</p>
+				<p>第<span>12</span>个段落</p>
+			</div>
+			<div id="box4" class="box foo">box4</div>
+			<div id="box5" class="box foo">box5</div>
+			<div id="box6" class="box foo">box6</div>
+		</div>
+		<script src="js/jquery-3.6.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var $div;
+				var $ele = $("#box1").parent('.container'); // 仅父元素
+				var $ele = $("#box1").parents('.container'); //所有父级元素
+				console.log($ele);
+				var $div = $('.container').children('.foo') //子元素
+				console.log($div);
+				var $div = $('.box').find('.paragraph'); // 查找子元素
+				console.log($div);
+				$div = $('#box3').prev('#box22'); //上一个
+				$div = $('#box3').prevAll(); //上面所有兄弟
+				console.log($div);
+				$div = $('#box3').next(); //下一个
+				$div = $('#box3').nextAll(); //下面所有
+				console.log($div);
+				$div = $('#box3').siblings(); //前后所有兄弟元素
+				console.log($div);
+				$('.box').click(function(e) {
+					// $(this).siblings().css('color', 'blue');
+					// $(this).css('color', 'pink')
+					// 排他思想
+					$(this).css('color', 'pink').siblings().css('color', 'blue')
+				})
+			})
+		</script>
+	</body>
+</html>

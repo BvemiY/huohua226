@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      margin: 200px auto;
+      perspective: 1000px;
+      width: 800px;
+      height: 600px;
+      border: 10px solid blue;
+      position: relative;
+      /* 在父盒子设置 保留子元素的位置 */
+      transform-style: preserve-3d;
+      transform: rotateX(-35deg);
+    }
+
+    .box div {
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .item1 {
+      background-color: salmon;
+      transform: rotateY(70deg);
+      /* transform-style: preserve-3d; */
+    }
+
+    .item2 {
+      background: skyblue;
+      transform: rotateY(-50deg);
+      /* transform-style: preserve-3d; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+  </div>
+</body>
+
+</html>

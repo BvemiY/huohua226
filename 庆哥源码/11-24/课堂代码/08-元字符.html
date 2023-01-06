@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var reg = /0-9/;
+        // \d  等价 [0-9]
+        // var reg1 = /^\d{11}$/;
+        // console.log(reg1.test("18703672519"));
+
+        // \D  等价  除了数字之外的全部字符包括符号   [^0-9]
+        // var reg1 = /^\D$/;
+        // console.log(reg1.test("@"));
+
+        // \w 匹配字母或数字或下划线，等价于`[a-zA-Z0-9_]`   用于用户名的
+        // var reg1 = /^\w*$/;
+        // console.log(reg1.test("5wq4e65_"));
+
+        // \w 匹配不是字母或数字或下划线，等价于`[^a-zA-Z0-9_]`   用于用户名的
+        // var reg1 = /^\W*$/;
+        // console.log(reg1.test("!@#$%^&*()"));
+
+
+
+        // \s  匹配任意的空白符`[/t/r/n/v/f]`
+        // var reg1 = /\s/;
+        // console.log(reg1.test("as ddsaas"));
+
+        // \s  匹配任意的不是空白符`[/t/r/n/v/f]`
+        // var reg1 = /\S/;
+        // console.log(reg1.test("as ddsaas"));
+
+
+        // . :匹配除换行符和行结束符以外的其他字符
+        // var reg1 = /./;
+        // console.log(reg1.test("\n"));
+
+
+        // |  或者 选择两者中的一个
+        // var reg1 = /^a|b$/;
+        // console.log(reg1.test("a"));
+        // console.log(reg1.test("b"));
+        // console.log(reg1.test("ab"));
+        // console.log(reg1.test("abc"));
+        // console.log(reg1.test("zxcv"));
+
+
+
+        // 将特殊字符转义成(.)当成普通字符.
+        var reg1 = /\./;
+        console.log(reg1.test("871758313@qq.com"));
+        console.log(reg1.test("871758313@qq"));
+    </script>
+</body>
+
+</html>

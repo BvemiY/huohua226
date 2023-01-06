@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="05-c.html">下一页05-c</a>
+
+  <button class="shang">上一页</button>
+  <button class="xia">下一页</button>
+
+  <script>
+    console.log(history.length);
+    document.querySelector('.shang').onclick = function () {
+      // history.back();//上一页
+      history.go(-1);
+    }
+    document.querySelector('.xia').onclick = function () {
+      // history.forward()//下一页
+      history.go(1)
+    }
+  </script>
+</body>
+
+</html>

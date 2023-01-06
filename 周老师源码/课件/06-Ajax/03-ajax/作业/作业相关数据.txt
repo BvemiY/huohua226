@@ -1,0 +1,13 @@
+网址:
+
+https://tgideas.qq.com/
+
+tab切换接口1:
+https://apps.game.qq.com/wmp/v3.1/?p0=117&p1=searchNewsKeywordsList&pagesize=12&order=sIdxTime&r0=cors&r1=NewsObj&type=iTag&id=6521&source=web_PC&page=1
+tab切换接口2:
+https://apps.game.qq.com/wmp/v3.1/?p0=117&p1=searchNewsKeywordsList&pagesize=12&order=iTotalPlay&r0=cors&r1=NewsObj&type=iTag&id=6521&source=web_PC&page=1
+
+
+访问本地配置
+
+http://127.0.0.1:8093/wmp/v3.1/?p0=117&p1=searchNewsKeywordsList&pagesize=12&order=sIdxTime&r0=cors&r1=NewsObj&type=iTag&id=6521&source=web_PC&page=1

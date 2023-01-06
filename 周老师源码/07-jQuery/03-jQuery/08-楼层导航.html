@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .top {
+      height: 1000px;
+      background: gainsboro;
+    }
+
+    .top1,
+    .top2,
+    .top3,
+    .top4,
+    .top5 {
+      height: 500px;
+      font-size: 50px;
+    }
+
+    .top1 {
+      background: pink;
+    }
+
+    .top2 {
+      background: skyblue;
+    }
+
+    .top3 {
+      background: gold;
+    }
+
+    .top4 {
+      background: palegoldenrod;
+    }
+
+    .top5 {
+      background: honeydew;
+    }
+
+    aside {
+      width: 100px;
+      background: rosybrown;
+      position: fixed;
+      top: 40%;
+      left: 200px;
+      display: none;
+    }
+
+    aside a:link {
+      text-decoration: none;
+      font-size: 30px;
+      text-align: center;
+      display: block;
+      border: 1px solid orangered;
+    }
+
+    .active {
+      background: orange;
+    }
+
+    .footer {
+      height: 2000px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="top"></div>
+    <div class="top1 floor" id="top1">1</div>
+    <div class="top2 floor" id="top2">2</div>
+    <div class="top3 floor" id="top3">3</div>
+    <div class="top4 floor" id="top4">4</div>
+    <div class="top5 floor" id="top5">5</div>
+    <div class="footer"></div>
+  </main>
+  <aside>
+    <div class="item active"><a href="#top1">1</a></div>
+    <div class="item"><a href="#top2">2</a></div>
+    <div class="item"><a href="#top3">3</a></div>
+    <div class="item"><a href="#top4">4</a></div>
+    <div class="item"><a href="#top5">5</a></div>
+  </aside>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      var top1Top = $('.top1').offset().top;
+      $(window).scroll(function (e) {
+        // console.log($(window).scrollTop(), $('.footer').offset().top);
+        if ($(window).scrollTop() > top1Top) {
+          $('aside').css('display', 'block')
+        } else {
+          $('aside').css('display', 'none')
+          return;
+        }
+        // 滚动距离大于 底部盒子离顶部的距离
+        if ($(window).scrollTop() > $('.footer').offset().top) {
+          $('aside').css('display', 'none')
+          return;
+        }
+        // 循环楼层
+        $('.floor').each(function (index, ele) {
+          console.log($(window).scrollTop(), index, ele.offsetTop);
+          // 滚动距离  大于  最后一次元素离顶部的位置
+          if ($(window).scrollTop() >= ele.offsetTop) {
+            //给当最后一次元素 添加激活样式   其他元素 移除激活样式
+            $('.item').eq(index).addClass('active').siblings().removeClass('active')
+          }
+        })
+
+      })
+    })
+  </script>
+
+
+</body>
+
+</html>

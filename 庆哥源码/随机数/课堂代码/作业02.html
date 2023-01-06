@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 封装一个函数，将字符串 "hao-gu-ke-tang" 从第二个单词开始首字母大写，然后拼成字符串 
+        // haoGuKeTang，并返回。（注意：封装成一个函数）
+
+        var str = "hao-gu-ke-tang";
+
+        // 1.先通过普通代码讲内容写出来
+        // 2.找到最开始的初始化的变量
+        // 3.书写函数
+
+        function dxx(string1) {
+            var arr = string1.split("-");
+            // 讲字符串通过-分割
+            var newstr = "";
+            // 创建新的字符串来保存修改之后的
+            for (var i = 0; i < arr.length; i++) {
+                if (i > 0) {
+                    var arr1 = arr[i].split("");
+                    // 将字符串中的每一个字符都单独分割方便找出第一个
+                    arr1[0] = arr1[0].toUpperCase();
+                    // 将首字母进行大小写转换  然后重新赋值给数组中的第一个
+                    newstr = newstr + arr1.join("");
+                    // 通过+进行拼接
+                } else {
+                    newstr = newstr + arr[i];
+                    // hao 第一个不需要转换 直接拼接
+                }
+            }
+            // console.log(newstr);
+            return newstr
+        }
+        console.log(dxx(str));
+    </script>
+</body>
+
+</html>

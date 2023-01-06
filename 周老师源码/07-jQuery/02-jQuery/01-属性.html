@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style type="text/css">
+		* {
+			font-size: 25px;
+		}
+
+		.box {
+			font-family: '楷体';
+		}
+
+		.active {
+			color: orangered;
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<h2 id="btn">送别</h2>
+		<div class="b1" data-id="1">王维 〔唐代〕</div>
+
+		<div class="box" id="box">山中相送罢，日暮掩柴扉。</div>
+		<div>春草明年绿，王孙归不归？(明年 一作：年年)</div>
+		<div>收藏下载复制完善</div>
+		<div>译文及注释</div>
+
+		<h2>译文</h2>
+		<div>在深山中送走了好友，夕阳西坠把柴门关闭。</div>
+		<div>待到明年春草又绿的时候，朋友啊你能不能回还？</div>
+		<img src="./img/firetweet.jpeg" alt="">
+		<input type="checkbox" name="hobby" value="LOL" />LOL
+	</section>
+
+	<script src="./js/jquery-3.6.3.js"></script>
+	<script>
+		$(function () {
+			$('h2').click(function (e) {
+				// var $attr = $('.box').attr('id');//根据属性名获取属性值
+				// console.log($attr);
+				// $('.box').attr('class', 'active');//设置属性,会覆盖
+				// $('.box').attr('data-id', '123'); //可以设置自定义属性
+				// $('.box').removeAttr('id');//可以删除元素自身属性和自定义属性
+				// $('.box').removeAttr('data-id')
+
+				// console.log($('.box').prop('data-id'));//只能获取元素自身属性(id,class等)
+				// console.log($('.box').prop('id'));
+				// $('.box').prop('id', 'box3');
+				// $('.box').prop('class', 'active');//会覆盖
+				$('.box').prop('data-id', '123');//只能设置元素自身属性在标签显示,  自定义属性jQuery对象中能看到(在控制台输出的)
+				// $('.box').removeProp('data-id');//不能移除元素自身和自定义属性
+				$('.box').removeProp('className');//只能移除自定义属性,在内存中
+				console.log($('.box'));
+			})
+		})
+	</script>
+</body>
+
+</html>

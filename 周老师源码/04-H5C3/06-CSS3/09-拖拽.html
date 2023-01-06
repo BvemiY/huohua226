@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .top,
+    .bot {
+      width: 400px;
+      height: 300px;
+      border: 1px solid orange;
+    }
+
+    p {
+      background: pink;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top">
+    <p id="p1" draggable="true">让河南学子创造中国互联网未来</p>
+  </div>
+  <div class="bot"></div>
+  <div class="bot"></div>
+  <script>
+    document.ondragstart = function (e) {
+      // console.log(e.target);
+      // console.log(e.srcElement);//当前事件源对象
+      e.dataTransfer.setData('id1', e.target.id)//存元素id
+      console.log(e.dataTransfer);
+    }
+    document.ondragover = function () {
+      return false;
+    }
+    document.ondrop = function (e) {
+      var id = e.dataTransfer.getData('id1');// 取id
+      var p2 = document.getElementById(id);
+      e.target.appendChild(p2);
+    }
+
+  </script>
+</body>
+
+</html>

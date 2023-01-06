@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //1 字面量
+    var p = {
+      uname: '小谷',
+      age: 10,
+      say: function () {
+        console.log('说话方法');
+      }
+    }
+    console.log(p);
+    //2 new Object
+    var p2 = new Object();
+    p2.uname = '小好';
+    p2.age = 10
+    p2.say = function () {
+      console.log('说话中');
+    }
+    console.log(p2);
+    //3 构造函数
+    function Person(uname, age) {
+      this.uname = uname;
+      this.age = age;
+      this.say = function () {
+        console.log('说话方法');
+      }
+    }
+    var p3 = new Person('好谷', 20);
+    console.log(p3);
+
+  </script>
+</body>
+
+</html>

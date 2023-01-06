@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button>get请求</button>
+  <script>
+    var btn_get = document.querySelector('button');
+    btn_get.addEventListener('click', function (e) {
+
+      // 1 创建XMLHttpRequest
+      var xhr = new XMLHttpRequest();
+      // 2 添加请求状态改变的 回调函数
+      xhr.onreadystatechange = function () {
+
+        //5判断请求状态和响应状态码
+        if (xhr.readyState == 4) {
+          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+            // 6 请求成功的处理, 获取响应信息
+            console.log(xhr.responseText);
+          }
+        }
+      }
+      //3 打开连接, 设置请求方式和URL
+      xhr.open('GET', 'http://localhost:3008/api/student/getStudent')
+
+      // 4发送请求
+      xhr.send()
+
+    })
+  </script>
+</body>
+
+</html>

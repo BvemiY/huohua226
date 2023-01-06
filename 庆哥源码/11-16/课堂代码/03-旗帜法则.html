@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1,
+        .box2,
+        .box3 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">你好！！！</div> -->
+    <img src="./images/1.jpeg" alt="" width="100px" height="100px" id="oImg">
+    <input type="text" class="text">
+    <input type="button" value="发送" class="btn">
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+
+        var oImg = document.getElementById("oImg");
+
+        var flag = 1;
+        // 设置标记
+        oImg.onclick = function() {
+            if (flag == 1) {
+                oImg.src = "./images/2.jpg"
+                flag = 2;
+            } else if (flag == 2) {
+                oImg.src = "./images/3.jpg"
+                flag = 3;
+            } else if (flag == 3) {
+                oImg.src = "./images/1.jpeg"
+                flag = 1;
+            }
+        }
+        var btn = document.getElementsByClassName("btn")[0];
+        var text = document.getElementsByClassName("text")[0];
+        var box1 = document.getElementsByClassName("box1")[0];
+        var box2 = document.getElementsByClassName("box2")[0];
+        var box3 = document.getElementsByClassName("box3")[0];
+
+        btn.onclick = function() {
+            if (flag == 1) {
+                box1.innerText = text.value
+            }
+            if (flag == 2) {
+                box2.innerText = text.value
+            }
+            if (flag == 3) {
+                box3.innerText = text.value
+            }
+        }
+
+        // box.onclick = function() {
+        //     if (flag == 1) {
+        //         box.innerText = "朱小青";
+        //         flag = 2;
+        //     } else if (flag == 2) {
+        //         box.innerText = "郑娇娇";
+        //         flag = 3;
+        //     } else if (flag == 3) {
+        //         box.innerText = "徐晨行";
+        //         flag = 1;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

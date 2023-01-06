@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    p {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h2> 行宫</h2>
+    <p id="d1">元稹 〔唐代〕</p>
+    <p class="c1">寥落古行宫，</p>
+    <p class="c2">宫花寂寞红。</p>
+    <p class="c1">白头宫女在，</p>
+    <p class="c2">闲坐说玄宗。</p>
+
+    <section>
+      <h2> 登鹳雀楼</h2>
+      王之涣 〔唐代〕
+      <p>白日依山尽，黄河入海流。</p>
+      <p>欲穷千里目，更上一层楼。</p>
+    </section>
+  </div>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      // $('h2,#d1,.c2').css('color', 'red') // 多重
+      // $('div p').css('color', 'blue');// E P 子孙后代
+      // $('div>p').css('color', 'blue');// E>P 亲儿子
+      // $('#d1+p').css('color', 'orange');//元素后紧挨着
+      $('#d1~p').css('color', 'orange');//元素后紧挨着
+    })
+  </script>
+
+</body>
+
+</html>

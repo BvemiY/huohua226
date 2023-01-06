@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" class="username">
+
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function (e) {
+
+      $('.username').keydown(function (e) {
+        console.log('按下');
+        console.log(e);
+        console.log(e.key);
+      })
+      $('.username').keypress(function (e) {
+        console.log('按着不松');
+        console.log(e);
+        console.log(e.key);
+      })
+      $('.username').keyup(function (e) {
+        console.log('松开');
+        console.log(e);
+        console.log(e.key);
+      })
+
+
+    })
+  </script>
+</body>
+
+</html>

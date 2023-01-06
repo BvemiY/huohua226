@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      font-size: 25px;
+    }
+
+    .b1 {
+      font-size: 30px;
+      color: blue;
+    }
+
+    .box {
+      width: 500px;
+      height: 100px;
+      margin: 100px;
+      padding: 10px;
+      border: 10px solid orange;
+    }
+
+    .father {
+      width: 600px;
+      height: 600px;
+      border: 3px solid orange;
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+
+    .son {
+      width: 300px;
+      height: 300px;
+      border: 3px solid blue;
+      position: absolute;
+      left: 100px;
+      top: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h2 id="btn">送别</h2>
+    <div class="b1" data-id="1">王维 〔唐代〕</div>
+
+    <div class="box" id="box">山中相送罢，日暮掩柴扉。</div>
+    <div>春草明年绿，王孙归不归？(明年 一作：年年)</div>
+    <div>收藏下载复制完善</div>
+    <div>译文及注释</div>
+
+    <h2>译文</h2>
+    <div>在深山中送走了好友，夕阳西坠把柴门关闭。</div>
+    <div>待到明年春草又绿的时候，朋友啊你能不能回还？</div>
+    <img src="./img/firetweet.jpeg" alt="">
+    <input type="checkbox" name="hobby" value="LOL" />LOL
+  </section>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      $('h2').click(function () {
+        // $('.b1').css('color', 'blue');
+        // $('.b1').css({
+        //   'color': 'blue',
+        //   'font-family': '楷体',
+        //   'font-size': "40px"
+        // })
+        // console.log($('.b1').css('color'));
+        // console.log($('.b1').css(['color', 'font-size']));
+
+        // $('.box').height(200)//设置高度
+        // $('.box').width(400);
+        // console.log($('.box').height());//仅高度
+        // console.log($('.box').width());
+
+        //宽/高+内边距
+        // console.log($('.box').innerHeight(), $('.box').innerWidth());
+        // $('.box').innerHeight(300);
+
+        // 边框+内边距+宽/高
+        // console.log($('.box').outerHeight(), $('.box').outerWidth());
+        // $('.box').outerWidth(800)
+
+        // console.log($('.box').offset());//获取元素的坐标
+        // $('.box').offset({
+        //   left: 300,
+        //   top: 400
+        // })
+
+        console.log($('.son').position());//只能获取   不能设置
+
+
+      })
+    })
+  </script>
+</body>
+
+</html>

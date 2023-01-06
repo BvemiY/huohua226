@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid orange;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="1200" height="900"></canvas>
+  <img src="img/firetweet.jpeg" alt="">
+  <script>
+    var canvas = document.querySelector('#canvas');
+    var ctx = canvas.getContext('2d');
+
+    var myImg = document.querySelector('img');
+    myImg.onload = function () {
+      // ctx.drawImage(myImg, 200, 200);
+      ctx.drawImage(myImg, 0, 0, 300, 300);
+      // ctx.drawImage(myImg, 100, 100, 100, 100, 0, 0, 300, 300);
+    }
+
+    var img2 = document.createElement('img');
+    img2.setAttribute('src', 'img/firetweet.jpeg')
+    img2.onload = function () {
+      // ctx.drawImage(myImg, 200, 200);
+      ctx.drawImage(img2, 0, 0, 300, 300);
+      // ctx.drawImage(myImg, 100, 100, 100, 100, 0, 0, 300, 300);
+    }
+
+    var img3 = new Image();
+    // img3.setAttribute('src', 'img/firetweet.jpeg')
+    img3.src = 'img/firetweet.jpeg';
+    img3.alt = "图片";
+    img3.onload = function () {
+      // ctx.drawImage(myImg, 200, 200);
+      ctx.drawImage(img3, 0, 0, 300, 300);
+      // ctx.drawImage(myImg, 100, 100, 100, 100, 0, 0, 300, 300);
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

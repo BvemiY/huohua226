@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 会话存储
+    // sessionStorage.setItem('token', "iuuisdf8877887msdfkisfd778");
+    // sessionStorage.setItem('date', new Date());
+    // sessionStorage.removeItem('date')
+    // sessionStorage.clear();
+    console.log(sessionStorage.getItem('token'));
+
+
+    for (var i = 0; i < sessionStorage.length; i++) {
+      var key = sessionStorage.key(i);
+      var value = sessionStorage.getItem(key);
+      console.log(key, value);
+    }
+  </script>
+</body>
+
+</html>

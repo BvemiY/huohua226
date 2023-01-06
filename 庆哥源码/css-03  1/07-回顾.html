@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            font-size: 44px;
+            text-align: center;
+            line-height: 300px;
+            border: 1px solid red;
+            /* display: inline-block; */
+            /* 转换为行内块元素 */
+            /* float: left; */
+            /* 浮动  会造成父元素高度为零的情况 */
+            position: relative;
+        }
+
+        .box {
+            position: relative;
+            /* 设置相对定位  会保留原本的位置 */
+            top: -906px;
+            left: 301px;
+        }
+        .box1{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 120, 120);
+            position: absolute;
+            /* 设置绝对定位   需要已有定位的父元素*/
+            left: 41%;
+            top: 41%;
+            z-index: -2;
+            /* 叠放次序  默认值都为0  */
+        }
+        .nav{
+            width: 100px;
+            height: 270px;
+            background-color: rgb(90, 164, 234);
+            font-size: 20px;
+            position: fixed;
+            /* 固定定位  会固定在页面可视窗口的一个区域不在有任何的位置移动*/
+            right: 15px;
+            bottom: 15px;
+            /* 定位方式 水平方向上页面最左边边框到盒子左边的边框线的距离位置   */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2
+        <div class="box1"></div>
+    </div>
+    <div>3</div>
+    <div class="box">4</div>
+
+
+    <div class="nav">回顶部</div>
+</body>
+
+</html>

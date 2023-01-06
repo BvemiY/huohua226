@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(108, 236, 206);
+            margin: 150px auto;
+            /* transition: all 5s ease 0s; */
+            perspective: 100px;
+            /* 透视  透视距离  近大远小 */
+            transform: rotateX(45deg) rotateY(45deg); 
+
+        }
+        .box:hover{
+            /* transform: rotateX(550deg); */
+            /* 3D变换也需要使用transform   */
+            /* rotateX 3d变换中的x轴翻转 */
+
+            /* transform: rotateY(550deg); */
+            /* rotateY 3d变换中的Y轴翻转 */
+
+
+            /* transform: rotateZ(550deg); */
+            /* rotateY 3d变换中的Z轴翻转 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">夏长江---box里面加点文字 </div>
+</body>
+
+</html>

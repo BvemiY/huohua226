@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var aaa = +new Date();
+        // 时间戳 就是  当前的时间 距离 1970年1月1日的时间差  以毫秒数的形式展示
+        console.log(aaa);
+
+        var bbb = +new Date("2022/11/11 11:11:11");
+        // 获取目标时间戳
+        console.log(bbb);
+
+
+        console.log(bbb - aaa);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(174, 232, 88);
+            margin: 150px auto;
+            /* transform: rotate(60deg); */
+            /* 旋转  rotate   deg代表度数 */
+            /* 1.默认是根据盒子的中心点进行旋转 */
+            /* 2.顺时针方向旋转 */
+            /* 3.盒子旋转会带着里面的内容一起旋转 */
+            transition: all 5s linear 0s;
+            transform-origin: left top;
+            /* 修改旋转原点的位置   x轴坐标  y轴坐标 */
+            /* 1.可以直接书写具体的位置 也可以写代表方位的单词 但是必须是一个水平方向的一个垂直方向的 */
+            /* 2. 必须书写在旋转之前  放在原本的盒子里面*/
+        }
+
+        .box:hover{
+            transform: rotate(63deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">王雙玖顺时针 </div>
+</body>
+
+</html>

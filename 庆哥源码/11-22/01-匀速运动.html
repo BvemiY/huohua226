@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            position: relative;
+        }
+        
+        .sm_box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(242, 67, 225);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="向左走" class="left_btn">
+    <input type="button" value="向右走" class="right_btn">
+    <div class="box">
+        <div class="sm_box"></div>
+    </div>
+
+
+    <script>
+        // 获取元素
+        var left_btn = document.getElementsByClassName("left_btn")[0];
+        var right_btn = document.getElementsByClassName("right_btn")[0];
+        var sm_box = document.getElementsByClassName("sm_box")[0];
+
+        // 添加事件
+        left_btn.onclick = function() {
+            // 清除之前遗留的定时器  如果出现元素抖动的情况  那么就是定时器没有清除
+            clearInterval(a);
+            a = setInterval(function() {
+
+                if (sm_box.offsetLeft <= 0) {
+                    clearInterval(a);
+                } else {
+                    sm_box.style.left = sm_box.offsetLeft - 10 + "px"
+
+                }
+
+            }, 100)
+        }
+
+        right_btn.onclick = function() {
+            clearInterval(a);
+
+            a = setInterval(function() {
+
+                if (sm_box.offsetLeft >= 450) {
+                    clearInterval(a);
+                } else {
+                    sm_box.style.left = sm_box.offsetLeft + 10 + "px"
+
+                }
+
+            }, 100)
+
+        }
+    </script>
+</body>
+
+</html>

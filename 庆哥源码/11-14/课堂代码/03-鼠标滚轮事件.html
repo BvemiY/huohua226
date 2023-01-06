@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 6300px;
+            background-color: rgb(96, 114, 250);
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+
+        // onmousewheel 鼠标滚轮事件
+        // 给window绑定onmousewheel鼠标滚轮事件 
+        //  不要给body
+
+        window.onmousewheel = function(e) {
+            // console.log(e.wheelDelta);
+            // 判断鼠标滚轮向哪里滚动
+            if (e.wheelDelta > 0) {
+                console.log("你在向上滚动");
+            } else if (e.wheelDelta < 0) {
+                console.log("你在向下滚动");
+
+            }
+        }
+    </script>
+</body>
+
+</html>

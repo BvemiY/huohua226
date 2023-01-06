@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .active {
+      font-size: 30px;
+      background: pink;
+      color: orangered;
+    }
+
+    .moren {
+      font-size: 30px;
+      background: skyblue;
+      color: purple;
+    }
+
+    button {
+      font-size: 30px;
+      background: skyblue;
+      color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      $('button').click(function (e) {
+        console.log('事件');
+        // $(this).css('color', 'blue');
+        // $(this).css({
+        //   "color": "red",
+        //   "background": "skyblue",
+        //   "font-size": "30px"
+        // })
+        // $(this).addClass('active');
+        // if ($(this).hasClass('active')) {
+        //   $(this).addClass('moren')
+        // } else {
+        //   $(this).addClass('active');
+        // }
+        $(this).toggleClass('active')
+      })
+    })
+  </script>
+</body>
+
+</html>

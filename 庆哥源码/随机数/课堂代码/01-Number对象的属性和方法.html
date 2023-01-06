@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(Number.MAX_VALUE);
+        // 当前浏览器 js所能识别的最大的数字
+        console.log(Number.MIN_VALUE);
+        // 当前浏览器 js所能识别的最小的数字
+
+
+        console.log(Number.POSITIVE_INFINITY);
+        // Infinity 正无穷大
+        console.log(Number.NEGATIVE_INFINITY);
+        // -Infinity 负无穷大
+
+        var num = 3.1415926;
+        console.log(num.toFixed(2));
+        // toFixed  将数字转换为字符串  可以通过参数来规定当前数字的小数点位数  取值范围是0-100 会四舍五入
+
+        console.log(num.toExponential());
+        // toExponential  将数字转换为科学计数法
+
+        console.log(Number.isFinite(num));
+        console.log(Number.isFinite(Infinity));
+        // isFinite 判断数字是否是一个有限的数字
+
+        console.dir(Boolean);
+    </script>
+</body>
+
+</html>

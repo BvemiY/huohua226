@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(174, 232, 88);
+            margin: 150px auto;
+            transition: all 5s ease 0s;
+        }
+        .box:hover{
+            /* transform: translate(100px,100px); */
+            transform: scale(2,2) translate(100px,100px);
+            /* 缩放  0~1    1代表原本的大小  当值大于1的时候 会放大*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

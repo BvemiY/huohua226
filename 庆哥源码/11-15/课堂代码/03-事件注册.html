@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box" onclick="abb()">点击我</div>
+    <!-- 2.绑定事件的第二种方法 -->
+    <script>
+        var box = document.getElementsByClassName('box')[0];
+        // 1.绑定事件的方法一
+        box.onclick = function() {
+            console.log("你点到我了兄弟");
+        }
+
+
+        // 2. 绑定事件的第二种方法
+
+        function abb() {
+            console.log("咋？换了一个方式点我？");
+        }
+    </script>
+</body>
+
+</html>

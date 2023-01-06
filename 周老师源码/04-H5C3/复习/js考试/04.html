@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .time {
+      width: 300px;
+      height: 60px;
+      background-color: #e01222;
+      transform: translateX(200px) skew(-45deg);
+    }
+
+    .con {
+      width: 200px;
+      height: 60px;
+      transform: translateX(60px) skew(45deg);
+    }
+
+    .con {
+      color: #fff;
+      font-size: 16px;
+      font-weight: bolder;
+    }
+
+    .b-left {
+      float: left;
+      width: 50px;
+      line-height: 60px;
+      height: 60px;
+    }
+
+    .b-right {
+      float: left;
+      width: 140px;
+      height: 60px;
+      padding-top: 10px;
+    }
+
+    .b-right div {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="time">
+    <div class="con">
+      <div class="b-left">16:00</div>
+      <div class="b-right">
+        <div>即将开始</div>
+        <div class="t"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    setInterval(function () {
+      var d = new Date();//系统当前时间;
+      var d2 = new Date('2022-12-06 16:00:00');
+      var time = d2.getTime() - d.getTime();
+
+      var h = parseInt(time / 1000 / 60 / 60);//小时
+      h = h < 10 ? '0' + h : h;
+
+      var m = parseInt(time / 1000 / 60 % 60);//分钟
+      m = m < 10 ? '0' + m : m;
+      // if (m < 10) {
+      //   m = '0' + m;
+      // }
+      console.log(m);
+      var s = Math.round(time / 1000 % 60);//秒
+      s = s < 10 ? '0' + s : s;
+      var str = '距开始 ' + h + ':' + m + ':' + s;
+      document.getElementsByClassName('t')[0].innerText = str;
+    }, 1000)
+  </script>
+</body>
+
+</html>

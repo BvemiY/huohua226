@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      /* 视口距离:眼睛到屏幕的距离 */
+      perspective: 1000px;
+    }
+
+    .box {
+      margin: 100px auto;
+      width: 300px;
+      height: 300px;
+      background: pink;
+      transition: all 1s linear;
+      transform: rotateY(70deg);
+    }
+
+    .box:hover {
+      /* 先旋转,再平移, 所有轴线跟随一起
+        先平移,再旋转, 所有轴线不动*/
+
+      transform: translateZ(100px) rotateY(70deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">1234</div>
+</body>
+
+</html>

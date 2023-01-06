@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // 类
+    class Person {
+      //构造器
+      constructor(uname, age) {
+        this.uname = uname;
+        this.age = age
+      }
+      say(name) {
+        console.log('说话' + name);
+      }
+      study() {
+        console.log('好好学习');
+      }
+    }
+
+    var p = new Person('火花226', 20);
+    console.log(p);
+    console.log(Person);
+    p.say('哈哈');
+    p.study()
+
+  </script>
+</body>
+
+</html>

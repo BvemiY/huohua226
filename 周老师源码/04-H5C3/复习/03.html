@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .small-box {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="small-box"></div>
+
+  <script>
+    var smallBox = document.getElementsByClassName('small-box')[0];
+
+    document.onkeydown = function (e) {
+      switch (e.keyCode) {
+        case 37://左
+          smallBox.style.left = smallBox.offsetLeft - 10 + 'px';
+          break;
+        case 38://上
+          smallBox.style.top = smallBox.offsetTop - 10 + 'px';
+          break;
+        case 39://右
+          smallBox.style.left = smallBox.offsetLeft + 10 + 'px';
+          break;
+        case 40://下
+          smallBox.style.top = smallBox.offsetTop + 10 + 'px';
+          break;
+        default:
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

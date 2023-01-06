@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var arr = [3, 7, 1, 9, 5, 43, 64, 23, 9, 4, 8];
+    console.log(arr);
+    // 比较多少行
+    for (var i = 0; i < arr.length - 1; i++) {
+      //每行比较多少次
+      for (var j = 0; j < arr.length - 1 - i; j++) {
+        // console.log(i, j);
+        //相邻两个元素对比交换数据
+        if (arr[j] < arr[j + 1]) {
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+        }
+      }
+    }
+    console.log(arr);
+  </script>
+</body>
+
+</html>

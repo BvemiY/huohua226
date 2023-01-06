@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    p {
+      font-size: 20px
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h2> 行宫</h2>
+    <p id="d1">元稹 〔唐代〕</p>
+    <p class="c1">寥落古行宫，</p>
+    <p class="c2">宫花寂寞红。</p>
+    <p class="c1">白头宫女在，</p>
+    <p class="c2">闲坐说玄宗。</p>
+
+    <section>
+      <h2> 登鹳雀楼</h2>
+      <p> 王之涣 〔唐代〕</p>
+
+      <p class="c3" id="d2">白日依山尽，黄河入海流。</p>
+      <p class="c14">欲穷千里目，更上一层楼。</p>
+    </section>
+  </div>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      // $('p[class]').css('color', 'blue'); //有class属性
+      // $('p[class=c1]').css('color', 'blue');  //属性是c1
+      // $('p[class!=c1]').css('color', 'blue'); // 属性不是c1的
+      // $('p[class^="c"]').css('color', 'blue'); //以..开头
+      // $('p[class$="1"]').css('color', 'blue'); //以...结尾
+      // $('p[class*="1"]').css('color', 'blue'); //属性包含 1
+      $('p[class="c3"][id="d2"]').css('color', 'blue'); // 属性有class为c3和id为d2
+
+    })
+  </script>
+</body>
+
+</html>

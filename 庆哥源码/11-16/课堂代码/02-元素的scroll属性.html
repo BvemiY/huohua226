@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 120px;
+            height: 340px;
+            background-color: rgba(250, 102, 102, 0.603);
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        我们都知道，在运动的时候，肺部呼吸频率是倍增的，在这样的时候，如果抽烟势必会有不良的影响，不过人并不关心这些。 据悉，这名“全程抽烟跑完马拉松”的广州男子，火到国外了，因为这丝毫不影响他完成全程马拉松。 有网友感慨称，一边跑一边抽烟，以3小时28分完成了马拉松，这个世界上估计只有他一个人能做到，真的是牛人啊！吸烟有害健康，能戒了就早点戒吧！ ? 对于抽烟这件事，抽了一辈子烟还活到90岁”，是幸存者偏差导致的错觉。“幸存者偏差”是一个非常经典的逻辑谬误，当取得资讯的渠道仅来自于幸存者时，可能会与实际情况存在巨大的偏差。
+        “吸了一辈子烟也没事”的人，只是幸存者；而那因吸烟而早亡的人，成为了沉默的数据。 如果非要问“为什么有人吸了一辈子烟也能长寿”？一句话解释就是：胜在了基因上。美国加利福尼亚大学洛杉矶分校的研究人员在《老年病学杂志》上发表的一项研究显示：在“吸烟但长寿”者的基因组里，存在215处单核苷酸多态性。 拥有这种基因的人，体内细胞修复损伤的能力更强。也就是他们虽然吸烟，但体内细胞能够较好地抵抗相应损害。 研究人员还将这些“吸烟但长寿者”与6447名不吸烟者进行对比，结果发现，拥有这些单核苷酸多态性的人，活到100岁的几率是不吸烟的普通人的三倍以上。
+        作为普通人，最好不要认为自己会是那少数的幸运儿。
+    </div>
+
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+
+        box.onscroll = function() {
+            // scrollTop  获取当前的滚动条位置距离最上面的位置  被卷去的长度
+            // console.log(box.scrollTop);
+            // console.log(box.scrollLeft);
+
+
+            // scrollWidth,scrollHeight  获取当前元素的宽度和高度  包含被滚动条卷去的部分
+            console.log(box.scrollWidth);
+            console.log(box.scrollHeight);
+
+        }
+    </script>
+</body>
+
+</html>

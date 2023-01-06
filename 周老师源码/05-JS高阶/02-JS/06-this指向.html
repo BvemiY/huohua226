@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  //你对this的理解
+  <script>
+
+    // console.log(this); // window
+    function show() {
+      console.log(this);// window
+    }
+    // show();
+
+    function Person(name) {
+      this.name = name;
+      this.say = function () {
+        console.log(this);//当前实例化对
+      }
+    }
+    Person.prototype.study = function () {
+      console.log(this);//指向当前实例化的对象
+    }
+    var p = new Person('好谷');
+    p.say();
+    p.study();
+
+    // console.log(p === that);
+    // new Person('小谷').say();
+    // setInterval(function () {
+    //   console.log(this);// window
+    // }, 1000)
+
+
+  </script>
+
+</body>
+
+</html>

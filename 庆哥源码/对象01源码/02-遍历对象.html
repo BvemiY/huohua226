@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "aaa",
+            age: "18",
+            sex: true,
+            sayHi: function() {
+                console.log("aaa");
+            }
+        }
+
+        // 遍历
+        for (var xx in obj) {
+            console.log(xx); // 属性名
+            console.log(obj[xx]); //  属性值
+        }
+        // 增强for  针对于对象 可以快速的识别当前对象中有多少个键值对  就循环几次
+        // key 就是用来接收对象中的属性名的
+    </script>
+</body>
+
+</html>

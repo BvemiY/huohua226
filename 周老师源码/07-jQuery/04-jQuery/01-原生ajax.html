@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+
+<body>
+	<script>
+		// var basicURL = "http://localhost:3008"
+		// var xhr = new XMLHttpRequest();
+		// xhr.onreadystatechange = function () {
+		// 	if (xhr.readyState == 4) {
+		// 		if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+		// 			console.log(xhr.response);
+		// 		}
+		// 	}
+		// }
+		// xhr.open('GET', basicURL + '/api/student/getStudent');
+		// xhr.send();
+		var basicURL = "http://localhost:3008"
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState == 4) {
+				if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+					console.log(xhr.response);
+				}
+			}
+		}
+		xhr.open('POST', basicURL + '/api/student/addStudent');
+		// 窗体数据或表单数据
+		// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		// var data = "clazz=火花226&name=夏长江&gender=男&age=21&tel=10010&hobby=iphone14&address=南阳"
+		// xhr.send(data);
+		//json数据
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		var data = {
+			clazz: '火花226',
+			name: '艾志杰',
+			gender: '男',
+			age: 21,
+			tel: '10010',
+			hobby: 'iphone14',
+			address: '南阳'
+		}
+		xhr.send(JSON.stringify(data))
+
+	</script>
+</body>
+
+</html>

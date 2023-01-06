@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="">
+    <input type="checkbox" name="hobby" value="唱">唱
+    <input type="checkbox" name="hobby" value="跳">跳
+    <input type="checkbox" name="hobby" value="rup">rup
+  </form>
+
+  <script>
+    var form = document.querySelector('form');
+    form.oninput = function (e) {
+      localStorage.setItem('hobby', e.target.value);
+    }
+
+
+  </script>
+</body>
+
+</html>

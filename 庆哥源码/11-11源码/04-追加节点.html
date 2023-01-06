@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <p id="box1">段落内容</p>
+        <p id="box2">段落内容</p>
+        <p id="box3">段落内容</p>
+    </div>
+    <script>
+        var box3 = document.getElementById("box3");
+
+        var oB = document.createElement("b");
+        // 新建的标签
+        var oText = document.createTextNode("王雙玖:这个单词读 亏a特 ");
+        // 新建的文本
+
+        // 追加节点  将文本内容追加进标签里面
+        oB.appendChild(oText);
+
+        // box3.appendChild(oB);
+        // 父元素.appendChild(需要添加的子元素)  添加元素
+
+
+
+
+        var box3 = document.getElementById("box3");
+        var oB = document.createElement("b");
+        oB.innerText = "没分号为啥也不报错 ";
+        box3.appendChild(oB);
+    </script>
+</body>
+
+</html>

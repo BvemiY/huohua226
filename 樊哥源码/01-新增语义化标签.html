@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #box{
+            color: violet;
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <header>我是页面的头部信息</header>
+    <!-- 定义页眉标签 -->
+    <p>我是页面的头部信息</p>
+
+    <nav>这是一个导航栏</nav>
+
+
+
+    <progress value="5" min="0" max="10" id="box"></progress>
+    <!-- progress  进度条  value属性代表当前的进度值   min进度条最小的数值   max代表进度条最大的数值 -->
+
+    <meter value="5" min="0" max="10"></meter>
+    <!-- meter 进度条 -->
+
+
+    <input type="text" placeholder="请输入你的账号" autofocus="autofocus">
+    <!-- placeholder  input占位符  占据位置做提示信息使用 -->
+    <!-- autofocus  页面刷新时自动获取焦点   如果有多个标签拥有 谁在最上面对谁使用-->
+    <!-- <input type="text" placeholder="请输入你的账号" autofocus="autofocus"> -->
+
+
+    <input type="file" multiple="multiple">  <br>
+    <!-- multiple  针对文件上传使用  可以同时上传多个文件 -->
+
+
+    <form method="get" >
+        <input type="text" name="user" autocomplete="on" required="required">
+        <!-- required 必填项 -->
+        <input type="text" name="pw" autocomplete="off" accesskey="s" pattern="[A-z]{3}">
+        <!-- autocomplete   保存提交时输入框内的内容  并且记录 当下次在输入的时候会有提示信息 -->
+        <!-- accesskey  可以通过alt+s  来快速的让当前的输入框获取到焦点 -->
+        <!-- pattern 匹配正则表达式  可以规定当前输入框的输入内容的格式和要求 -->
+        <input type="submit">
+    </form>
+
+
+    <div data-wh="giaogiao">giao鹏</div>
+</body>
+
+</html>

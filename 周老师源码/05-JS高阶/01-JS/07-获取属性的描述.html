@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var p = {
+      name: '火花226',
+    }
+    // // 数据属性
+    // Object.defineProperty(p, 'age', {
+    //   configurable: false,//是否可配置 (删除和添加)
+    //   enumerable: false,//是否可枚举, 通过for in或者Object.keys得到可枚举的属性
+    //   value: 10,// 默认值
+    //   writable: false,// 是否可写, 重新赋值
+    // })
+
+
+    // 定义访问器属性
+    Object.defineProperty(p, 'sex', {
+      configurable: true,
+      enumerable: false,
+      get: function () {
+        return this._sex;
+      },
+      set: function (value) {
+        if (value == '男' || value == '女') {
+          this._sex = value;
+        } else {
+          console.log('性别有误');
+        }
+      }
+    })
+
+    //定义多个属性
+    Object.defineProperties(p, {
+      age: {
+        configurable: true,
+        enumerable: false,
+        value: 10,
+        writable: true
+      },
+      sex: {
+        configurable: true,
+        enumerable: true,
+        get: function () {
+          return this._sex;
+        },
+        set: function (value) {
+          this._sex = value;
+        }
+      }
+    })
+
+
+
+    var v = Object.getOwnPropertyDescriptor(p, 'age');// 获取该对象指定属性的描述
+    console.log(v);
+
+    console.log(Object.getOwnPropertyDescriptor(p, 'sex'));
+
+    var v = Object.getOwnPropertyDescriptors(p);// 获取对象所有属性的描述
+    console.log(v);
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var reg1 = /abc/;
+
+        // ^  已谁为开始
+        // $  已谁为结束
+        // var reg2 = /^abc/;
+
+        // console.log(reg2.test("abc")); // yes_yes
+        // console.log(reg2.test("abcdef")); // yes_yes
+        // console.log(reg2.test("123abc")); // no_yes
+        // console.log(reg2.test("axbxcx")); // no_yes
+        // console.log(reg2.test("as45das5d")); // no_yes
+        // console.log(reg2.test("a")); // no_yes
+        // console.log(reg2.test("b")); // no_yes
+        // console.log(reg2.test("c")); // no_yes
+
+        // var reg3 = /abc$/;
+
+        // console.log(reg3.test("abc")); // yes_yes
+        // console.log(reg3.test("abcdef")); // no_yes
+        // console.log(reg3.test("123abc")); // yes_yes
+        // console.log(reg3.test("axbxcx")); // no_yes
+        // console.log(reg3.test("as45das5d")); // no_yes
+        // console.log(reg3.test("a")); // no_yes
+        // console.log(reg3.test("b")); // no_yes
+        // console.log(reg3.test("c")); // no_yes
+
+
+        var reg4 = /^abc$/;
+        // 当同时添加了开始和结尾的时候意味着只能是 abc
+        console.log(reg4.test("abc")); // yes_yes
+        console.log(reg4.test("abcdef")); // no_yes
+        console.log(reg4.test("abc123abc")); // yes_yes
+        console.log(reg4.test("axbxcx")); // no_yes
+        console.log(reg4.test("as45das5d")); // no_yes
+        console.log(reg4.test("a")); // no_yes
+        console.log(reg4.test("b")); // no_yes
+        console.log(reg4.test("c")); // no_yes
+    </script>
+</body>
+
+</html>

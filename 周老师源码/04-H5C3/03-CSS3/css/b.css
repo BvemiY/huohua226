@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+aside{
+  margin: 100px auto;
+  width: 70px;
+  height: 320px;
+  background: skyblue;
+}
+
+
+
+.top{
+  width: 65px;
+  height: 130px;
+  background: #ff0000;
+  border-radius: 5px;
+  text-align: center;
+  transform-origin: bottom right;
+  animation: top1 1s linear 1;
+}
+@keyframes top1 {
+  0%{
+    transform: rotate(90deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+.top img{
+  margin-top: 10px;
+  transition: all .5s linear;
+
+}
+.top img:hover {
+  transform: rotate(360deg);
+}
+.line{
+  color: #fff;
+  padding: 10px;
+}
+
+.m{
+  position: relative;
+}
+.mid{
+  margin-top: 10px;
+  width: 64px;
+  height: 64px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background: #fff;
+  transform: rotate(-90deg);
+  opacity: 0;
+  text-align: center;
+  transform-origin: bottom left;
+  animation: mid1 1s linear 1s 1 forwards;
+}
+@keyframes mid1{
+  0%{
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  100%{
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+.mid img{
+  margin-top: 10px;
+  width: 20px;
+}
+.mid p{
+  font-size: 12px;
+  margin-top: 5px;
+}
+.m:hover .tel{
+  opacity: 1;
+  left: -165px;
+  /* animation: tel1 1s linear 1 forwards; */
+}
+.tel{
+  width: 230px;
+  height: 65px;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  opacity: 0;
+  background-color: #FF0000;
+  border-radius: 5px;
+  transition: all 1s linear;
+}
+
+@keyframes tel1 {
+  0%{
+    left:200px;
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    left: -165px;
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 20;
+        // 在最外层声明  全局变量
+
+        function fun() {
+            var num = 12;
+            // 在函数体里面声明  局部变量
+            num2 = 888;
+            // 全局变量
+            console.log(a);
+        }
+
+        function fun1() {
+            console.log(num);
+        }
+
+
+        if (false) {
+            var num1 = 999;
+        }
+
+        // 作用域的意思就是当前这个变量都可以在那些地方使用
+        // 1.全局作用域  全局变量在任何地方都可以使用
+        // 2.函数作用域  局部作用域   在函数体里面通过var声明的变量称之为局部变量  当不var 创建变量的时候 那么这个变量就是全局变量
+        // 切记局部变量只可以在当前声明变量的代码块中使用   
+        // 可以形成局部作用域的地方目前只有函数
+
+
+        fun();
+        // fun1();
+
+
+        console.log(num1);
+        console.log(num2);
+        // console.log(num);
+        // num is not defined  num未定义   num这个变量没有声明
+    </script>
+</body>
+
+</html>

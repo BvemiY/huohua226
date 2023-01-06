@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+
+<body>
+	<canvas id="canvas" width="1200" height="900">
+		浏览器不支持
+	</canvas>
+	<script>
+		// 获取画布对象
+		var mycanvas = document.querySelector('#canvas')
+		// 获取上下文对象
+		var ctx = mycanvas.getContext('2d');
+		console.log(ctx);
+
+		// 描边矩形
+		// ctx.beginPath();
+		// ctx.strokeStyle = "blue";
+		// ctx.lineWidth = "5";
+		// ctx.strokeRect(200, 200, 500, 350); // 不能使用描边方法, 可以在绘制钱设置描边线条
+		// ctx.closePath();
+
+		// 填充矩形
+		ctx.beginPath();
+		ctx.fillStyle = "pink";
+		ctx.fillRect(200, 200, 500, 350);
+		ctx.clearRect(300, 300, 300, 200);
+		ctx.closePath();
+
+		// 普通矩形
+		// ctx.beginPath();
+		// ctx.rect(200, 200, 500, 350);
+		// ctx.closePath();
+		// ctx.fillStyle = "skyblue";
+		// ctx.fill();
+		// ctx.strokeStyle = "blue";
+		// ctx.lineWidth = "5";
+		// ctx.stroke();
+
+	</script>
+</body>
+
+</html>

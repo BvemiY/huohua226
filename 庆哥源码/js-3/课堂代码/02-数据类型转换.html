@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var abb = "100";
+
+        // console.log(Boolean("你好"));
+
+        // Boolean()   将括号内的变量转换为布尔值  
+
+        console.log(Boolean(false)); // false
+
+        console.log(Boolean(undefined)); // false
+
+        console.log(Boolean(null)); // false
+
+        console.log(Boolean(0)); // false
+
+        console.log(Boolean(-0)); // false
+
+        console.log(Boolean(NaN)); // false
+
+        console.log(Boolean('')); // false
+
+        // -   false
+        // -   undefined
+        // -   null
+        // -   0
+        // -   NaN(不是一个数值)
+        // -   ‘ ’
+        // 会被转换为false
+
+
+
+        console.log(Boolean(true)); // true
+
+        console.log(Boolean(9527)); // true
+
+        console.log(Boolean({ myname: 'Bob' })); // true
+
+        console.log(Boolean('abcd')); // true
+
+        // - 非空字符串
+        // - 非零数字
+        // - 对象
+        // - true
+        // 会被转换为true
+
+        console.log("----------------------------------------------------");
+
+
+        // console.log(Number(undefined));
+        // Number()  将括号内的变量强制转换为数字数据类型
+        console.log(Number("123.321")); //123321
+        console.log(Number("123abc")); // NaN
+        console.log(Number(null));  // 0
+        console.log(Number(undefined)); // NaN
+        console.log(Number(true)); // 1
+        console.log(Number(false)); // 0
+        console.log("----------------------------------------------------");
+
+        // parseInt() 将括号内的变量强制转换为数字数据类型  去掉小数点后面的数字 
+        console.log(parseInt("123321")); //123321
+        console.log(parseInt("123.321")); //123
+        console.log(parseInt("123abc")); // 123
+        console.log(parseInt("1a2b3c")); // 
+        console.log(parseInt(true)); // NaN
+        console.log(parseInt(false)); // NaN
+        console.log(parseInt(null)); // NaN
+        console.log(parseInt(undefined)); // NaN
+        console.log("----------------------------------------------------");
+
+
+        // 隐式类型转换  先将变量偷偷摸摸的转换为数字类型 使用的是Number()方法  然后在进行加减乘除运算
+        console.log(true - false);
+
+        // isNaN()  用来判断是否是一个数字 如果是打印false
+        console.log(isNaN("123abc"));
+        console.log("----------------------------------------------------");
+
+        // String() 将括号内的变量强制转换为字符串
+
+        console.log(String(null));
+        console.log(String(1222));
+        console.log(String(undefined));
+
+        console.log("----------------------------------------------------");
+ 
+        // toString() 将前面的变量强制转换为字符串  括号里面可以添加进制2 and 36
+
+        var num = 24;
+        console.log(num.toString(36));
+
+    </script>
+</body>
+
+</html>

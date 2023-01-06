@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $('div').each(function (index, ele) {
+      console.log(ele);
+    })
+
+    var arr = ['apple', 'orange', 'banana', 'grape', 'pear'];
+    jQuery.each(arr, function (i, v) {
+      // console.log(i, v);
+    })
+    // // arr.forEach//ES6新增
+    // arr.forEach(function (v, i) {
+    //   console.log(i, v);
+    // })
+    var p = {
+      name: '小谷',
+      age: 11,
+      isYang: true,
+      score: [67, 89, 88],
+      son: {
+        name: '小小谷',
+        age: 1,
+        isYang: true,
+      },
+      regex: /1[3456789]\\d{ 9}/ //正则的特殊符号会出问题
+    }
+    // //遍历对象, 属性名  属性值
+    // $.each(p, function (key, value) {
+    //   console.log(key, value);
+    // })
+
+    // var arrNew = $.map(arr, function (ele, i) {
+    //   return ele + '00';
+    // })
+    // console.log(arrNew);
+
+    var newObj = { name: '小谷' }
+    // $.extend(newObj, p);//浅拷贝
+    $.extend(true, newObj, p);//深拷贝
+    p.son.name = '好谷';
+    console.log(p);
+    console.log(newObj);
+  </script>
+
+</body>
+
+</html>

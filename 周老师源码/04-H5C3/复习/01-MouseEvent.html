@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				width: 400px;
+				height: 4000px;
+				background-color: skyblue;
+				border: 10px solid orange;
+			}
+
+			.sbox {
+				width: 200px;
+				height: 200px;
+				background-color: hotpink;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+
+		</div>
+		<div class="sbox">
+
+		</div>
+		<script>
+			var box = document.getElementsByClassName('box')[0];
+			var sbox = document.getElementsByClassName('sbox')[0];
+			box.onclick = function(e) {
+				// console.log(e.clientX, e.clientY);
+				// console.log(e.pageX, e.pageY);
+				// console.log(e.screenX, e.screenY);
+				console.log(e.offsetX, e.offsetY);
+			}
+			document.onmousemove = function(e) {
+				console.log(e.clientX, e.clientY);
+				sbox.style.left = e.clientX + 'px';
+				sbox.style.top = e.clientY + 'px';
+			}
+		</script>
+	</body>
+
+</html>

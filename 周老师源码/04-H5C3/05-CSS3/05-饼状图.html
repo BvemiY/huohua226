@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid orange;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="1200" height="900"></canvas>
+  <script>
+    // 通过数据进行绘制饼图
+    var data = [{
+      "value": .2,
+      "color": "red",
+      "title": "应届生"
+    }, {
+      "value": .25,
+      "color": "blue",
+      "title": "社会招生"
+    }, {
+      "value": .4,
+      "color": "green",
+      "title": "老学员推荐"
+    }, {
+      "value": .15,
+      "color": "pink",
+      "title": "公开课"
+    }];
+
+    var canvas = document.querySelector('#canvas');
+    var ctx = canvas.getContext('2d');
+
+    var start = 0, end = 0;
+    for (let i = 0; i < data.length; i++) {
+      var v = data[i].value;
+      end = start + v * 360;
+
+      console.log(start, end);
+      ctx.beginPath();
+      ctx.moveTo(400, 400);
+      ctx.arc(400, 400, 200, Math.PI / 180 * start, Math.PI / 180 * end);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fillStyle = data[i].color;
+      ctx.fill();
+
+      start = end;
+    }
+
+
+  </script>
+</body>
+
+</html>

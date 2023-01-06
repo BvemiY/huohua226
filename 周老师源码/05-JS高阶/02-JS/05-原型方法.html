@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.say = function () {
+        console.log('开始说话');
+      }
+    }
+
+    //构造函数的  原型对象, 添加共享属性和方法,所有创建对象都拥有
+    Person.prototype.sex = '女';
+    Person.prototype.study = function () {
+      console.log('好好学习');
+    }
+
+    var p1 = new Person('小谷', 10);
+    console.log(p1);
+    // 对象的 对象原型 , 谷歌: [[prototype]]  id|360: __proto__, 火狐:<prototype>
+
+    // console.log(p1.__proto__);// 对象的   对象原型:  提供调用的查找机制
+    // console.log(Person.prototype);// 构造函数的   原型对象  : 提供声明属性和方法
+    // console.log(p1.__proto__ === Person.prototype);// 相等的
+
+    // console.log(p1.name);
+    // console.log(p1.age);
+    // p1.say();
+
+    // console.log(p1.sex);
+    // p1.study();//先去对象自身查找  如果找不到,再去对象的  对象原型上查找, 所形成的的链条就是原型链
+
+    // console.log(p1.__proto__.constructor);// 对象的  对象原型的  构造函数
+    // console.log(Person.prototype.constructor);// 构造函数的   原型对象的  构造函数
+    // console.log(p1.__proto__.constructor === Person.prototype.constructor);
+
+
+    console.log(p1.hasOwnProperty('study'));//判断是对象的属性, 而不是原型对象的属性
+    console.log(p1.hasOwnProperty('say'));
+    console.log(p1.hasOwnProperty('name'));
+    console.log(p1.hasOwnProperty('age'));
+
+    var p2 = new Person('小好', 20);
+    var d = new Date();
+
+    //判断对象是否在原型链上
+    console.log(Person.prototype.isPrototypeOf(p1));
+    console.log(Person.prototype.isPrototypeOf(p2));
+    console.log(Person.prototype.isPrototypeOf(d));
+
+  </script>
+</body>
+
+</html>

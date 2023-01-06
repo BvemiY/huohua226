@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //父构造函数
+    function Father(name) {
+      this.name = name;
+      this.say = function () {
+        console.log('father在说话');
+      }
+    }
+    // 子构造函数
+    function Son(name, age) {
+      Father.call(this, name, age);// 子构造函数的第一行
+      this.age = age;
+      this.study = function () {
+        console.log('son 在学习');
+      }
+    }
+
+    var son = new Son('小谷', 20);
+    console.log(son);
+    son.say();
+    son.study();
+  </script>
+</body>
+
+</html>

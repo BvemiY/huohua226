@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        
+        .box {
+            height: 360px;
+            width: 750px;
+            border: 1px solid red;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .oUl {
+            height: 360px;
+            width: 4500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .oUl>li {
+            float: left;
+        }
+        
+        .dot_list {
+            width: 270px;
+            height: 50px;
+            position: absolute;
+            top: 302px;
+            left: 832px;
+        }
+        
+        .dot {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(159, 254, 81);
+            display: inline-block;
+            border-radius: 50%;
+        }
+        
+        .active {
+            width: 40px;
+            height: 40px;
+            border: 5px solid gray;
+        }
+        
+        .prev,
+        .next {
+            width: 60px;
+            height: 100px;
+            /* background-color: rgb(255, 255, 255); */
+            font-size: 66px;
+        }
+        
+        .prev {
+            position: absolute;
+            top: 35%;
+            left: 0;
+        }
+        
+        .next {
+            position: absolute;
+            top: 35%;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <ul class="oUl">
+            <li><img src="./images/pic1.jpg" alt=""></li>
+            <li><img src="./images/pic2.jpg" alt=""></li>
+            <li><img src="./images/pic3.jpg" alt=""></li>
+            <li><img src="./images/pic4.jpg" alt=""></li>
+            <li><img src="./images/pic5.jpg" alt=""></li>
+            <!-- 给ul元素在多加一个li  就是第一张图片 -->
+            <li><img src="./images/pic1.jpg" alt=""></li>
+
+        </ul>
+        <div class="prev">&lt;</div>
+        <div class="next">&gt;</div>
+        <div></div>
+    </div>
+    <div class="dot_list">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script src="./js/animation.js"></script>
+    <script>
+        // 获取元素
+        var oUl = document.getElementsByClassName("oUl")[0];
+        var dot = document.getElementsByClassName("dot");
+        var prev = document.getElementsByClassName("prev")[0];
+        var next = document.getElementsByClassName("next")[0];
+        var flag = 0;
+        var flag_dot = 0;
+        // 计数器 
+        setInterval(function() {
+
+            if (flag == 5) {
+                // 通过计数器来判断当前是不是最后一张图片
+                flag = 0;
+                oUl.style.left = "0px";
+                // 计数器清零   位置清零  回到最原始的位置
+            } else {
+                // 正常计数器自增
+                flag++;
+                flag_dot++;
+            }
+
+            if (flag_dot == 5) {
+                flag_dot = 0;
+            }
+            for (var j = 0; j < dot.length; j++) {
+                dot[j].className = "dot";
+            }
+            // 将当前单击的元素添加active类名来做到添加新的样式 
+            dot[flag_dot].className = "dot active";
+            // 通过提前封装好的动画方法  进行ul的位置移动
+            moveAnimation1(oUl, -750 * flag);
+
+        }, 7000);
+        // 每一张图片需要多久事件
+
+
+
+        prev.onclick = function() {
+            if (flag == 0) {
+                // 通过计数器来判断当前是不是最后一张图片
+                oUl.style.left = "3750px";
+                flag = 4;
+                flag_dot = 4;
+                // 计数器清零   位置清零  回到最原始的位置
+            } else {
+                // 正常计数器自增
+                flag--;
+                flag_dot--;
+            }
+
+
+            for (var j = 0; j < dot.length; j++) {
+                dot[j].className = "dot";
+            }
+            // 将当前单击的元素添加active类名来做到添加新的样式 
+            dot[flag_dot].className = "dot active";
+
+            moveAnimation1(oUl, -750 * flag);
+        }
+
+
+        next.onclick = function() {
+
+            if (flag == 5) {
+                // 通过计数器来判断当前是不是最后一张图片
+                flag = 0;
+                oUl.style.left = "0px";
+                // 计数器清零   位置清零  回到最原始的位置
+            } else {
+                // 正常计数器自增
+                flag++;
+                flag_dot++;
+            }
+
+
+
+
+            if (flag_dot == 5) {
+                flag_dot = 0;
+            }
+
+            for (var j = 0; j < dot.length; j++) {
+                dot[j].className = "dot";
+            }
+            // 将当前单击的元素添加active类名来做到添加新的样式 
+            dot[flag_dot].className = "dot active";
+
+            moveAnimation1(oUl, -750 * flag);
+        }
+
+
+
+
+        for (var i = 0; i < dot.length; i++) {
+            // 保存i值 在dom元素中 i值所代表的就是每一个小圆点的索引 它对应第几张照片
+            dot[i].index = i;
+            // 绑定事件
+            dot[i].onclick = function() {
+                // 当单击小圆点之后 将原点的index值 赋值给计数器 做到同步执行
+                flag = this.index;
+                // 排他思想
+                for (var j = 0; j < dot.length; j++) {
+                    dot[j].className = "dot";
+                }
+                // 将当前单击的元素添加active类名来做到添加新的样式 
+                this.className = "dot active";
+                // 计算最终要到达的目的地位置
+                var target = this.index * (-750);
+                // 走动画
+                moveAnimation1(oUl, target);
+
+            }
+        }
+    </script>
+</body>
+
+</html>

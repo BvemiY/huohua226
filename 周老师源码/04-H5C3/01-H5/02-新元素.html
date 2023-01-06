@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    meter,
+    progress {
+      width: 900px;
+    }
+
+    fieldset {
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <meter value="80" max="100"></meter><br>
+  <progress value="30" max="100"></progress>
+  <form action="" method="get">
+    <fieldset>
+      <legend>基本信息</legend>
+      <div>
+        <label for="username">用户名: </label>
+        <input type="text" id="username">
+      </div>
+      <div>
+        <label for="pwd">密码: </label>
+        <input type="password" id="pwd">
+      </div>
+      <div>
+        城市:
+        <select name="city" id="">
+          <option value="郑州">郑州</option>
+          <option value="郑州1" selected>郑州1</option>
+          <option value="郑州2">郑州2</option>
+        </select>
+      </div>
+      <div>
+        城市
+        <input type="text" name="city2" list="city">
+        <datalist id="city">
+          <option value="郑州"></option>
+          <option value="郑州1"></option>
+          <option value="郑州2"></option>
+        </datalist>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>详细信息</legend>
+      <div>
+        现居住地:<input type="text">
+      </div>
+      <div>
+        户籍地:<input type="text">
+      </div>
+    </fieldset>
+    <input type="submit" value="提交">
+  </form>
+
+</body>
+
+</html>

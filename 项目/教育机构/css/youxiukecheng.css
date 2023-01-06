@@ -1,0 +1,108 @@
+.curriculum {
+    width: 1519px;
+    height: 585px;
+    padding: 40px 0px;
+    background-color: white
+}
+
+.curriculum_top {
+    width: 175px;
+    height: 120px;
+    margin: 0px auto;
+    color: #999999;
+    text-align: center;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.curriculum_top h1 {
+    font-size: 40px;
+    color: black;
+}
+
+.xian {
+    width: 80px;
+    height: 5px;
+    margin: 25px auto;
+}
+
+.xian1 {
+    width: 30px;
+    height: 5px;
+    background-color: #F0AC07;
+    float: left;
+}
+
+.xian2 {
+    width: 50px;
+    height: 5px;
+    background-color: #132E50;
+    float: right;
+}
+
+.curriculum_bottom {
+    width: 1300px;
+    height: 465px;
+    margin: 0px auto;
+}
+
+.curriculum_bottom .curriculum_bottom_box {
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin: 30px 16px;
+    position: relative;
+}
+
+.curriculum_bottom_img {
+    width: 400px;
+    height: 200px;
+    transition: all 1s ease 0s;
+}
+
+.curriculum_bottom_img img {
+    width: 400px;
+    height: 200px;
+}
+
+.curriculum_bottom_img:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1) translate(0px, 10px);
+
+}
+
+.curriculum_bottom_text {
+    width: 400px;
+    height: 180px;
+    padding-top: 20px;
+    background-color: pink;
+    text-align: center;
+    line-height: 50px;
+}
+
+span {
+    color: #F0AC07;
+}
+
+.P {
+    color: #666666;
+}
+
+.gengduo {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    bottom: -25px;
+    left: 130px;
+    background-color: #173253;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    transition: all 1s ease 0s;
+}
+
+.gengduo:hover {
+    background-color: #F0AC07;
+    cursor: pointer;
+}

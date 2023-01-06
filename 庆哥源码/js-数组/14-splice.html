@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [15, 99, 26, 44, 12, 5, 62];
+        console.log(arr);
+        // splice(*index*,*howmany*,*item1*,.....,*itemX*)  修改数组   增删改
+        // - 方法参数 --- 1.需要添加或删除的开始位置的索引下标   2.可选  需要删除几个元素  3.可选 我们想要添加什么元素进入数组中
+        // - 返回值 ---返回字符串
+        // - 改变不改变原数组  ---会改变原数组
+
+
+        // 1.新增元素
+        // arr.splice(6, 0, "惊雷", "李鹏唱");
+        // 参数1.从哪个位置开始添加  添加在当前位置的前面
+        // 2.删除的个数 但是因为是添加 所以需要写0  不删除元素
+        // 3.需要添加的新元素  新变量
+        // console.log(arr);
+
+
+        // 2.删除元素
+        // arr.splice(1, 3);
+        // 参数1.从哪个位置开始删除  包含当前位置
+        // 2.需要删除几个元素
+        // console.log(arr);
+
+
+        // 3.修改元素
+        arr.splice(3, 1, "豫ATP077");
+        // 修改元素 其实就是先删除 在新增 的过程
+        console.log(arr);
+    </script>
+</body>
+
+</html>

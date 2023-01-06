@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      this.say = function () {
+        console.log('开始说话');
+      }
+    }
+
+    //构造函数的  原型对象, 添加共享属性和方法,所有创建对象都拥有
+    Person.prototype.sex = '女';
+    Person.prototype.study = function () {
+      console.log('好好学习');
+    }
+
+    var p1 = new Person('小谷', 10);
+    console.log(p1.name);
+    console.log(p1.age);
+    console.log(p1.sex);
+    p1.say();
+    p1.study();
+    console.log(p1);
+    var p2 = new Person('小好', 20);
+    console.log(p2.name);
+    console.log(p2.age);
+    console.log(p2.sex);
+    p2.say();
+    p2.study();
+    console.log(p2);
+
+  </script>
+</body>
+
+</html>

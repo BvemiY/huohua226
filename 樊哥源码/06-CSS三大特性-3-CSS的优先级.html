@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            代码的执行顺序
+            从上到下  由左至右
+         */
+        
+        .one {
+            color: yellow;
+        }
+        
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CSS优先级 -->
+    <p class="one">
+        CSS优先级 !important>行内样式>ID选择器>类选择器>标签选择器>通配符>继承的样式>浏览器默认样式
+    </p>
+
+    <!-- 
+        *               0,0,0,0
+        标签选择器       0,0,0,1
+        class类选择器    0,0,1,0
+        ID选择器         0,1,0,0 
+        行内样式         1,0,0,0  
+        !important      ∞ 无穷大
+     -->
+</body>
+
+</html>

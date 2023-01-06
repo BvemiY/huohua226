@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(108, 236, 206);
+            margin: 150px auto;
+            border: 1px solid red;
+            transition: all 5s ease 0s;
+            backface-visibility: hidden;
+            /* 3d中的背部不可见  不仅仅包含内容 只要是正面的所有东西背部都不可见 */
+            transform-style: preserve-3d;
+            /* 让子元素用于3d效果 */
+        }
+        .box:hover{
+            transform: rotateX(550deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">夏长江---box里面加点文字 </div>
+</body>
+
+</html>

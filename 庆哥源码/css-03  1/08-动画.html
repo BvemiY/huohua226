@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+
+        .box{
+            width: 300px;
+            height: 300px;
+            /* background-color: rgb(54, 161, 243); */
+            animation: run 10s linear 0s 1;
+            /* animation:动画名称 动画时间 运动曲线  何时开始  播放次数  是否反方向; */
+            /* 1.需要哪个元素运行动画效果就给谁添加animation   动画名称不可以是数字开头*/
+            /* 2.通过@keyframes 来定义当前动画名称的动画轨迹 */
+            /* 3. 通过关键帧来改变不同的动画内容  关键时间帧可以根据自己的想法随意书写 */
+        }
+
+        @keyframes run{
+            0%{
+                transform: translate(0px,0px);
+                color: aliceblue;
+                background-image: url(../作业/转动的书/作业资料/images/mysql.png);
+            }
+            20%{
+                transform: translate(120px,0px);
+                color: rgb(129, 192, 248);
+                background-image: url(../../01-html5-css3/作业/作业/banner.jpg);
+            }
+            40%{
+                transform: translate(120px,120px);
+                color: rgb(154, 243, 141);
+                background-image: url(../../05-css/课件/images/ll.jpg);
+            }
+            60%{
+                transform: translate(255px,205px);
+                color: rgb(250, 229, 142);
+                background-image: url(../../05-css/课件/images/tl.jpg);
+
+            }
+            80%{
+                transform: translate(120px,0px);
+                color: rgb(214, 150, 244);
+                background-image: url(../../05-css/课件/images/xian.jpg);
+
+            }
+            100%{
+                transform: translate(0px,120px);
+                color: rgb(255, 158, 158);
+                background-image: url(../../05-css/课件/images/yl.jpg);
+
+            }
+        }
+        /* 关键帧   补帧    帧 */
+        /* 百分比 关键帧 */
+    </style>
+</head>
+
+<body>
+    <div class="box">李鹏：动画名称run是自己定义的？  </div>
+</body>
+
+</html>

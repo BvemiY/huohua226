@@ -1,0 +1,14 @@
+@import url(a.css) screen and (max-width:768px);
+@import url(b.css) screen and (min-width:768px);
+@import url(c.css) screen and (min-width:992px);
+@import url(d.css) screen and (min-width:1200px);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  margin: 0 auto;
+  height: 900px;
+}

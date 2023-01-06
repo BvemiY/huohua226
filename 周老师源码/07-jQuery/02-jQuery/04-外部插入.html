@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    div {
+      border: 1px solid orange;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btnStart">开始</button>
+  <ul class="ul1">
+    <li>list item 1</li>
+    <li>list item 2<span>admin</span></li>
+    <li class="third-item">list item 3</li>
+    <li id="four-item">list item 4</li>
+    <li>list item 5</li>
+  </ul>
+  <div class="box">测试</div>
+
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      $('li').click(function () {
+        console.log(1);
+      })
+      $('.btnStart').click(function (e) {
+        // $('.third-item').before('<li>8888</li>');//之前插入
+        // $('<li>8888</li>').insertBefore($('.third-item'))
+        // $('.third-item').after('<li>666</li>');//之后插入
+        // $('<li>999</li>').insertAfter($('.third-item'))
+
+        // $('li').remove()
+        // $('li').remove('.third-item')//删除指定选择器元素或者删除所有,不保留元素
+
+        // $('li').empty();//清空内容,元素保留,事件保留
+
+        // $('li').detach('.third-item');//删除
+        // $('#four-item').before('<li class="third-item">list item 3</li>')
+
+        // $('li').replaceAll('.third-item');// 将所有li替换为  指定选择器的元素(页面存在)
+        // $('li').replaceWith('<li>888</li>');//将每个元素  替换为  指定文本(可以是标签类型)
+
+      })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      perspective: 1000px;
+      width: 800px;
+      height: 600px;
+      border: 1px solid red;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .box div {
+      width: 400px;
+      height: 600px;
+      transition: all 1s linear;
+      float: left;
+    }
+
+    .b-l {
+      /* position: absolute;
+      left: 0;
+      top: 0; */
+      transform-origin: left;
+      background-color: skyblue;
+    }
+
+    .box:hover .b-l {
+      transform: rotateY(180deg);
+    }
+
+    .b-r {
+      /* position: absolute;
+      top: 0;
+      right: 0; */
+      transform-origin: right;
+      background-color: pink;
+    }
+
+    .box:hover .b-r {
+      transform: rotateY(-180deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="b-l">1</div>
+    <div class="b-r">2</div>
+  </div>
+</body>
+
+</html>

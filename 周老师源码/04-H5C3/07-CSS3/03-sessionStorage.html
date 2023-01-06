@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 会话存储: 不同标签页共享, 关闭当前页面, 清空存储
+
+    console.log(sessionStorage.getItem('token'));
+    console.log(sessionStorage.getItem('date'));
+
+
+    for (var i = 0; i < sessionStorage.length; i++) {
+      var key = sessionStorage.key(i);
+      var value = sessionStorage.getItem(key);
+      console.log(key, value);
+    }
+  </script>
+</body>
+
+</html>

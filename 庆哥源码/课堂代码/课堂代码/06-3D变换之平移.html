@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 150px auto;
+            transform-style: preserve-3d;
+            perspective: 1500px;
+            transition: all 15s ease 0s;
+            /* transform: rotateY(70deg); */
+            background-color: rgb(236, 243, 135);
+
+
+        }
+        .box_1{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(155, 243, 135);
+            
+            transform: translateZ(-180px);
+            /* translateZ  z轴平移  正值代表向前平移  负值代表向后平移 */
+        }
+        .box_2{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(194, 135, 243);
+            
+            transform: translateZ(180px);
+        }
+        .box:hover{
+            transform: rotateY(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_1"></div>
+        <div class="box_2"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            /* border: 20px solid red; */
+            padding-left: 50px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+
+        // console.log(box.offsetWidth);
+        // clientWidth,clientHeight 获取对应盒子的大小 但是不包含边框线 包含内边距
+        console.log(box.clientWidth);
+        console.log(box.clientHeight);
+
+
+        // clientLeft,clientTop   获取对应盒子的边框线的粗细程度
+        console.log(box.clientLeft);
+        console.log(box.clientTop);
+    </script>
+</body>
+
+</html>

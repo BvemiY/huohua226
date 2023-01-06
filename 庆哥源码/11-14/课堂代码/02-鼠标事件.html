@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(96, 114, 250);
+            position: relative;
+        }
+        
+        .sm_box {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(239, 252, 113);
+            position: absolute;
+            top: 70px;
+            left: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <div class="sm_box"></div> -->
+    </div>
+
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+
+
+        // onmouseover  当鼠标刚进入元素时触发  
+        // 1.当鼠标移入元素的时候会触发事件
+        // box.onmouseover = function() {
+        //     console.log("你好！我叫刚进入");
+        // }
+
+        // onmouseenter  鼠标完全进入元素时触发
+        // box.onmouseenter = function() {
+        //         console.log("你好！我叫完全进入");
+        //     }
+        // onmouseover 和 onmouseenter 最大的区别
+        // 1.鼠标进入 元素中会触发  ，当元素进入小盒子的时候会触发onmouseover
+        // 2.onmouseenter  只有鼠标进入到当前自身元素中 才会触发
+
+        // onmouseout | 鼠标刚要离开元素时触发 
+
+        // box.onmouseout = function() {
+        //     console.log("你真的要离开我吗？？？");
+        // };
+
+        // onmouseleave | 鼠标完全离开元素时触发
+        // box.onmouseleave = function() {
+        //     console.log("你真的要离开我吗？？？");
+        // };
+
+        // onmousemove  鼠标在元素中移动
+        // box.onmousemove = function() {
+        //     console.log("我在元素中移动");
+        // }
+
+
+        // onmousedown  鼠标按下时触发
+        // 1. 鼠标左键右键都会触发  按压鼠标的时候触发
+        // box.onmousedown = function() {
+        //     console.log("点着你可不要放手呀");
+        // }
+
+        // onmouseup  鼠标弹起时触发
+        // 1. 鼠标左键右键都会触发  鼠标弹起的时候触发
+        // box.onmouseup = function() {
+        //     console.log("放手了就不要回来了");
+        // }
+
+        // onclick  鼠标单击事件
+        // 1.鼠标左键单击
+        // box.onclick = function() {
+        //     console.log("你点我干啥？？？");
+        // }
+
+        // ondblclick  鼠标双击事件
+        // 1.双击左键  间隔时间短
+        box.ondblclick = function(e) {
+            console.log("喜欢的家人们给庆子我双击一个小心心！！！");
+            console.log(e);
+            console.log(e.type);
+        }
+
+        // 当页面触发事件的时候  会产生一个事件对象 event
+    </script>
+</body>
+
+</html>

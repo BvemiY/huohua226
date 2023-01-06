@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [6, 5, 5, 9, 12, 4, 3];
+        var item;
+        for (var i = 0; i < arr.length - 1; i++) {
+            item = i;
+            for (var j = i + 1; j < arr.length; j++) {
+                if(arr[item] > arr[j]){
+                    item = j;
+                }
+            }
+            // 第三方变量位置交换
+            var num = arr[i];
+            arr[i] = arr[item];
+            arr[item] = num;
+        }
+
+        console.log(arr);
+    </script>
+</body>
+
+</html>

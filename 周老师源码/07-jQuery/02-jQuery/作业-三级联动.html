@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-size: 20px;
+
+    }
+
+    select {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <select class="sheng">
+    <option value="-1">--省--</option>
+  </select>
+  <select class="shi">
+    <option value="-1">--市--</option>
+  </select>
+  <select class="qu">
+    <option value="-1">--区/县--</option>
+  </select>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    var aProvince = ['河南', '河北', '山东'];//省份
+    // 城市
+    var aCity = [
+      ['郑州', '焦作', '商丘'],
+      ['石家庄', '承德', '衡水'],
+      ['菏泽', '济南', '烟台']
+    ];
+    //县 区
+    var aCounty = [
+      [
+        ['金水区', '高新区', '二七区'],
+        ['武陟县', '修武县', '温县'],
+        [' 商丘1', '商丘2', '商丘3']
+
+      ],
+      [
+        ['河北1', '河北1', '河北1'],
+        ['河北1', '河北1', '河北1'],
+        [' 河北1', '河北1', '河北1']
+      ],
+      [
+        ['山东1', '山东1', '山东1'],
+        ['山东2', '山东2', '山东2'],
+        [' 山东3', '山东3', '山东3']
+      ]];
+
+    //循环遍历省份,添加到option中
+    aProvince.forEach(function (ele, index) {
+      // $('.sheng').append('<option value="' + index + '">--' + ele + '--</option>')
+      $('.sheng').append(`<option value="${index}">${ele}</option>`)
+    })
+    var proIndex;
+    // 给省下拉列表添加 改变事件,    获取选中省份的索引
+    $('.sheng').change(function (e) {
+      proIndex = $(this).val();//选中省份的索引
+      if (proIndex < 0) {
+        return;
+      }
+      //获取市的数组数据. 循环遍历到市的option中
+      // console.log();
+      $('.shi').empty().append('<option value="-1">--市--</option>') //清空上次数据
+      $('.qu').empty().append('<option value="-1">--区/县--</option>');
+      //获取市的数据, 循环遍历添加到市是option中
+      aCity[proIndex].forEach(function (ele, index) {
+        $('.shi').append('<option value="' + index + '">' + ele + '</option>')
+      })
+    })
+    //给市添加选中事件
+    $('.shi').change(function (e) {
+      var shiIndex = $(this).val();//选中市的索引
+      //获取区县数据,遍历添加到区县的option中
+      // $('.qu').empty();
+      $('.qu').empty().append('<option value="-1">--区/县--</option>');
+      aCounty[proIndex][shiIndex].forEach(function (ele, index) {
+        $('.qu').append('<option value="' + index + '">' + ele + '</option>')
+      })
+    })
+
+  </script>
+</body>
+
+</html>

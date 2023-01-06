@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>get请求</button>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      var basicURL = "http://localhost:3008";
+      $('button').click(function () {
+        $.get(
+          basicURL + '/api/student/getStudent',//请求的url
+          'name=夏',//请求数据,一般为键值对
+          function (result) {//请求成功的回调函数
+            console.log(result);
+          },
+          'json'//响应的数据格式
+        )
+      })
+      // var basicURL = "http://192.168.20.20:8080/emp/employee.php";
+      // $('button').click(function () {
+      //   $.get(
+      //     basicURL,//请求的url
+      //     'action=findAllEmps&type=xml',//请求数据,一般为键值对
+      //     function (result) {//请求成功的回调函数
+      //       console.log(result);
+      //     },
+      //     'xml'//响应的数据格式
+      //   )
+      // })
+    })
+  </script>
+</body>
+
+</html>

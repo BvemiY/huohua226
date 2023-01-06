@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      height: 800px;
+      width: 1200px;
+      margin: 0 auto;
+      background: #6e9286;
+    }
+
+    .m-top {
+      height: 100px;
+      background: #54443d;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      position: relative;
+    }
+
+    .item {
+      width: 100px;
+      height: 50px;
+      background: #ba6151;
+      margin: 10px;
+    }
+
+    .item-f {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+
+    .m-bot {
+      height: 600px;
+      width: 100%;
+      background: #6e9286;
+      display: flex;
+    }
+
+    .m-l {
+      flex: 3;
+    }
+
+    .m-r {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .m-r div {
+      width: 290px;
+      height: 260px;
+      background: pink;
+      margin-top: 10px;
+    }
+
+    .m-l,
+    .m-r {
+      height: 560px;
+      background: #fff;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+    <div class="m-top">
+      <ul>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item item-f"></li>
+      </ul>
+    </div>
+    <div class="m-bot">
+      <div class="m-l"></div>
+      <div class="m-r">
+        <div class="mm-t"></div>
+        <div class="mm-b"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

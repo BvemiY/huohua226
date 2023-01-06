@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(239, 94, 94);
+        }
+        
+        .box1 {
+            width: 60px;
+            height: 20px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <div class="box1">点我</div>
+
+    <input type="text" class="text">
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+        var box1 = document.getElementsByClassName("box1")[0];
+        var text = document.getElementsByClassName("text")[0];
+
+        // box.style.backgroundColor = "green";
+
+        // box 给盒子添加事件 添加单击事件
+        // box.onclick = function() {
+        //         box.style.backgroundColor = "green";
+        //     }
+        // console.log(box);
+
+        // box1.onclick = function() {
+        //         box.style.backgroundColor = "green";
+        //     }
+        //     // 
+
+        // // --------------------------------------------------------
+        // // 获取input输入框的内容
+        box1.onclick = function() {
+            console.log(text.value);
+            var a = text.value;
+
+            if (a == 123321) {
+                console.log("输入充公");
+                box.style.backgroundColor = "green";
+            }
+            //     // value  值  通过value方法获取输入框里面的值
+        }
+    </script>
+</body>
+
+</html>

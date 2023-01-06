@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <section>
+    <h2>鹿柴</h2>
+    <div>王维 〔唐代〕</div>
+
+    <div>空山不见人，但闻人语响。</div>
+    <div>返景入深林，复照青苔上。</div>
+    <div>收藏下载复制完善</div>
+    <div>译文及注释</div>
+
+    <h2>译文</h2>
+    <div>幽静的山谷里看不见人，只听到人说话的声音。</div>
+    <div>落日余光映入了深林，又照在幽暗处的青苔上。</div>
+  </section>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    var divs = document.querySelectorAll('div');// js数组
+    console.log(divs);
+    console.log($(divs));// js对象 转换  jQuery对象
+
+    $(function () {
+      var divs2 = $('div');// jQuery对象: 数组+jQuery的方法
+      console.log(divs2);
+      var div = divs2.get(0);// jQuery对象  转换为   JS对象
+      console.log(div);
+      console.log(divs2[1]); // jQuery对象  转换为   JS对象
+      console.log(document.querySelectorAll('div')[0]);
+    })
+  </script>
+</body>
+
+</html>

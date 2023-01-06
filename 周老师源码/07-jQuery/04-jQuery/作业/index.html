@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>首页查询学生</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		main {
+			width: 1200px;
+			margin: 0 auto;
+			border: 1px solid orange;
+		}
+
+		.top {
+			padding: 20px 0;
+		}
+
+		table {
+			width: 1200px;
+		}
+
+		table,
+		th,
+		td {
+			border-collapse: collapse;
+			border: 1px solid blue;
+		}
+
+		tr {
+			height: 35px;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="top">
+			姓名: <input type="text" placeholder="模糊查询姓名" class="uname">
+			<input type="button" value="搜索" class="search">
+			<a href="add.html">添加</a>
+		</div>
+		<div class="con">
+			<table>
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>学号</th>
+						<th>班级</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>年龄</th>
+						<th>电话</th>
+						<th>爱好</th>
+						<th>地址</th>
+						<th>备注</th>
+						<th>日期</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+	</main>
+	<script>
+		initData(null)
+
+		var btnSearch = document.querySelector('.search');
+		// 模糊查询
+		btnSearch.addEventListener('click', function () {
+			var uname = document.querySelector('.uname'); //输入框对象
+			initData(uname.value)
+		})
+
+		// 查询所有或者名字模糊查询
+		function initData(uname) {
+			var tbody = document.querySelector("tbody");
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+						var dataArr = JSON.parse(xhr.responseText)
+						var str = '';
+						dataArr.forEach(function (v, i) {
+							str += `
+									<tr>
+										<td>${i + 1}</td>
+										<td>${v.id}</td>
+										<td>${v.clazz}</td>
+										<td>${v.name}</td>
+										<td>${v.gender}</td>
+										<td>${v.age}</td>
+										<td>${v.tel}</td>
+										<td>${v.hobby}</td>
+										<td>${v.address}</td>
+										<td>${v.remark}</td>
+										<td>${v.date}</td>
+										<td>
+											<a href="update.html#${v.id}">修改</a>&nbsp;&nbsp;
+											<a href="javascript:void(0)" class="del" data-id='${v.id}'>删除</a>
+										</td>
+									</tr>
+								`
+						})
+						tbody.innerHTML = str;
+
+						// 获取所有删除按钮
+						var dels = document.querySelectorAll('.del');
+						dels.forEach(function (delEle, i) {
+							delEle.onclick = function (e) {
+								var id = delEle.getAttribute('data-id');
+								if (confirm('是否删除')) {
+									delStu(id)
+								}
+							}
+						})
+					}
+				}
+			}
+			if (uname != null) { //如果名字不为空, 进行名字模糊查询, 否则进行全部查询
+				xhr.open('GET', 'http://localhost:3008/api/student/getStudent?name=' + uname);
+			} else {
+				xhr.open('GET', 'http://localhost:3008/api/student/getStudent');
+			}
+			xhr.send()
+		}
+
+		/**
+		 * 根据id删除学生
+		 * @param {Object} id
+		 */
+		function delStu(id) {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+					if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+						initData(null)
+					}
+				}
+			}
+			xhr.open('POST', ' http://localhost:3008/api/student/removeStudent');
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			xhr.send('id=' + id);
+		}
+	</script>
+</body>
+
+</html>

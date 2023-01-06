@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(101, 215, 221);
+            position: absolute;
+            top: 500px;
+            left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="box" style="top: 500px; left: 500px;">
+    <!-- <div class="box"></div> -->
+    <script>
+        // var text = document.getElementsByClassName("text")[0];
+
+        // // onkeydown    键盘按键按下时触发 
+        // text.onkeydown = function() {
+        //     console.log("轻点按，有点疼！！！");
+        // };
+        // // onkeypress   键盘按着不放时触发 
+        // // text.onkeypress = function() {
+        // //     console.log("有本事你松手！！！");
+        // // };
+        // // onkeyup      键盘按键弹起时触发
+        // // text.onkeyup = function() {
+        // //     console.log("终于松手了！！！");
+        // // };
+
+        var box = document.getElementsByClassName("box")[0];
+
+        box.onkeydown = function(e) {
+            console.log(e.keyCode);
+            // 键码
+            // 左37  上38  右39   下40
+            var oLeft = parseInt(box.style.left);
+            var oTop = parseInt(box.style.top);
+            if (e.keyCode == 37) {
+                box.style.left = oLeft - 20 + "px";
+            } else if (e.keyCode == 38) {
+                box.style.top = oTop - 20 + "px";
+            } else if (e.keyCode == 39) {
+                box.style.left = oLeft + 20 + "px";
+            } else if (e.keyCode == 40) {
+                box.style.top = oTop + 20 + "px";
+            }
+        }
+    </script>
+</body>
+
+</html>

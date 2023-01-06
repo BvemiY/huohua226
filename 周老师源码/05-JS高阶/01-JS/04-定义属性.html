@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var p = {
+      name: '火花226'
+    }
+    Object.defineProperty(p, 'age', {
+      configurable: false,//是否可配置 (删除和添加)
+      enumerable: false,//是否可枚举, 通过for in或者Object.keys得到可枚举的属性
+      value: 10,// 默认值
+      writable: false,// 是否可写, 重新赋值
+    })
+    Object.defineProperty(p, 'say', {
+      configurable: true,
+      enumerable: false,
+      value: function () {
+        console.log('说话');
+      },
+      writable: true
+    })
+    p.age = 20;
+    console.log(p);
+    p.say()
+    delete p.age;
+    console.log(p);
+
+    // // 可枚举的属性
+    // for (var key in p) {
+    //   console.log(key);
+    // }
+    // var arr = Object.keys(p);// 获取可枚举属性
+    // console.log(arr);
+    var arr2 = Object.getOwnPropertyNames(p);// 可枚举和不可枚举的属性
+    console.log(arr2);
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var reg1 = /look/; // no_yes
+        // var reg2 = /look/i; //yes_yes
+        // | i    | 忽略大小写          |
+
+        var reg3 = /look/g;
+        // | g    | 全局匹配            |
+
+        var reg3 = /look/gi;
+        // | gi   | 全局匹配+忽略大小写  |
+
+        var reg3 = /look/m;
+        // | m    | 多行匹配            |
+
+        // exec()  方法用于检索字符串中的正则表达式的匹配
+
+
+
+        // var str1 = "LOOK";
+        var str2 = "tell me why,为什么，look眼神里有话要说，是不是";
+
+        // console.log(reg1.test(str1));
+
+        // console.log(reg2.test(str1));
+
+        console.log(reg3.test(str2));
+        // console.log(reg3.exec(str2));
+    </script>
+</body>
+
+</html>

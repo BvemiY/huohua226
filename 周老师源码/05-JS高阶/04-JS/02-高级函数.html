@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    function show(num) {
+      console.log(num);
+    }
+    function method(fn) {
+      // console.log(arguments[0]);
+      console.log(arguments[2], arguments[3]);
+      fn(arguments[1]);
+    }
+
+
+    function method(fn, num, a, b) {
+      console.log(a, b);
+      fn(num)
+    }
+
+    //函数作为参数,
+    method(show, 8, 3, 6)
+    */
+    function show(a, b) {
+      console.log(a, b, '---');
+      return function (c) {
+        a++;
+        console.log(a, b, c, '+++');
+      }
+    }
+    var fn = show(2, 5);
+    fn(6);
+    fn(9);
+    fn()
+    // fn(8)
+    // fn(6)
+    // fn(8)
+    // show(2, 4)(8)
+  </script>
+</body>
+
+</html>

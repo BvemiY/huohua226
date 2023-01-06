@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(222, 227, 69);
+            /* display: none; */
+            /* 元素隐藏  通过标签显示模式  元素不会保留原本的位置 从页面中彻底消失掉 */
+            /* display: block;  元素显示 */
+            /* visibility: hidden; */
+            /* 元素隐藏  通过调整元素的可视性 元素会保留原本的位置 包含子元素都不可见 */
+        }
+
+        .smbox {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(197, 113, 76);
+            /* display: none; */
+            visibility: hidden;
+        }
+
+        .box:hover .smbox {
+            /* display: block; */
+            /* 元素显示 */
+
+            visibility: visible;
+            /* 元素显示 */
+
+        }
+
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(78, 235, 146);
+            /* display: none; */
+            /* 元素隐藏  通过标签显示模式 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="smbox"></div>
+    </div>
+    <div class="box1"></div>
+</body>
+
+</html>

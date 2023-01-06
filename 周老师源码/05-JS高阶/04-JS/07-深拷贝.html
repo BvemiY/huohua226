@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var p = {
+      name: '小谷',
+      age: 11,
+      isYang: true,
+      score: [67, 89, 88],
+      son: {
+        name: '小小谷',
+        age: 1,
+        isYang: true,
+      },
+      regex: /1[3456789]\\d{ 9}/ //正则的特殊符号会出问题
+    }
+
+    function deepCopy(newObj, oldObj) {
+      for (var key in oldObj) {//遍历所有的键
+        var val = oldObj[key];//获取值
+        if (val instanceof Array) {
+          newObj[key] = [];//在新数组中添加键和空数组
+          deepCopy(newObj[key], val);//递归
+        } else if (val instanceof Object) {
+          newObj[key] = {};
+          deepCopy(newObj[key], val);//递归
+        } else {
+          newObj[key] = val;//直接给新对象添加键和值
+        }
+      }
+    }
+    var p2 = {};
+    deepCopy(p2, p)
+
+    p.score[2] = 9;
+    p.son.name = '小好'
+    console.log(p);
+    // console.log(p2);
+
+    // JSON: javascript Object Notation 轻量级数据交换格式: 数值, 字符串, 逻辑,null,JSON数组,JSON对象
+    // JSON.stringify(p) // JS字面量对象   转换为 JSON对象字符串
+    var p3 = JSON.parse(JSON.stringify(p)); //  JS字面量对象   转换为   JSON对象字符串   转为   JS字面量对象
+    console.log(p3);
+  </script>
+</body>
+
+</html>

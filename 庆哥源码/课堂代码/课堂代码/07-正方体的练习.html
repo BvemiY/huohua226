@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            position: relative;
+            left: 40%;
+            top: 300px;
+            transform-style: preserve-3d;
+            /* perspective: 1500px; */
+            transition: all 15s ease 0s;
+            border-radius: 50%;
+
+        }
+        .box>div{
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 55px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+        .qian{
+            background-color: rgb(251, 138, 138);
+            transform: translateZ(150px);
+        }
+        .hou{
+            background-color: rgb(251, 219, 138);
+            transform: translateZ(-150px);
+        }
+        .zuo{
+            background-color: rgb(191, 251, 138);
+            transform: translateX(-150px) rotateY(90deg);
+        }
+        .you{
+            background-color: rgb(138, 251, 243);
+            transform: translateX(150px) rotateY(90deg);
+        }
+        .shang{
+            background-color: rgb(138, 147, 251);
+            transform: translateY(-150px) rotateX(90deg);
+        }
+        .xia{
+            background-color: rgb(251, 138, 213);
+            transform: translateY(150px) rotateX(90deg);
+        }
+        .box:hover{
+            transform: rotateX(320deg) rotateY(320deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="qian">前</div>
+        <div class="hou">后</div>
+        <div class="zuo">左</div>
+        <div class="you">右</div>
+        <div class="shang">上</div>
+        <div class="xia">下</div>
+    </div>
+</body>
+
+</html>

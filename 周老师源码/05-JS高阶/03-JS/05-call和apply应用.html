@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var arr = [43, 13, 46, 56, 73, 58]
+
+    var x = Math.max(...arr);
+    console.log(x);
+    x = Math.min(...arr);
+    console.log(x);
+
+
+    x = Math.max(43, 13, 46, 56, 73, 58)
+    console.log(x);
+
+    x = Math.max.call(Math, 43, 13, 46, 56, 73, 58);//最大值
+    console.log(x);
+    x = Math.min.call(Math, 43, 13, 46, 56, 73, 58);//最小值
+    console.log(x);
+
+    x = Math.min.apply(Math, arr);//最小值
+    console.log(x);
+    x = Math.max.apply(Math, arr);//最大值
+    console.log(x);
+
+
+  </script>
+</body>
+
+</html>

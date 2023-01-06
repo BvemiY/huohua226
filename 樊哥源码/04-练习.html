@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 并集选择器 */
+        
+        .nav,
+        .sidebar {
+            font-size: 18px;
+            font-family: 楷体;
+        }
+        /* 子元素选择器 */
+        
+        .sidebarRight>a {
+            color: red;
+        }
+        /* 交集选择器 */
+        
+        .nav ul li a {
+            color: blue;
+        }
+        
+        .nav>em {
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 主导航栏 -->
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="">公司首页</a>
+            </li>
+            <li>
+                <a href="">公司简介</a>
+            </li>
+            <li>
+                <a href="">公司产品</a>
+            </li>
+            <li>
+                <a href="">联系我们</a>
+            </li>
+        </ul>
+        <em> 收藏本站 </em>
+        <div> 联系我们:
+            <em> 1234567890</em>
+        </div>
+    </div>
+    <!-- 侧导航栏 -->
+    <div class="sidebar">
+        <div class="sidebarLeft">左侧导航栏</div>
+        <div class="sidebarRight">
+            <a href="#">登录</a>
+        </div>
+    </div>
+
+    <!-- 
+        在不修改以上代码的前提下，完成以下任务：
+
+1. 主导航栏和侧导航栏里面文字都是18像素并且是楷体。
+
+2. 链接登录的颜色为红色。
+
+3. 主导航栏里的列表中的文字颜色为蓝色。
+
+4. 收藏本站要求字体加粗。
+     -->
+</body>
+
+</html>

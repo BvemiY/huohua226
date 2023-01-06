@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 3. 随机输入0 - 10 之间的数, 猜数字(猜大了, 猜小了, 猜对了)
+
+        // console.log(num);
+        // [0-10]
+        var suiji = Math.floor(Math.random() * 11);
+
+        // if (num == suiji) {
+        //     console.log("恭喜你猜对了！！！");
+        // } else if (num > suiji) {
+        //     console.log("恭喜你猜大了！！！");
+        // } else if (num < suiji) {
+        //     console.log("恭喜你猜小了！！！");
+        // }
+
+        while (num != suiji) {
+
+            var num = Number(prompt("请输入0-10之间的数字"));
+
+            if (num > suiji) {
+                console.log("恭喜你猜大了！！！");
+            } else if (num < suiji) {
+                console.log("恭喜你猜小了！！！");
+            }
+        }
+    </script>
+</body>
+
+</html>

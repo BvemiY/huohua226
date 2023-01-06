@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.通过字面量的方式创建函数
+        // function wq(num1, num2) {
+        //     // 形参  形式参数
+        //     console.log(num1 + num2);
+        // }
+        // 通过function关键字进行定义函数
+        // 函数名称和变量名是一样的
+        // 小括号里面是需要的参数 需要几个写几个  如果不需要就不写
+        // wq(15, "15");
+        // 实参  实际参数
+
+
+
+        // 2.通过函数表达式的方式声明函数（匿名函数）
+        // var sun = function(name, age) {
+        //     console.log(name + age);
+        // }
+
+        // sun("夏长江", 18);
+
+
+        // 3.使用Function构造函数声明函数
+        // var fun = new Function("a", "b", "console.log(a + b)");
+        // fun(10, 5);
+
+
+        // 4.自执行函数
+        (function(a, b) {
+            console.log(a + b);
+        })(5, 6)
+    </script>
+</body>
+
+</html>

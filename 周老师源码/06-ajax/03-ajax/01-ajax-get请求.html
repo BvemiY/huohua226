@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>get请求</button>
+  <script>
+    var btn_get = document.querySelector('button');
+    btn_get.onclick = function (e) {
+      // 1 创建XMLHttpRequest对象
+      var xhr = new XMLHttpRequest();
+      // 2  添加请求状态改变的 回调函数
+      xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState);// 请求状态
+        // 5 判断请求状态为4
+        if (xhr.readyState == 4) {
+          //6 判断 响应状态码 为200
+          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+            // console.log(xhr.status);//状态码
+            // console.log(xhr.statusText);//状态码文本描述
+            // 7 处理数据
+            // console.log(xhr.response);
+            // console.log(xhr.responseText);
+            var dataObj = JSON.parse(xhr.responseText)
+
+          }
+        }
+      }
+      // 3 打开连接, 设置请求方式和URL
+      xhr.open('GET', 'http://localhost:8080/wmp/v3.1/?p0=117&p1=searchNewsKeywordsList&pagesize=10&order=sIdxTime&r0=cors&r1=NewsObj&type=iTag&id=6521&source=web_PC&page=1')
+      //4 发送请求
+      xhr.send();
+    }
+  </script>
+</body>
+
+</html>

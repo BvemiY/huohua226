@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        
+        .box {
+            height: 360px;
+            width: 750px;
+            border: 1px solid red;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .oUl {
+            height: 360px;
+            width: 3750px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .oUl>li {
+            float: left;
+        }
+        
+        .dot_list {
+            width: 270px;
+            height: 50px;
+            position: absolute;
+            top: 302px;
+            left: 832px;
+        }
+        
+        .dot {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(159, 254, 81);
+            display: inline-block;
+            border-radius: 50%;
+        }
+        
+        .active {
+            width: 40px;
+            height: 40px;
+            border: 5px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <ul class="oUl">
+            <li><img src="./images/pic1.jpg" alt=""></li>
+            <li><img src="./images/pic2.jpg" alt=""></li>
+            <li><img src="./images/pic3.jpg" alt=""></li>
+            <li><img src="./images/pic4.jpg" alt=""></li>
+            <li><img src="./images/pic5.jpg" alt=""></li>
+        </ul>
+
+    </div>
+    <div class="dot_list">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script src="./js/animation.js"></script>
+    <script>
+        // 获取元素
+        var oUl = document.getElementsByClassName("oUl")[0];
+        var dot = document.getElementsByClassName("dot");
+
+        for (var i = 0; i < dot.length; i++) {
+            // 保存i值 在dom元素中 i值所代表的就是每一个小圆点的索引 它对应第几张照片
+            dot[i].index = i;
+            // 绑定事件
+            dot[i].onclick = function() {
+                // 排他思想
+                for (var j = 0; j < dot.length; j++) {
+                    dot[j].className = "dot";
+                }
+                // 将当前单击的元素添加active类名来做到添加新的样式 
+                this.className = "dot active";
+                // 计算最终要到达的目的地位置
+                var target = this.index * (-750);
+                // 走动画
+                moveAnimation1(oUl, target);
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYdivE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      div {
+        font-size: 25px;
+        height: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <h2>杂诗三首·其二</h2>
+      <div>王维 〔唐代〕</div>
+      <div></div>
+      <div>君自故乡来，</div>
+      <div>应知故乡事。</div>
+      <div>来日绮窗前，</div>
+      <div>寒梅著花未？</div>
+      <div>收藏下载复制完善</div>
+      译文及注释
+      <div></div>
+      <h2>译文</h2>
+      <div class="c1">您是刚从我们家乡来的，</div>
+      <div>一定了解家乡的人情世态。</div>
+      <div>请问您来的时候我家雕画花纹的窗户前，</div>
+      <div>那一株腊梅花开了没有？</div>
+    </section>
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+      $(function () {
+        // $('div:contains("故乡")').css('color', 'red');//内容包含"故乡"的div
+        // $('div:empty').css('background', 'skyblue'); //空的div
+        // $('div:parent').css('background', 'skyblue');// 非空div
+        // $('section:has(h2)').css('color', 'blue'); //包含h2的section
+        $('div:not(.c1)').css('color', 'blue');//非c1的div
+
+      })
+    </script>
+  </body>
+
+  </html>

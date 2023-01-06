@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var reg = /a/;
+        // | *     | 出现0次或更多次 |
+        // var reg1 = /^a*$/;
+        // console.log(reg1.test("a")); //yes
+        // console.log(reg1.test("aaa")); //yes
+        // console.log(reg1.test(" ")); //yes
+        // console.log(reg1.test("qa接r")); //no
+
+
+        // | +     | 出现1次或更多次 |
+        // var reg1 = /^a+$/;
+        // console.log(reg1.test("a")); //yes
+        // console.log(reg1.test("aaa")); //yes
+        // console.log(reg1.test("")); //no
+        // console.log(reg1.test("qa接r")); //no
+
+
+        // | ?     | 出现0次或1次    |
+        // var reg1 = /^a?$/;
+        // console.log(reg1.test("a")); //yes
+        // console.log(reg1.test("aaa")); //no
+        // console.log(reg1.test("")); //yes
+        // console.log(reg1.test("qa接r")); //no
+
+
+        // | {n}   | 出现n次         |
+        // var reg1 = /^a{5}$/;
+        // console.log(reg1.test("a")); //yes
+        // console.log(reg1.test("aaaaa")); //no
+        // console.log(reg1.test("")); //yes
+        // console.log(reg1.test("qa接r")); //no
+
+
+        // | {n,}  | 出现n次或更多次 |
+        // var reg1 = /^a{5,}$/;
+        // console.log(reg1.test("a")); //no
+        // console.log(reg1.test("aaaaa")); //yes
+        // console.log(reg1.test("aaaaaaaaaa")); //yes
+        // console.log(reg1.test("qa接r")); //no
+
+
+        // | {n,m} | 出现n到m次      |
+        // var reg1 = /^a{5,8}$/;
+        // console.log(reg1.test("a")); //yes
+        // console.log(reg1.test("aaaaa")); //no
+        // console.log(reg1.test("aaaaaaaaaa")); //yes
+        // console.log(reg1.test("qa接r")); //no
+
+
+
+        // var reg2 = /^[a-zA-Z0-9]{6,18}$/;
+        // // 当前的字符串必须是这个完整的6到18位 可以有 只能有 大写字母 小写字母 数字 组成
+        // console.log(reg2.test("！！！！1258!!!4551!!!!mmn!!!vmc----")); //14 yes
+        // console.log(reg2.test("asdsaiAAA")); // 9 yes
+        // console.log(reg2.test("Wq1314")); // 6 yes
+        // console.log(reg2.test("iqing521")); // 8 yes
+        // console.log(reg2.test("2541522dcfrse")); //13 yes
+        // console.log(reg2.test("123sdas!!!wewerer")); //13 yes
+    </script>
+</body>
+
+</html>

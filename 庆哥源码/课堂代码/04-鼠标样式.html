@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 350px;
+            height: 350px;
+            background-color: rgb(87, 214, 172);
+
+            cursor: not-allowed;
+            /* pointer  可点击的小手 */
+            /* move  移动 */
+            /* 可以改变鼠标的样式 但是并不会给原本的元素进行添加任何的功能 */
+  
+            outline: #00FF00 solid 5px;
+            /* 对元素添加轮廓   但是轮廓不算是盒子的一部分  不会计算成盒子的大小 */
+        }
+
+        a{
+            pointer-events: none;
+            /* 阻止鼠标的默认事件  包括 单击鼠标  鼠标悬停 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">李鹏
+        咱们作业 那个红色的竖杠图片 怎么和文字对齐 用C3的知识也没办法让它对齐 这一个地方我调节半个小时 烦死啦 </div>
+
+
+    <a href="http://wwww.baidu.com">百度一下，你就知道</a>
+
+
+    </body>
+
+</html>

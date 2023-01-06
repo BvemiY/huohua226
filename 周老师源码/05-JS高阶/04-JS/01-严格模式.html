@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    'use strict'// 开启严格模式
+
+    var num = 2;//严格模式必须使用关键字声明变量
+    console.log(num);
+
+    delete num;//严格模式不能删除
+    console.log(num);
+
+    function show() {
+      console.log(this);// 严格模式this未定义
+    }
+    show();
+
+    function Person(name) {
+      this.name = name;
+    }
+
+    var p = new Person('小谷');//严格模式,构造函数必须使用new 调用
+    console.log(p);
+
+    setInterval(function () {
+      //console.log(this);//严格模式 this指向window对象
+    }, 1000)
+
+    function show(n1, n2) {//严格模式下参数不能重名
+      'use strict'//开启严格模式
+      console.log(n1 + n2);
+    }
+    show(1, 2)
+  </script>
+</body>
+
+</html>

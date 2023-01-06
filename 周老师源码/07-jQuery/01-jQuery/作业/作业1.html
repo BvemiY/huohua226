@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    table {
+      width: 800px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid blue;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th>标题</th>
+      <th>标题</th>
+      <th>标题</th>
+      <th>标题</th>
+      <th>标题</th>
+    </tr>
+    <tr>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+    </tr>
+    <tr>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+    </tr>
+    <tr>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+    </tr>
+    <tr>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+    </tr>
+    <tr>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+      <td>单元格</td>
+    </tr>
+  </table>
+  <script src="../js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      $("tr:nth-child(odd)").css('background', '#dfd8d8')
+      $("tr:first").css('background', '#c0de98')
+      var colors;
+      // $("tr").hover(function (e) {
+      //   colors = $(this).css('background');
+      //   $(this).css('background', 'pink');
+      // }, function (e) {
+      //   $(this).css('background', colors);
+      // })
+      $('tr').mouseover(function () {
+        colors = $(this).css('background');
+        $(this).css('background', 'pink');
+      })
+      $('tr').mouseout(function () {
+        $(this).css('background', colors);
+      })
+    })
+  </script>
+</body>
+
+</html>

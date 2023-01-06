@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /* 有href属性  */
+    a[href] {
+      /* color: red; */
+    }
+
+    /* class值必须为c2 */
+    a[class='c2'] {
+      /* color: pink; */
+    }
+
+    /* 以http开头 */
+    a[href^='http'] {
+      /* color: hotpink; */
+    }
+
+    /* 以...结尾 */
+    a[href$='#2'] {
+      /* color: deeppink; */
+    }
+
+    /* 包含 */
+    a[href*='www'] {
+      /* color: skyblue; */
+    }
+
+    /* class为多个值, 其中为f1的元素 */
+    a[class~='f1'] {
+      /* color: red; */
+    }
+
+    /* 有top-**的属性, top-必须第一个属性 */
+    a[class|='top'] {
+      color: gold;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><a class="top-left c1 " href="https://www.baidu.com#9">百度</a></li>
+    <li><a class="c2 ckf1" href="http://www.163.com#2">163</a></li>
+    <li><a class="c1 kk f1" href="https://www.mi.com#2">小米</a></li>
+    <li><a href2="http://www.sina.com.cn#2">新浪</a></li>
+    <li><a class="top-right c2 f1 " href="http://spring.io#9">spring</a></li>
+    <li><a class="top-right c22" href="http://www.jd.com#2">京东</a></li>
+  </ul>
+</body>
+
+</html>

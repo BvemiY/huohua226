@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var p = {
+      name: '火花226',
+    }
+    // 数据属性
+    Object.defineProperty(p, 'age', {
+      configurable: false,//是否可配置 (删除和添加)
+      enumerable: false,//是否可枚举, 通过for in或者Object.keys得到可枚举的属性
+      value: 10,// 默认值
+      writable: false,// 是否可写, 重新赋值
+    })
+
+
+    // 定义访问器属性
+    Object.defineProperty(p, 'sex', {
+      configurable: true,
+      enumerable: true,
+      get: function () {
+        return this._sex;
+      },
+      set: function (value) {
+        if (value == '男' || value == '女') {
+          this._sex = value;
+        } else {
+          console.log('性别有误');
+        }
+      }
+    })
+    p.sex = '女';
+
+
+    // // 可枚举的属性
+    // for (var key in p) {
+    //   console.log(key);
+    // }
+    // var arr = Object.keys(p);// 获取可枚举属性
+    // console.log(arr);
+    var arr2 = Object.getOwnPropertyNames(p);// 可枚举和不可枚举的属性
+    console.log(arr2);
+
+
+  </script>
+</body>
+
+</html>

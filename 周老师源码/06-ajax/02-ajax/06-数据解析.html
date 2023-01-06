@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box {
+      margin: 10px auto;
+      width: 1200px;
+    }
+
+    .b-top {
+      padding: 10px;
+      height: 30px;
+      border: 1px solid orangered;
+    }
+
+    .b-content {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid orangered;
+    }
+
+    .tab {
+      width: 1180px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid orange;
+    }
+
+    tr {
+      height: 40px;
+    }
+
+    th:last-child {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="tab">
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>学号</th>
+        <th>班级</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>电话</th>
+        <th>爱好</th>
+        <th>地址</th>
+        <th>备注</th>
+        <th>日期</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${}</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+
+    var tbody = document.querySelector('tbody');
+    // 1 创建XMLHttpRequest对象
+    var xhr = new XMLHttpRequest();
+    // 2  添加请求状态改变的 回调函数
+    xhr.onreadystatechange = function () {
+      // console.log(xhr.readyState);// 请求状态
+      // 5 判断请求状态为4
+      if (xhr.readyState == 4) {
+        //6 判断 响应状态码 为200
+        if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+          // console.log(xhr.status);//状态码
+          // console.log(xhr.statusText);//状态码文本描述
+          // 7 处理数据
+          var arr = JSON.parse(xhr.response);
+
+          var str = '';
+          arr.forEach(function (v, i) {
+            str += `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${v.id}</td>
+                <td>${v.clazz}</td>
+                <td>${v.name}</td>
+                <td>${v.gender}</td>
+                <td>${v.age}</td>
+                <td>${v.tel}</td>
+                <td>${v.hobby}</td>
+                <td>${v.address}</td>
+                <td>${v.remark}</td>
+                <td>${v.date}</td>
+                <td><a href="update.html?id=${v.id}#${v.id}">修改</a>&nbsp;<a href="">删除</a></td>
+              </tr>
+          `
+          })
+
+          tbody.innerHTML = str;
+          console.log(str);
+        }
+        // console.log(xhr.responseText);
+        // console.log(xhr.getResponseHeader('Content-Type'));
+        // var arr = xhr.getAllResponseHeaders();
+        // console.log(arr);
+        // for (var i = 0; i < arr.length; i++) {
+        //   console.log(xhr.getResponseHeader(arr));
+        // }
+      }
+
+    }
+    // 3 打开连接, 设置请求方式和URL
+    // xhr.open('GET', 'http://localhost:3008/api/student/getStudent')
+    xhr.open('GET', 'http://localhost:8080/emp/employee.php?action=findAllEmps&type=json')
+    //4 发送请求
+    xhr.send();
+  </script>
+</body>
+
+</html>

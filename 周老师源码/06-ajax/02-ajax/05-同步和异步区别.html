@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 1 创建XMLHttpRequest对象
+    var xhr = new XMLHttpRequest();
+    // 2  添加请求状态改变的 回调函数
+    xhr.onreadystatechange = function () {
+      // console.log(xhr.readyState);// 请求状态
+      // 5 判断请求状态为4
+      if (xhr.readyState == 4) {
+        //6 判断 响应状态码 为200
+        if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+          // console.log(xhr.status);//状态码
+          // console.log(xhr.statusText);//状态码文本描述
+          // 7 处理数据
+          var obj = JSON.parse(xhr.response);
+          console.log(obj);
+          // console.log(xhr.responseText);
+          // console.log(xhr.getResponseHeader('Content-Type'));
+          // var arr = xhr.getAllResponseHeaders();
+          // console.log(arr);
+          // for (var i = 0; i < arr.length; i++) {
+          //   console.log(xhr.getResponseHeader(arr));
+          // }
+        }
+      }
+    }
+    // 3 打开连接, 设置请求方式和URL
+    xhr.open('GET', 'http://192.168.33.71:3008/api/student/getStudent')
+    //4 发送请求
+    xhr.send();
+
+    // setInterval(function () {
+    //   console.log(000);
+    // }, 10)
+
+    for (var i = 0; i < 10; i++) {
+      console.log(i);
+    }
+  </script>
+</body>
+
+</html>

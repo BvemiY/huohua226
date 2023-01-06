@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .carousel {
+      margin: 100px auto;
+      width: 1000px;
+      height: 437.5px;
+      border: 3px solid blue;
+    }
+
+    .caro-list {
+      width: 1000px;
+      height: 437.5px;
+      position: relative;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .viewpage {
+      list-style: none;
+      width: 600%;
+      height: 437.5px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+
+    .item {
+      float: left;
+    }
+
+    .pic {
+      width: 1000px;
+      height: 437.5px;
+    }
+
+    .btnright,
+    .btnleft {
+      width: 50px;
+      height: 100px;
+      background-color: rgba(100, 100, 100, .8);
+      font-size: 50px;
+      line-height: 100px;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      cursor: pointer;
+    }
+
+    .btnright {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="carousel">
+    <div class="caro-list">
+      <ul class="viewpage">
+        <li class="item"><img src="img/newBanner01.png" alt="" class="pic"></li>
+        <li class="item"><img src="img/newBanner02.png" alt="" class="pic"></li>
+        <li class="item"><img src="img/newBanner03.png" alt="" class="pic"></li>
+        <li class="item"><img src="img/newBanner04.png" alt="" class="pic"></li>
+        <li class="item"><img src="img/newBanner05.png" alt="" class="pic"></li>
+        <li class="item"><img src="img/newBanner01.png" alt="" class="pic"></li>
+      </ul>
+      <!-- 左右按钮 -->
+      <div class="btnleft">&lt;</div>
+      <div class="btnright">&gt;</div>
+    </div>
+  </div>
+  <script src="js/animationutils.js"></script>
+  <script type="text/javascript">
+    var caroList = document.getElementsByClassName('caro-list')[0];
+    var viewpage = document.getElementsByClassName('viewpage')[0];
+    var items = document.getElementsByClassName('item');
+    var btnleft = document.getElementsByClassName('btnleft')[0];
+    var btnright = document.getElementsByClassName('btnright')[0];
+    // 1 自动轮播
+    var index = 0;
+    var interId;
+    function autoPlay() {
+      interId = setInterval(function () {
+        index++;
+        var target = -1000 * index;
+        var viewpageLeft = viewpage.offsetLeft;
+        var myInter = setInterval(function () {
+          if (target == viewpage.offsetLeft) {
+            clearInterval(myInter);
+            if (index == items.length - 1) {
+              index = 0;
+              viewpage.style.left = '0px';
+            }
+            // console.log(items.length, index, viewpageLeft, target, viewpage.offsetLeft);
+          } else {
+            viewpageLeft += -10;
+            // console.log(items.length, index, viewpageLeft, target, viewpage.offsetLeft);
+            viewpage.style.left = viewpageLeft + 'px';
+          }
+        }, 10)
+      }, 3000)
+    }
+    autoPlay();
+
+    // 2 鼠标悬停 //3 鼠标进入显示按钮, 离开隐藏按钮
+    caroList.onmouseover = function () {
+      clearInterval(interId);
+      btnright.style.display = 'block';
+      btnleft.style.display = 'block';
+    }
+    caroList.onmouseout = function () {
+      autoPlay();
+      btnright.style.display = 'none';
+      btnleft.style.display = 'none';
+    }
+
+    //3 点击左右轮播
+    btnright.onclick = function () {
+      index++;
+      var target = -1000 * index;
+      var viewpageLeft = viewpage.offsetLeft;
+      var myInter = setInterval(function () {
+        if (target == viewpage.offsetLeft) {
+          clearInterval(myInter);
+          if (index == items.length - 1) {
+            index = 0;
+            viewpage.style.left = '0px';
+          }
+        } else {
+          viewpageLeft += -10;
+          viewpage.style.left = viewpageLeft + 'px';
+        }
+      }, 10)
+    }
+    btnleft.onclick = function () {
+      console.log(index, items.length);
+      if (index == 0) {
+        index = 5;
+        viewpage.style.left = index * -1000 + 'px';
+      }
+      index--;
+      var target = -1000 * index;
+      var viewpageLeft = viewpage.offsetLeft;
+      var myInter = setInterval(function () {
+        if (target == viewpage.offsetLeft) {
+          clearInterval(myInter);
+        } else {
+          viewpageLeft -= -10;
+          // console.log(items.length, index, viewpageLeft, target, viewpage.offsetLeft);
+          viewpage.style.left = viewpageLeft + 'px';
+        }
+      }, 10)
+    }
+
+  </script>
+</body>
+
+</html>

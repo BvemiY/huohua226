@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 120px;
+            height: 42px;
+            background-color: rgb(194, 190, 190);
+            text-align: center;
+            line-height: 42px;
+        }
+        .oUl{
+            padding: 0;
+            margin: 0;
+            height: 0px;
+            overflow: hidden;
+            transition: all 5s ease 0s;
+             /* transition: 要过渡的属性  花费时间  运动曲线  何时开始; */
+        }
+        .oUl>li{
+            list-style-type: none;
+            background-color: rgb(251, 150, 150);
+        }
+        .box:hover .oUl{
+            height: 170px;
+
+        }
+        .box:hover .li1{
+            background-color: rgb(113, 232, 123);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        关于我们
+        
+        <ul class="oUl">
+            <li>官网</li>
+            <li class="li1">联系我们</li>
+            <li>地址</li>
+            <li>邮箱</li>
+        </ul>
+    </div>
+    <div>123</div>
+</body>
+
+</html>

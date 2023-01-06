@@ -1,0 +1,66 @@
+.teacher {
+    width: 1519px;
+    height: 770px;
+    padding: 55px 0px;
+    position: relative;
+}
+
+.teacher_bottom {
+    width: 1000px;
+    height: 530px;
+    margin: 30px auto;
+}
+
+.teacher_bottom .teacher_bottom_box {
+    width: 485px;
+    height: 220px;
+    float: left;
+    background-color: #F4F4F4;
+    margin: 22px 7px;
+    border-radius: 110px;
+}
+
+.teacher_bottom_1 {
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 50%;
+    margin: 30px 25px;
+}
+
+.teacher_bottom_1 img {
+    width: 150px;
+    height: 150px;
+    transition: transform 1s ease-out;
+    opacity: 1;
+}
+
+.teacher_bottom_1 img:hover {
+    transform: rotateY(360deg);
+}
+
+.teacher_bottom_2 {
+    width: 240px;
+    height: 150px;
+    float: left;
+    color: #666666;
+    margin: 30px 0px;
+    line-height: 23px;
+}
+
+hr {
+    width: 50px;
+    height: 1px;
+    background-color: #F0AC07;
+    margin: 10px 0px;
+}
+
+.teacher_bottom_2 h2 {
+    color: black;
+}
+
+.teacher .gengduo {
+    position: absolute;
+    bottom: 65px;
+    left: 690px;
+}

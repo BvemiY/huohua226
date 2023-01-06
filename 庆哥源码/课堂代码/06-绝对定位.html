@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 700px;
+            height: 700px;
+            background-color: rgb(0, 0, 0);
+            /* margin: 0 auto; */
+            position: relative;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(250, 98, 98);
+            position: absolute;
+            /* 绝对定位  是根据已有定位父元素的位置进行定位的  从父元素的左上角开始进行定位  
+            如果父元素没有定位 会继续向上找有定位的父元素*/
+            /* 绝对定位不占据原本的位置 body自带有默认定位*/
+            /* 需要些两个单独的属性   1.代表水平方向的位置 left  right   2.代表垂直方向的位置  top  bottom*/
+            /* 需要向哪个方向移动  可以设置相反方向的位置 */
+            /* 子绝父相  当子元素需要使用绝对定位的时候  可以给父元素设置相对定位 不设置任何的值即可 */
+            top: 100px;
+            left: 100px; 
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(178, 251, 122);
+            /* position: absolute;
+            绝对定位
+            top: 150px;
+            left: 150px; */
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(99, 121, 230);
+            position: absolute;
+            /* 绝对定位 */
+            top: 270px;
+            left: 270px;
+        }
+        .box3_1{
+            width: 40px;
+            height: 20px;
+            background-color: rgb(154, 54, 54);
+            position: absolute;
+            /* 可以看定位之后的位置距离四条边那边近 */
+            top: 0;
+            right: 0;
+
+        }
+        .ospan{
+            position: absolute;
+            /* 可以看定位之后的位置距离四条边那边近 */
+            top: 30px;
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2">123123</div>
+        <div class="box3">
+            <span class="ospan">456</span>
+            <div class="box3_1">NEW</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

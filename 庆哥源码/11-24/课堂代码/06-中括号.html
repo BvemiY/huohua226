@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // [] 从中括号里面任选其一即可
+        // var reg1 = /[abc]/;
+        // console.log(reg1.test("abc")); // yes_yes
+        // console.log(reg1.test("abcdef")); // yes_yes
+        // console.log(reg1.test("axbxcx")); // yes_yes
+        // console.log(reg1.test("qwer")); // no_yes
+        // console.log(reg1.test("123aaa")); // yes_yes
+        // console.log(reg1.test("123bbb")); // yes_yes
+        // console.log(reg1.test("123ccc")); // yes_yes
+
+
+        // var reg1 = /^[abc]/;
+        // // 从方括号中任选一个 为字符串的开头 就可以
+        // console.log(reg1.test("abc")); // yes_yes
+        // console.log(reg1.test("abcdef")); // yes_yes
+        // console.log(reg1.test("axbxcx")); // yes_yes
+        // console.log(reg1.test("qwer")); // no_yes
+        // console.log(reg1.test("123aaa")); // no_yes
+        // console.log(reg1.test("123bbb")); // no_yes
+        // console.log(reg1.test("123ccc")); // no_yes
+
+
+        // var reg1 = /^[abc]$/;
+        // // 从方括号中任选一个 为字符串的开头以及结尾   从方括号里面选择一个 字符串只能有着一个字符
+        // console.log(reg1.test("abc")); // yes_yes
+        // console.log(reg1.test("abcdef")); // yes_yes
+        // console.log(reg1.test("axbxcx")); // yes_yes
+        // console.log(reg1.test("a")); // yes_yes
+        // console.log(reg1.test("123aaa")); // no_yes
+        // console.log(reg1.test("b")); // yes_yes
+        // console.log(reg1.test("c")); // yes_yes
+
+
+        // var reg2 = /[a-z]/; //小写字母任意其一
+        // console.log(reg2.test("a55444654126"));
+        // var reg2 = /[A-Z]/; //大写字母任意其一
+        // var reg2 = /[0-9]/; //数字任意其一
+        var reg3 = /^[a-zA-Z0-9]$/;
+        // a   DFDF  09
+
+        // var reg4 = /^[^a-zA-Z0-9_-]$/;
+        // var reg5 = /^[^a-zA-Z0-9_-]$/;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 700px;
+      border: 1px solid orange;
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    .box div {
+      height: 240px;
+      border: 1px solid blue;
+      margin: 10px;
+    }
+
+    .item1 {
+      /* flex-basis: 400px; */
+      width: 200px;
+
+      /* flex: auto; */
+      /* flex: 1 1 auto; */
+
+      /* flex: none;
+      flex: 0 0 auto; */
+
+      flex: 1;
+      /* flex: 1 1 0%; */
+    }
+
+    .item2 {
+      width: 200px;
+      /* flex: auto; */
+      /* flex: 2; */
+      flex: 1;
+      /* flex: 2 2 0%; */
+    }
+
+    .item3 {
+      width: 200px;
+      /* flex: auto; */
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="item1">1</div>
+    <div class="item2 ">2</div>
+    <div class="item3">3</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+
+	<body>
+		<section></section>
+		<script src="js/jquery-3.6.3.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				var $div = $('<div>哈哈学废吗</div>')
+				console.log($div);
+				$('section').append($div);
+				var $img = $('<img src="img/firetweet.jpeg" title="图片" alt="图片" />')
+				$('section').append($img);
+
+				var $img2 = $('<img>', {
+					src: "img/firetweet.jpeg",
+					title: "提示文字",
+					alt: "图片",
+					click: function(e) {
+						console.log('点击事件');
+					}
+				})
+				$('section').append($img2)
+			})
+		</script>
+	</body>
+
+</html>

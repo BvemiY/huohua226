@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 2</li>
+			<li class="third-item">list item 3</li>
+			<li id="four-item">list item 4</li>
+			<li>list item 5</li>
+		</ul>
+		<p>Hello<a href="http://www.baidu.com/">百度</a>搜索</p>
+		<p>
+			<span>end测试1</span>
+			<span>end测试2</span>
+		</p>
+		<script src="js/jquery-3.6.3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				console.log($('.third-item').next().css('color', 'red').end());
+
+				$('.third-item').next().css('color', 'red')
+					.end().css('color', "pink").prev().css('color', 'blue')
+					.end().prevAll().css('color', 'orange')
+				$('.third-item').css('color', 'blue')
+					.nextAll().css('color', 'red')
+					.end().prevAll().css('color', 'yellowgreen');
+
+				var newLi = $('li').add($('<li>123</li>')); //将新元素添加到集合的内存中,不会添加到页面, 想添加到页面
+				console.log();
+				$('ul').append(newLi) //追加到原来,否则会剪切
+				var $ele = $('p').contents() //获取内容(包含子标签,换行)
+				$ele.each(function(i, ele) {
+					console.log(ele);
+				})
+			})
+		</script>
+		<tr>
+			<td>$<span>9899</span></td>
+			<td><span>-</span><span>7</span><span>+</span></td>
+		</tr>
+	</body>
+</html>

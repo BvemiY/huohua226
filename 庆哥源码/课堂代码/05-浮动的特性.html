@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(240, 120, 120);
+            /* font-size: 66px; */
+            /* text-align: center;  */
+            /* line-height: 300px; */
+            /* display: inline-block; */
+            /* 将元素转换为行内块元素 */
+            float: left;
+            /* 浮动  向左浮动 */
+            /* clear: both; */
+
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(120, 240, 182);
+            font-size: 66px;
+            text-align: center;
+            line-height: 300px;
+            /* display: inline-block; */
+            /* 将元素转换为行内块元素 */
+            float: left;
+            /* 浮动  向左浮动 */
+            /* clear: both; */
+
+        }
+
+        .box{
+            border: 5px solid blue;
+            /* clear: both; */
+            /* 清楚浮动带给box父元素的影响 */
+
+            overflow: hidden;
+            /* 清楚浮动带来的影响  比较常用 */
+            /* width: 100%; */
+            /* height: 300px; */
+            /* 缺啥补啥型 */
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            border: 5px solid pink;
+        }
+        .box4{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(207, 229, 81);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <div class="box1">啊实打实大苏打大大大大大大大大大大大大阿三大苏打实打实的啊实打实的阿斯顿阿斯顿阿三大苏打阿萨的</div>
+        <div class="box2">2</div>
+        <div class="box4">123123213</div>
+
+    </div>
+    <!-- 浮动带来的影响 -->
+    <!-- 如果浮动元素有父元素的话  那么当元素浮动之后父元素的高度为0-->
+    <!-- 需要清楚浮动带来的影响 -->
+
+
+    <div class="box3">123456789000</div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 400px;
+      height: 300px;
+      background-color: lightgray;
+    }
+
+    .dimg {
+      text-align: center;
+      height: 90px;
+    }
+
+    .img {
+      width: 100px;
+      position: relative;
+      top: 30px;
+    }
+
+    form {
+      padding: 50px 100px;
+      border: 1px solid blue;
+    }
+
+    input {
+      background-color: lightgray;
+      border: 1px solid gray;
+      height: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="dimg">
+      <img class="img" src="img/2.png" alt="">
+    </div>
+    <form action="" method="get">
+      <p>
+        <input type="text" class="tel" placeholder="输入手机号" name="tel">
+      </p>
+      <p>
+        <input type="password" class="pwd" placeholder="输入密码" name="tel">
+      </p>
+    </form>
+  </div>
+  <script>
+    var tel = document.getElementsByClassName('tel')[0];
+    var img = document.getElementsByClassName('img')[0];
+    var pwd = document.getElementsByClassName('pwd')[0];
+
+    tel.onfocus = function () {//获取焦点
+      img.src = 'img/1.png'
+    }
+    tel.onblur = function () {//失去焦点
+      img.src = 'img/2.png'
+    }
+    pwd.onfocus = function () {
+      img.src = 'img/3.png'
+    }
+    pwd.onblur = function () {
+      img.src = 'img/2.png'
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var p = {
+      name: '好谷'
+    }
+    function show(a, b) {
+      console.log(a + b);
+      console.log(this);
+    }
+    // show(1, 2)
+    var fn = show.bind(p, 1, 2);//没有直接调用
+    fn();//调用
+
+    /**
+     * call/apply/bind都会改变this指向问题,
+     * call/apply 会立即调用, bind不会立即调用
+     * call /bind参数为 1,2,3   apply参数为数组 [1,2,3]
+     * */
+
+  </script>
+</body>
+
+</html>

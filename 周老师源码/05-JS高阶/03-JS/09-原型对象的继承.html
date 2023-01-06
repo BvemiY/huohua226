@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //父构造函数
+    function Father(name) {
+      this.name = name;
+      this.say = function () {
+        console.log('father在说话');
+      }
+    }
+    Father.prototype.xuan = function () {
+      console.log('父元素在炫....');
+    }
+
+    // 子构造函数
+    function Son(name, age) {
+      Father.call(this, name, age);// 子构造函数的第一行
+      this.age = age;
+      this.study = function () {
+        console.log('son 在学习');
+      }
+    }
+    Son.prototype = new Father();//子构造器的原型对象   等于  父对象
+    Son.prototype.constructor = Son;// 子构造器的原型对象的构造器等于 子构造器
+
+    Son.prototype.play = function () {
+      console.log('玩游戏');
+    }
+
+    var son = new Son('小谷', 20);
+    console.log(son);
+    son.say();
+    son.study();
+    son.xuan();
+    son.play();
+  </script>
+</body>
+
+</html>

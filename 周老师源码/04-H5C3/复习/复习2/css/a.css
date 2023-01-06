@@ -1,0 +1,42 @@
+/* @import url(common.css);不能DOM操作 */
+/* @import url(*.css);多个公用样式 */
+
+/*
+div{
+  color: deeppink;
+}
+#d1{
+  color: blue;
+}
+.c1{
+  color: goldenrod;
+}*/
+*{
+  font-size: 40px;
+  /* border: 1px solid orange; */
+}
+/* 带href属性 */
+/*/
+a:link{
+  text-decoration: none;
+  color: yellowgreen;
+}
+.alink:hover{
+  color: orangered;
+}
+div:hover{
+  color: khaki;
+} */
+/*
+:link和visited只能带href属性的元素
+:hover和:active适合所有元素 */
+/* .alink:active{
+  color: blue;
+}
+div:active{
+  color: olivedrab;
+}
+.alink:visited{
+  color: darkturquoise;
+} */
+

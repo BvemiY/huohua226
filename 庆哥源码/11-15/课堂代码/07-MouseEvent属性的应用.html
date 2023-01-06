@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(94, 239, 237);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+
+    <script>
+        var box = document.getElementsByClassName('box')[0];
+
+        document.onmousemove = function(e) {
+            console.log(e.clientX);
+            console.log(e.clientY);
+            box.style.top = e.clientY + "px";
+            box.style.left = e.clientX + "px";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+      width: 600px;
+      height: 100px;
+      display: flex;
+    }
+
+    li {
+      border: 1px solid orange;
+      flex: 1;
+      line-height: 100px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul>
+    <li>赞(0)</li>
+    <li>赞(0)</li>
+    <li>赞(0)</li>
+    <li>赞(0)</li>
+    <li>赞(0)</li>
+  </ul>
+  <script>
+    var lis = document.querySelectorAll('li');
+    lis.forEach(function (v) {
+      var c = 0;
+      v.addEventListener('click', function () {
+        c++;
+        v.innerText = '赞(' + c + ')';
+      })
+    })
+  </script>
+</body>
+
+</html>

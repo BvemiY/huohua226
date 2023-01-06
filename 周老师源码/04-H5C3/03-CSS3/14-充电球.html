@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgb(85, 81, 81);
+    }
+
+    .main {
+      height: 1000px;
+      margin: 500px auto;
+      width: 400px;
+    }
+
+    .ball {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 150px;
+      background: springgreen;
+      box-shadow: 0 0 15px springgreen;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .ball::before {
+      position: absolute;
+      top: 0px;
+      left: -80px;
+      content: '';
+      border-radius: 40%;
+      width: 350px;
+      height: 350px;
+      background-color: #fff;
+      animation: move 10s linear infinite;
+    }
+
+    @keyframes move {
+      0% {
+        top: -160px;
+        transform: rotate(0);
+      }
+
+      100% {
+        top: -400px;
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+    <div class="ball"></div>
+  </div>
+
+</body>
+
+</html>

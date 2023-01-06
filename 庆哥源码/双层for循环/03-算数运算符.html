@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num1 = 5;
+        var num2 = 10;
+        // +  加法运算符 两个数字相加 如果相加的不是两个数字呢？？？
+        console.log(num1 + num2);
+
+        var str1 = "你好";
+        var str2 = "我不好";
+        // 如果是两个字符串相加 + 不再是加法运算的意思  + 拼接符
+        console.log(str1 + str2);
+
+        console.log(num2 + str2);
+
+        console.log(str1 + num1);
+        // 只要加号前后包含字符串 就不再是加法运算了  拼接符 连接符
+
+
+        console.log("------------------------------------------");
+
+        console.log(num2 + true); //1. 11
+        console.log(num2 + false); // 2. 10
+        console.log(num1 + (num2 + str1) ); // 3. 510你好  15你好
+        console.log(num1 + true + undefined + num2); //4.nan
+
+        console.log(str1 + undefined);  //你好undefined
+
+        console.log("------------------------------------------");
+
+        // - 减法运算  没有任何的花里胡哨的东西 就是最单纯的减法  如果遇到没有办法隐式转换为数字的变量的话会打印为NaN
+        console.log(str1 - num1);
+        console.log("------------------------------------------");
+
+        // * 乘法运算  没有任何的花里胡哨的东西 就是最单纯的乘法  如果遇到没有办法隐式转换为数字的变量的话会打印为NaN
+        console.log(num1 * num2);
+
+        // / 除法运算  没有任何的花里胡哨的东西 就是最单纯的除法  如果遇到没有办法隐式转换为数字的变量的话会打印为NaN
+        console.log(num1 / num2);
+
+
+        //  %  取余数
+        console.log(4 % 3);
+
+        // ()  提高计算的优先级 
+        console.log(num1 + (num2 + str1) ); // 3. 510你好  15你好
+    </script>
+</body>
+
+</html>

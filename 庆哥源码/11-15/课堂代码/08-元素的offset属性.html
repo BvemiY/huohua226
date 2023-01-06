@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 0 auto;
+            /* position: relative; */
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(63, 245, 90);
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        var son = document.getElementsByClassName('son')[0];
+        // offsetTop 和 son.style.top 之间的区别
+        // offsetTop是一个只读属性(只能读取 不能修改) 整数
+        // son.style.top css设置的定位偏移量  有px单位
+        // offsetTop,offsetLeft  元素跟父元素左上角的距离
+        console.log(son.offsetTop);
+        console.log(son.offsetLeft);
+
+
+        //offsetWidth,offsetHeight 读取元素的宽度和高度  包含内容大小，内边距，边框线
+        console.log(son.offsetWidth);
+        console.log(son.offsetHeight);
+
+        // 获取定位的父元素
+        console.log(son.offsetParent);
+    </script>
+</body>
+
+</html>

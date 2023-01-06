@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        
+        .box {
+            height: 360px;
+            width: 750px;
+            border: 1px solid red;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .oUl {
+            height: 360px;
+            width: 3750px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .oUl>li {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <ul class="oUl">
+            <li><img src="./images/pic1.jpg" alt=""></li>
+            <li><img src="./images/pic2.jpg" alt=""></li>
+            <li><img src="./images/pic3.jpg" alt=""></li>
+            <li><img src="./images/pic4.jpg" alt=""></li>
+            <li><img src="./images/pic5.jpg" alt=""></li>
+        </ul>
+    </div>
+
+
+    <script src="./animation.js"></script>
+    <script>
+        // 获取元素
+        var oUl = document.getElementsByClassName("oUl")[0];
+
+
+        var flag = 0;
+        // 计数器
+        setInterval(function() {
+
+            if (flag == 4) {
+                // 通过计数器来判断当前是不是最后一张图片
+                flag = 0;
+                oUl.style.left = "0px";
+                // 计数器清零   位置清零  回到最原始的位置
+            } else {
+                // 正常计数器自增
+                flag++;
+            }
+            // 通过提前封装好的动画方法  进行ul的位置移动
+            moveAnimation1(oUl, -750 * flag);
+        }, 7000);
+        // 每一张图片需要多久事件
+    </script>
+</body>
+
+</html>

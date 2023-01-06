@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<script>
+			// 本地存储
+			// 同源策略: 协议名  域名 端口号 必须一致
+			// 相同浏览器下,同源下 多个页面共享数据, 永久存储
+			// http://127.0.0.1:8848/02-Code/04-H5C3/07-CSS3/01-locationStorage.html
+			// http://127.0.0.1:5500/04-H5C3/07-CSS3/01-locationStorage.html
+			// http://127.0.0.1:5500/04%20H5C3/07-H5CSS3/01-locathStorage.html
+
+			// localStorage.setItem('token', 'iuUJiikPOPOOINMUUJKLKJJKI,LLKKLoioiio');//设置
+
+			// var d = localStorage.getItem('date')//获取
+			// console.log(d);
+			// localStorage.removeItem('goodsId2');//移除
+			// localStorage.clear();//清除所有
+
+			console.log(localStorage.length);
+			console.log(localStorage.key(2));
+
+			for (var i = 0; i < localStorage.length; i++) {
+				var key = localStorage.key(i);
+				var value = localStorage.getItem(key);
+				console.log(key, value);
+			}
+		</script>
+	</body>
+
+</html>

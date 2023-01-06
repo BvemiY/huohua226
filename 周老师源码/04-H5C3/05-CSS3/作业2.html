@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas class="canvas" width="1200" height="1000"></canvas>
+  <script>
+    // 获取画布对象
+    var canvas = document.querySelector('.canvas')
+    // 获取上下文对象
+    var ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(600, 200);
+    ctx.lineTo(800, 400);
+    ctx.lineTo(400, 400);
+    ctx.closePath();
+    ctx.fillStyle = "#f33e35";
+    ctx.fill();
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    ctx.rect(450, 401, 300, 300);
+    ctx.closePath();
+    ctx.fillStyle = "#f4f559";
+    ctx.fill();
+    ctx.clearRect(500, 440, 50, 50);
+    ctx.clearRect(650, 440, 50, 50);
+    ctx.clearRect(550, 595, 100, 100);
+
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    ctx.moveTo(600, 593);
+    ctx.arc(600, 593, 50, 180 * Math.PI / 180, 360 * Math.PI / 180);
+    ctx.closePath();
+    ctx.fillStyle = "#fff";
+    ctx.fill()
+    ctx.strokeStyle = '#fff'
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(550, 594)
+    ctx.lineTo(650, 594)
+    ctx.closePath();
+    ctx.strokeStyle = "#F00"
+    ctx.stroke()
+
+  </script>
+</body>
+
+</html>

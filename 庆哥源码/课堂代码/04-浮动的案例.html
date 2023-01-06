@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            list-style-type: none;
+            /* 去除小黑点 */
+            float: left;
+            width: 120px;
+            height: 34px;
+            background-color: rgb(253, 140, 140);
+            text-align: center;
+            line-height: 34px;
+            position: relative;
+        }
+        .box{
+            width: 120px;
+            height: 550px;
+            background-color: rgb(227, 242, 87);
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+        li:hover {
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+        }
+        li:hover .box{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>123
+            <div class="box"></div>
+        </li>
+        <li>456
+            <div class="box"></div>
+        </li>
+        <li>789
+            <div class="box"></div>
+        </li>
+        <li>000
+            <div class="box"></div>
+        </li>
+    </ul>
+    <!-- 很多应用在导航栏身上 -->
+</body>
+
+</html>

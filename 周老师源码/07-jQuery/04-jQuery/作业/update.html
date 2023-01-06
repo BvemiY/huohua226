@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>修改学生信息</title>
+  <style>
+    .con {
+      width: 400px;
+      margin: 0 auto;
+      /* border: 1px solid red; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="con">
+    <h1>修改学生信息</h1>
+    <form action="" method="post">
+      <input type="hidden" name="id" class="id">
+      <p>
+        <label for="class"> 班级：</label>
+        <input type="text" name="clazz" id="clazz">
+      </p>
+      <p>
+        <label for="name">姓名：</label>
+        <input type="text" name="name" id="name">
+      </p>
+      <p>
+        <label for="gender">性别：</label>
+        男<input type="radio" name="gender" class="gender" value="男">
+        女<input type="radio" name="gender" class="gender" value="女">
+      </p>
+      <p>
+        <label for="age">年龄：</label>
+        <input type="text" name="age" id="age">
+      </p>
+      <p>
+        <label for="hobby">爱好：</label>
+        吃饭<input type="checkbox" name="hobby" class="hobby" value="吃饭">
+        睡觉<input type="checkbox" name="hobby" class="hobby" value="睡觉">
+        学习<input type="checkbox" name="hobby" class="hobby" value="学习">
+      </p>
+      <p>
+        <label for="tel">手机号：</label>
+        <input type="text" name="tel" id="tel">
+      </p>
+      <p>
+        <label for="address">地址：</label>
+        <select name="address" id="address">
+          <option value="郑州">郑州</option>
+          <option value="洛阳">洛阳</option>
+          <option value="新乡">新乡</option>
+          <option value="漯河">漯河</option>
+        </select>
+      </p>
+      <p>
+        <label for="remark">备注：</label>
+        <textarea name="remark" id="remark" cols="30" rows="10"></textarea>
+      </p>
+      <p>
+        <label for="date">入学时间：</label>
+        <input type="date" name="date" id="date">
+      </p>
+      <p>
+        <input type="submit" value="提交">
+      </p>
+    </form>
+  </div>
+  <script src="utils.js"></script>
+  <script>
+    //回显
+    function huiXian() {
+      var id = location.hash.substring(1);// 获取锚点
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+            console.log();
+            var stu = JSON.parse(xhr.responseText)[0];
+            document.querySelector('.id').value = stu.id;
+            document.querySelector('#clazz').value = stu.clazz;
+            document.querySelector('#name').value = stu.name;
+            document.querySelector('#age').value = stu.age;
+            document.querySelector('#tel').value = stu.tel;
+            document.querySelector('#remark').value = stu.remark;
+            document.querySelector('#date').value = stu.date;
+            // 单选按钮  性别
+            document.querySelector('input[value=' + stu.gender + ']').checked = true;
+            // 复选框  爱好
+            stu.hobby.split(',').forEach(function (v) {
+              document.querySelector('input[value=' + v + ']').checked = true;
+            });
+            //下拉列表 地址
+            document.querySelector('option[value=' + stu.address + ']').selected = true;
+          }
+        }
+      }
+      xhr.open('GET', 'http://localhost:3008/api/student/getStudent?id=' + id);
+      xhr.send();
+    }
+    huiXian();
+
+    //修改
+    var form = document.querySelector('form'); //当前form表单
+    form.onsubmit = function (e) {
+      e.preventDefault(); //阻止当前表单提交
+
+      // var data = serializeKeyValue(form); //表单的键值对
+      var data = serializeJSON(form); // 表格生成 JSON数据
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+            window.location.href = 'index.html'
+          }
+        }
+      }
+      xhr.open('POST', 'http://localhost:3008/api/student/updateStudent');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      // xhr.send(data);
+      xhr.send(JSON.stringify(data));
+    }
+  </script>
+
+</body>
+
+</html>

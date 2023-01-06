@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .min-box {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      margin-top: 100px;
+      margin-left: 100px;
+      width: 450px;
+      height: 450px;
+      border: 1px solid orange;
+      cursor: move;
+    }
+
+    .min-box,
+    .max-box {
+      float: left;
+    }
+
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, .3);
+      display: none;
+    }
+
+    .max-box {
+      position: relative;
+      border: 1px solid blue;
+      width: 600px;
+      height: 600px;
+      overflow: hidden;
+      display: none;
+    }
+
+    .max-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="min-box">
+    <img src="min.jpg" class="min-img" alt="">
+    <div class="mask"></div>
+  </div>
+  <div class="max-box">
+    <img src="max.jpg" class="max-img" alt="">
+  </div>
+  <script type="text/javascript">
+    var minBox = document.getElementsByClassName('min-box')[0];
+    var minImg = document.getElementsByClassName('min-img')[0];
+    var mask = document.getElementsByClassName('mask')[0];
+    var maxBox = document.getElementsByClassName('max-box')[0];
+    var maxImg = document.getElementsByClassName('max-img')[0];
+
+    minBox.onmouseover = function (e) {
+      mask.style.display = 'block';
+      maxBox.style.display = 'block';
+    }
+    // minBox.onmouseout = function (e) {
+    //   mask.style.display = 'none';
+    //   maxBox.style.display = 'none';
+    // }
+
+    window.onmousemove = function (e) {
+      // console.log(e.pageX - minBox.offsetLeft, e.pageY - minBox.offsetTop);
+      var x = e.pageX - minBox.offsetLeft; // 在小盒子中的x坐标
+      var y = e.pageY - minBox.offsetTop; //
+      // console.log(x, y);
+      //鼠标在蒙版中间的坐标
+      x = x - mask.offsetWidth / 2;
+      y = y - mask.offsetHeight / 2;
+
+      //蒙版移动的最大距离
+      var maskLeft = minBox.offsetWidth - mask.offsetWidth;
+      var maskTop = minBox.offsetHeight - mask.offsetHeight;
+      if (x < 0) {
+        x = 0;
+      }
+      if (x > maskLeft) {
+        x = maskLeft;
+      }
+      if (y <= 0) {
+        y = 0;
+      }
+      if (y > maskTop) {
+        y = maskTop;
+      }
+      console.log(x, y);
+      mask.style.left = x + 'px';
+      mask.style.top = y + 'px';
+
+
+      maxImg.style.left = x * (maxBox.offsetWidth - maxImg.offsetWidth) / maskLeft + 'px';
+      maxImg.style.top = y * (maxBox.offsetHeight - maxImg.offsetHeight) / maskTop + 'px';
+
+
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

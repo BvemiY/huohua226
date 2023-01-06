@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            color: red;
+        }
+        
+        .box>span {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 直系后代选择器 子元素选择器 -->
+    <span>我是 SPAN</span>
+    <div class="box">
+        <p>我是div的亲儿子 PPP</p>
+        <span>我是DIV 的亲儿子 SAPN</span>
+        <p>
+            <span>我是div的孙子 SAPN</span>
+        </p>
+    </div>
+</body>
+
+</html>

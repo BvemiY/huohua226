@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log('start');
+    setTimeout(function () {
+      console.log('你猜我输出在哪');
+    }, 0);//异步函数
+    console.log('end');
+    for (var i = 0; i < 10; i++) {
+      console.log(i);
+    }
+    //---------------------------------------------------------------------------
+    console.log('start');
+    for (var i = 0; i < 3; i++) {
+      (function (index) {
+        setTimeout(function () {
+          console.log(index);
+        }, 0);
+      })(i);//异步函数
+    }
+    console.log('end');
+  </script>
+</body>
+
+</html>

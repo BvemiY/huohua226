@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>post请求</button>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      var basicURL = "http://localhost:3008";
+      var data = "clazz=火花226&name=夏长江888&gender=男&age=21&tel=10010&hobby=iphone14&address=南阳"
+      var data2 = {
+        clazz: '火花226',
+        name: '艾志杰',
+        gender: '男',
+        age: 21,
+        tel: '10010',
+        hobby: 'iphone14',
+        address: '南阳'
+      }
+      $('button').click(function () {
+        $.post(
+          basicURL + '/api/student/addStudent',
+          data2,
+          function (result) {
+            console.log(result);
+          },
+          'json'
+        )
+      })
+
+    })
+  </script>
+</body>
+
+</html>

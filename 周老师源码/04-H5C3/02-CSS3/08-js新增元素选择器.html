@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .item {
+      background: skyblue;
+      font-size: 40px;
+    }
+
+    #t {
+      font-family: '楷体';
+    }
+  </style>
+</head>
+
+<body>
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item" id="t">3</div>
+  <div class="item">4</div>
+  <div class="item5">5</div>
+  <script>
+    // var div = document.querySelector('.item')
+    // div.style.color = "gold";
+    // var div2 = document.querySelector('#t');
+    // div2.style.color = 'blue'
+    // var div2 = document.querySelector('div[class="item5"]');
+    // div2.style.color = 'pink'
+
+    var divs = document.querySelectorAll('.item');
+    for (var i = 0; i < divs.length; i++) {
+      divs[i].style.color = 'blue'
+    }
+  </script>
+</body>
+
+</html>

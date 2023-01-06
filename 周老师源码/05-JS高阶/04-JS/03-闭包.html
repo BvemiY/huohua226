@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //闭包: 内部函数访问外部函数声明的变量, 所产生的词法环境叫闭包,
+    //闭包的特点:1.函数嵌套,
+    // 2.内部函数访问外部函数的局部变量,
+    // 3.使外部函数声明的变量长期驻扎在内存中
+
+    var n = 6;//全局变量,
+    function show() {
+      var x = 5;
+      console.log(n);
+      return function () {
+
+        x++;
+        console.log(x);
+      }
+    }
+    var fn = show();
+    fn();
+    fn();
+    fn()
+  </script>
+</body>
+
+</html>

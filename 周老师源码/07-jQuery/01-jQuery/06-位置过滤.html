@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    p {
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>新嫁娘词</h1>
+    <p>王建 〔唐代〕</p>
+
+    <p>三日入厨下，</p>
+    <p>洗手作羹汤。</p>
+    <p>未谙姑食性，</p>
+    <p>先遣小姑尝。</p>
+
+    <h2>译文</h2>
+    <p>婚后第三天来到厨房，</p>
+    <p>洗手亲自作羹汤。</p>
+    <p>还不熟悉婆婆的口味，</p>
+    <p>做好先让小姑品尝。</p>
+  </section>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      // $('section>p:first').css('color', 'orange'); //第一个
+      // $('section>p:last').css('color', 'blue');    //最后一个
+      // $('section>p:even').css('color', 'blue');    //索引为偶数
+      // $('section>p:odd').css('color', 'orange');   //索引为奇数
+      $('section>p:eq(3)').css('color', 'orange');    //索引等于
+      $('section>p:gt(3)').css('color', 'pink');      //索引大于
+      $('section>p:lt(3)').css('color', 'hotpink');   //索引小于
+    })
+  </script>
+</body>
+
+</html>

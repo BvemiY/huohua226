@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+
+<body>
+	<canvas id="canvas" width="1200" height="900">
+		浏览器不支持
+	</canvas>
+	<script>
+		// 获取画布对象
+		var mycanvas = document.querySelector('#canvas')
+		// 获取上下文对象
+		var cxt = mycanvas.getContext('2d');
+		console.log(cxt);
+
+		// 开始路径
+		cxt.beginPath();
+
+		// 移动到点
+		cxt.moveTo(100, 100);
+
+		// 划线
+		cxt.lineTo(300, 300);
+		cxt.lineTo(500, 100);
+
+		// 闭合路径
+		cxt.closePath();
+
+		//描边颜色和粗细
+		cxt.strokeStyle = "orange";
+		cxt.lineWidth = "5"
+		// 描边
+		cxt.stroke();
+	</script>
+</body>
+
+</html>

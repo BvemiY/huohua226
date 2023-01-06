@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>点击</button>
+  <button>点击</button>
+  <button>点击</button>
+  <button>点击</button>
+  <script>
+
+    var btns = document.querySelectorAll('button');
+    // 第一种
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].onclick = function (e) {
+        console.log(this);
+        this.disabled = true;//禁用按钮
+        var v = 5;
+        var that = this;
+        var interId = setInterval(function () {
+          that.innerText = '等待' + v + '秒';
+          if (v <= 0) {
+            clearInterval(interId)
+            that.innerText = '点击'
+            that.disabled = false;//启用按钮
+          }
+          v--;
+        }, 1000)
+      }
+    }
+
+    //第二种
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].onclick = function (e) {
+        // console.log(e.target);//当前事件源对象
+        // console.log(e.srcElement);
+        e.target.disabled = true;
+        var v = 5;
+        var interId = setInterval(function () {
+          e.target.innerText = '等待' + v + '秒';
+          if (v <= 0) {
+            clearInterval(interId);
+            e.target.innerText = '点击'
+            e.target.disabled = false;//启用按钮
+          }
+          v--;
+        }, 1000)
+      }
+    }
+
+    //第三种
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].onclick = function (e) {
+        this.disabled = true;
+        var v = 5;
+        var interId = setInterval(function () {
+          // console.log(this);
+          this.innerText = '等待' + v + '秒';
+          if (v <= 0) {
+            clearInterval(interId);
+            this.innerText = '点击'
+            this.disabled = false;//启用按钮
+          }
+          v--;
+        }.bind(this), 1000)
+      }
+    }
+  </script>
+</body>
+
+</html>

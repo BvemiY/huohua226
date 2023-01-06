@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    .box {
+      margin: 0 auto;
+      width: 700px;
+    }
+
+    input {
+      width: 80px;
+    }
+
+    input:last-of-type {
+      width: 130px;
+    }
+
+    table {
+      margin-top: 10px;
+      width: 700px;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid orange;
+      border-collapse: collapse;
+    }
+
+    tr {
+      text-align: center;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="top">
+      按照价格查询:
+      <input type="number" class="num-start" />
+      -
+      <input type="number" class="num-end" />
+      <button class="btn_search">搜索</button>
+      按照商品名称查询:
+      <input type="search" class="name-search" />
+      <button class="btn_find">搜索</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>名称</th>
+          <th>价格</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <script>
+
+    var data = [{
+      id: '1',
+      pname: '小米10',
+      price: 9899
+    }, {
+      id: '2',
+      pname: 'oppoA52',
+      price: 1299
+    }, {
+      id: '3',
+      pname: '荣耀10',
+      price: 1299
+    }, {
+      id: '4',
+      pname: '华为p20',
+      price: 2999
+    }, {
+      id: '5',
+      pname: '华为p30',
+      price: 3999
+    }];
+    var tbody = document.querySelector('tbody');
+    var numStart = document.querySelector('.num-start');
+    var numEnd = document.querySelector('.num-end');
+    var btnSearch = document.querySelector('.btn_search');
+    var nameSearch = document.querySelector('.name-search');
+    var btn_find = document.querySelector('.btn_find');
+    var str = ''
+    data.forEach(function (v, i) {
+      str += `
+        <tr>
+          <td>${v.id}</td>
+          <td>${v.pname}</td>
+          <td>${v.price}</td>
+        </tr>
+        `;
+    })
+    tbody.innerHTML = str;
+
+
+    //模糊查询
+    btn_find.addEventListener('click', function (e) {
+      var arr = data.filter(function (v) {
+        return v.pname.includes(nameSearch.value); //名字模糊查询
+      })
+      str = '';
+      arr.forEach(function (v, i) {
+        str += `
+        <tr>
+          <td>${v.id}</td>
+          <td>${v.pname}</td>
+          <td>${v.price}</td>
+        </tr>
+        `;
+      })
+      tbody.innerHTML = str;
+    })
+
+    //价格区间
+    btnSearch.onclick = function (e) {
+      var arr;
+      if (numStart.value != '' && numEnd.value != '') {//非空判断
+        arr = data.filter(function (v, i) {
+          return v.price >= numStart.value && v.price <= numEnd.value;//满足价格区间
+        })
+      } else {
+        arr = data;
+      }
+      str = '';
+      arr.forEach(function (v, i) {
+        str += `
+        <tr>
+          <td>${v.id}</td>
+          <td>${v.pname}</td>
+          <td>${v.price}</td>
+        </tr>
+        `;
+      })
+      tbody.innerHTML = str;
+    }
+
+  </script>
+</body>
+
+</html>

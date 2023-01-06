@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(243, 116, 116);
+
+            transition: all 5s ease 0s;
+            /* 过渡  添加过渡效果 过渡动画    对什么样式使用过渡    整个动画的时间    运动曲线  何时开始*/
+
+        }
+        .box>img{
+            transition: all 5s ease 0s;
+            /* 过渡  添加过渡效果 过渡动画    对什么样式使用过渡    整个动画的时间    运动曲线  何时开始*/
+
+        }
+        .box:hover img{
+            
+            transform: translate(30px,150px) scale(2,1.5) rotate(45deg) skew(45deg,45deg);
+            /* 2d 变换   translate 平移  scale 缩放  rotate  旋转   skew 倾斜*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../../01-html5-css3/作业/作业/banner.jpg" alt="">
+    </div>
+</body>
+
+</html>

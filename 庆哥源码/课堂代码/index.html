@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* @media screen and (max-width:400px){
+            .box{
+                width: 100%;
+                height: 150px;
+                background-color: rgb(253, 140, 140);
+            }
+        }
+
+        @media screen and (min-width:800px){
+            .box{
+                width: 300px;
+                height: 300px;
+                background-color: rgb(247, 253, 140);
+            }
+        }
+
+
+        @media screen and (min-width:400px) and (max-width:800px){
+            .box{
+                width: 150px;
+                height: 150px;
+                background-color: rgb(140, 183, 253);
+            }
+        } */
+
+        @import url(style.css) screen and (max-width:400px);
+        @import url(style1.css) screen and (min-width:800px);
+        @import url(style2.css) screen and (min-width:400px) and (max-width:800px);
+        /* 引入css文件中的样式  和link功能一样*/
+    </style>
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

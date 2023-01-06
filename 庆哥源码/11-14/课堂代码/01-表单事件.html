@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="###" class="myForm">
+        <span>账号：</span><input type="text" class="text"> <br>
+        <span>密码：</span><input type="password" class="pw">
+        <input type="submit">
+        <input type="reset">
+    </form>
+
+    <script>
+        var text = document.getElementsByClassName("text")[0];
+        var pw = document.getElementsByClassName("pw")[0];
+        var myForm = document.getElementsByClassName("myForm")[0];
+
+        // onchange  内容改变
+        // 1.当取消选中的时候，如果内容发生了变换 就会触发当前的事件
+        // 2.并不是实时
+        // text.onchange = function() {
+        //     console.log(text.value);
+        // }
+
+        // onfocus  获取焦点
+        // 1.输入框 获取到光标 选中状态  获取焦点
+        // text.onfocus = function() {
+        //     console.log("你选中了我");
+        // }
+
+        // onblur  失去焦点
+        // 1.输入框 失去到光标 不在选中状态  失去焦点
+        // text.onblur = function() {
+        //     console.log("你失去了我");
+        // }
+
+        // oninput  输入事件
+        // 1.当输入框输入内容的时候会触发当前事件  
+        // 2.实时触发的  监听事件
+        pw.oninput = function(e) {
+            console.log(pw.value);
+            console.log(e);
+        }
+
+        // onsubmit 表单提交事件
+        // 1. 当表单的提交按钮按下之后 表单提交 会触发
+        // myForm.onsubmit = function(e) {
+        //     console.log("你确定提交嘛？？？");
+        //     // e.preventDefault();
+        //     // 阻止页面刷新
+        // }
+
+        // onreset 表单重置事件
+        // 1. 当表单的重置按钮按下之后 表单重置 会触发
+        // myForm.onreset = function() {
+        //     alert("你确定重置嘛？？？");
+        // }
+    </script>
+</body>
+
+</html>

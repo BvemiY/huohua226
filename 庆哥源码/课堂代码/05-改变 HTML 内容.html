@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        周浩打开摄像头
+    </div>
+
+    <script>
+        // 如何修改html标签内容
+        // 1.先获取节点  可以使用任何的方式获取节点
+        var oBox = document.getElementsByClassName("box")[0];
+
+        console.log(oBox);
+
+        // oBox.innerHTML = "<a href='###'>夏长江打开摄像头！</a>";
+        // innerHTML  修改元素内容
+
+        oBox.innerText = "<a href='###'>徐影蝶打开摄像头！</a>";
+        // innerText  修改页面元素
+
+        // innerHTML 和 innerText 的不同点
+        // innerHTML  可以识别html代码  可以通过innerHTML来添加一些新的子元素
+        // innerText  只可以识别文本
+
+        // innerHTML 和 innerText 的相同点
+        // 都会直接替换原标签里面的全部内容
+    </script>
+</body>
+
+</html>

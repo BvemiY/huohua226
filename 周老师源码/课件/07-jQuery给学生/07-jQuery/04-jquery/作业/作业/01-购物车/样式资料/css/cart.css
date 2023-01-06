@@ -1,0 +1,240 @@
+input[type="checkbox"] {
+    display: none
+}
+
+label {
+    width: 14px;
+    height: 14px;
+    background: url(../images/check.png) no-repeat;
+    display: inline-block;
+}
+
+label.active {
+    background: url(../images/checked.png) no-repeat;
+}
+
+.cart-wrap {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 300px;
+}
+
+.cart-header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #444;
+}
+
+.cart-lists {
+    height: 110px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.cart-lists li {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cart-box .cart-lists li {
+    height: 110px;
+}
+
+.cart-lists .cart-check {
+    width: 150px;
+}
+
+.cart-lists .cart-con {
+    width: 570px;
+}
+
+.cart-lists .cart-price {
+    width: 160px;
+}
+
+.cart-lists .cart-amount {
+    width: 130px;
+}
+
+.cart-lists .cart-sum {
+    width: 120px;
+}
+
+.cart-lists .cart-option {
+    width: 60px;
+}
+
+.cart-box {
+    width: 100%;
+}
+
+.cart-box .shop-info {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: #efefef;
+    margin: 10px 0;
+}
+
+.cart-box .shop-info .all-check {
+    width: 26px;
+    height: 50px;
+}
+
+.cart-content .cart-img {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #ccc;
+}
+
+.cart-content .cart-img img {
+    width: 70px;
+    height: 70px;
+}
+
+.cart-content .cart-text {
+    margin-left: 20px;
+    height: 60px;
+    line-height: 20px;
+    /* 多行文本出现省略号 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.cart-price .price {
+    font-size: 20px;
+    color: #f55;
+}
+
+.cart-price .price::before {
+    content: "￥";
+}
+
+.cart-sum .price-sum {
+    font-size: 20px;
+    color: #f55;
+}
+
+.cart-sum .price-sum::before {
+    content: "￥";
+}
+
+.cart-amount .amount-box {
+    width: 90px;
+    height: 25px;
+    position: relative;
+    text-align: center;
+}
+
+.cart-amount .amount-box input {
+    width: 40px;
+    height: 25px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.cart-amount .amount-box button {
+    width: 20px;
+    height: 27px;
+    border: 1px solid #e5e5e5;
+}
+
+.cart-amount .amount-box button:focus {
+    border: 1px solid rgb(241, 113, 28);
+}
+
+.cart-amount .amount-box button,
+.cart-amount .amount-box input {
+    float: left;
+}
+
+.cart-dele {
+    cursor: pointer;
+}
+
+
+/* 合计 */
+
+.cart-footer {
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.cart-footer div {
+    /* width: 100px; */
+    height: 50px;
+    line-height: 50px;
+}
+
+
+/* 自定义模态框 */
+
+.modal-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.modal-box {
+    width: 360px;
+    height: 200px;
+    background: #fff;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+
+.modal-box h2 {
+    height: 40px;
+    background: #efefef;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.modal-box p {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    height: 80px;
+}
+
+.modal-box .btn {
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-box .btn button {
+    background-color: #f55;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+
+.modal-box .btn button:first-child {
+    background-color: #ccc;
+}

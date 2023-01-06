@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <p id="box1">段落内容1</p>
+        <p id="box2">段落内容2</p>
+        <p id="box3">段落内容3</p>
+    </div>
+    <script>
+        var box3 = document.getElementById("box3");
+        var box2 = document.getElementById("box2");
+        var main = document.getElementById("main");
+
+        var oB = document.createElement("b");
+        // 新建的标签
+        var oText = document.createTextNode("王雙玖:这个单词读 亏a特 ");
+        // 新建的文本
+
+        // 追加节点  将文本内容追加进标签里面
+        oB.appendChild(oText);
+
+        // 替换节点  将原本存在的标签替换成新的标签
+        main.replaceChild(oB, box2);
+        // 父元素.replaceChild(新元素，被替换掉的元素)；
+    </script>
+</body>
+
+</html>

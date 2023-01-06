@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box {
+      width: 400px;
+      height: 90px;
+      border: 1px solid orange;
+      position: relative;
+      overflow: hidden;
+    }
+
+    ul {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1000px;
+      animation: mm 3s linear infinite;
+    }
+
+    @keyframes mm {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: -470px;
+      }
+    }
+
+    ul li {
+      float: left;
+      width: 90px;
+      height: 90px;
+      margin: 2px;
+      background: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

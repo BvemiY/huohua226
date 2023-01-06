@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid orange;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="1200" height="900"></canvas>
+  <script>
+
+    var canvas = document.querySelector('#canvas');
+    var ctx = canvas.getContext('2d');
+
+    console.log(ctx);
+    // ctx.textAlign = "left";
+    // ctx.textBaseLine = "hanging";
+    // ctx.direction = "ltr"
+
+
+    // ctx.fillStyle = "red";
+    ctx.font = " 100px 楷体";
+    // ctx.fillText("让河南学admin子创造中国互联网未来", 100, 200);
+    ctx.strokeStyle = "blue"
+    ctx.strokeText("让河南学子创造中国互联网未来", 100, 200);
+
+
+
+
+  </script>
+</body>
+
+</html>

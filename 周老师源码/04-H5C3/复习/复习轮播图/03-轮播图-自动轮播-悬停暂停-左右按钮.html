@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.carousel {
+				margin: 50px auto;
+				width: 1000px;
+				height: 437.5px;
+				position: relative;
+			}
+
+			.cal-list {
+				width: 1000px;
+				height: 437.5px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.viewpage {
+				position: absolute;
+				left: 0px;
+				top: 0;
+				width: 600%;
+				height: 437.5px;
+			}
+
+			.item {
+				float: left;
+			}
+
+			.pic {
+				width: 1000px;
+				height: 437.5px;
+			}
+
+			.prev,
+			.next {
+				position: absolute;
+				top: 40%;
+				width: 60px;
+				height: 70px;
+				color: #fff;
+				font-size: 60px;
+				line-height: 60px;
+				text-align: center;
+				border-radius: 0 50px 50px 0;
+				background-color: skyblue;
+				display: none;
+				cursor: pointer;
+			}
+
+			.next {
+				right: 0px;
+				border-radius: 50px 0 0 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 轮播图 -->
+		<div class="carousel">
+			<!-- 图片列表 -->
+			<div class="cal-list">
+				<ul class="viewpage">
+					<li class="item"><img class="pic" src="img/newBanner01.png" /></li>
+					<li class="item"><img class="pic" src="img/newBanner02.png" /></li>
+					<li class="item"><img class="pic" src="img/newBanner03.png" /></li>
+					<li class="item"><img class="pic" src="img/newBanner04.png" /></li>
+					<li class="item"><img class="pic" src="img/newBanner05.png" /></li>
+					<li class="item"><img class="pic" src="img/newBanner01.png" /></li>
+				</ul>
+				<!-- 放置左右按钮 -->
+				<div class="prev">&lt;</div>
+				<div class="next">&gt;</div>
+			</div>
+		</div>
+		<script src="js/animationutils.js"></script>
+		<script type="text/javascript">
+			var calList = document.getElementsByClassName('cal-list')[0];
+			var viewpage = document.getElementsByClassName('viewpage')[0];
+			var items = document.getElementsByClassName('item');
+			var prev = document.getElementsByClassName('prev')[0];
+			var next = document.getElementsByClassName('next')[0];
+
+
+			// 1 自动轮播
+			var myInter;
+			var index = 0;
+
+			function autoPlay() {
+				myInter = setInterval(function() {
+					if (index == items.length) {
+						viewpage.style.left = '0px';
+						index = 1;
+					}
+					var target = -1000 * index;
+					moveAnimation(viewpage, target);
+					index++;
+				}, 3000);
+			}
+			autoPlay();
+
+			//2 鼠标悬停暂停, 离开继续, 左右图片显示隐藏
+			calList.onmouseover = function() {
+				clearInterval(myInter);
+				prev.style.display = 'block';
+				next.style.display = 'block';
+			}
+			calList.onmouseout = function() {
+				autoPlay();
+				prev.style.display = 'none';
+				next.style.display = 'none';
+			}
+			// 3 点击左右图标进行移动
+			next.onclick = function() {
+				index++;
+				if (index == items.length) {
+					index = 1;
+					viewpage.style.left = '0px';
+				}
+				console.log(index);
+				console.log(index, '++');
+				var target = -1000 * index;
+				moveAnimation(viewpage, target)
+			}
+			prev.onclick = function() {
+
+				if (index == 0) {
+					index = items.length - 1;
+					viewpage.style.left = -1000 * index + 'px';
+				}
+				console.log(index);
+				index--;
+				var target = -1000 * index;
+				moveAnimation(viewpage, target)
+			}
+		</script>
+	</body>
+</html>

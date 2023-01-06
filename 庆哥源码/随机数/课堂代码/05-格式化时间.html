@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var aaa = +new Date();
+        // 时间戳 就是  当前的时间 距离 1970年1月1日的时间差  以毫秒数的形式展示
+        var bbb = +new Date("2022/11/11 11:11:11");
+        // 获取目标时间戳
+        var miao = (bbb - aaa) / 1000;
+
+        // 计算天数
+        var tian = parseInt(miao / 60 / 60 / 24);
+
+        // 计算小时数
+        var xiaoshi = parseInt(miao / 60 / 60 % 24);
+
+        // 计算分钟
+        var fen = parseInt(miao / 60 % 60);
+
+        // 计算秒数
+        var miao1 = parseInt(miao % 60);
+
+        console.log(miao1);
+
+        console.log(tian + "天" + xiaoshi + "时" + fen + "分" + miao1 + "秒");
+        // // 毫秒和秒数
+        // var miao = haomiao / 1000;
+        // console.log(miao);
+
+        // // 秒转换为分钟
+        // var fen = miao / 60;
+        // console.log(fen);
+
+        // // 分钟和小时的转换
+        // var shi = fen / 60;
+        // console.log(shi);
+
+        // // 天数和小时的转换
+        // var tian = shi / 24;
+        // console.log(tian);
+    </script>
+</body>
+
+</html>

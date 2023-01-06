@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 属性分为:  数据属性  和   访问器属性
+    var p = {
+      name: '火花226', //数据属性
+      _age: 0,  // 访问器属性
+      get age() { // 获取age的值
+        return this._age;
+      },
+      set age(value) {// 设置
+        if (value < 0 || value > 150) {
+          console.log('年龄必须在0-150之间');
+        } else {
+          this._age = value;
+        }
+      }
+    }
+    console.log(p.name);//获取
+    p.name = '226'; // 设置
+    p.age = 200;
+    console.log(p);
+    console.log(p.age);
+
+  </script>
+</body>
+
+</html>

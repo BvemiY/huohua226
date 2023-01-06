@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+</head>
+
+<body>
+	<canvas id="canvas" width="1200" height="900">
+		浏览器不支持
+	</canvas>
+	<script>
+		// 获取画布对象
+		var mycanvas = document.querySelector('#canvas')
+		// 获取上下文对象
+		var ctx = mycanvas.getContext('2d');
+		console.log(ctx);
+
+		// 填充矩形
+		ctx.beginPath();
+		//45°
+		ctx.moveTo(400, 400);
+		ctx.arc(400, 400, 200, Math.PI / 180 * 0, Math.PI / 180 * 90);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		//45°
+		ctx.moveTo(400, 400);
+		ctx.arc(400, 400, 200, Math.PI / 180 * 90, Math.PI / 180 * 200);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		//45°
+		ctx.moveTo(400, 400);
+		ctx.arc(400, 400, 200, Math.PI / 180 * 200, Math.PI / 180 * 290);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		//45°
+		ctx.moveTo(400, 400);
+		ctx.arc(400, 400, 200, Math.PI / 180 * 290, Math.PI / 180 * 360);
+		ctx.closePath();
+		ctx.stroke();
+
+		// ctx.fillStyle = 'pink';
+		// ctx.fill();
+		// ctx.strokeStyle = "blue";
+		// ctx.lineWidth = "5"
+
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var arr = ["a","b","c","d"];
+
+        // var str = arr.join("true");
+        // join() 将数组转换成字符串输出
+        // - 方法参数 ---可选参数  " " 每一个数组元素中间用什么进行分割
+        // - 返回值 ---返回字符串
+        // - 改变不改变原数组  ---不改变       
+
+        // console.log(str);
+
+
+        var str = arr.toString();
+        // .toString()  将数组转换成字符串  将前面的变量转换成字符串
+        // - 方法参数 ---无
+        // - 返回值 ---返回字符串
+        // - 改变不改变原数组  ---不改变     
+        console.log(str);
+
+        // 将一个数组［1，2，3，4，5］转换成字符串1-2-3-4-5
+        var arr = [1, 2, 3, 4, 5];
+        // var str = arr.join("-");
+        // console.log(str);
+        var str = "";
+        for (var i = 0; i < arr.length; i++) {
+            // str = str + arr[i] + "-";
+            if(i != arr.length-1){
+                str = str + arr[i] + "-";
+            }else{
+                str = str + arr[i];
+            }
+
+        }
+        console.log(str);
+
+
+
+
+    </script>
+</body>
+
+</html>

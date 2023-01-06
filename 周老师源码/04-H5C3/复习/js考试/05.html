@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="num">
+  <div></div>
+  <script>
+    document.getElementById('num').onblur = function () {
+      document.getElementsByTagName('div')[0].innerText = jieCheng(this.value);
+    }
+    function jieCheng(num) {
+      var jc = 1;
+      for (var i = num; i > 0; i--) {
+        jc *= i;
+      }
+      return jc;
+    }
+    var v = jieCheng(10);
+    console.log(v);
+
+  </script>
+</body>
+
+</html>

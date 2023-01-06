@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "azAZ09";
+
+        console.log(str[1]);
+        console.log(str.charAt(3));
+        // charAt 通过参数来返回对应位置的字符
+        console.log("----------------------");
+        console.log(str.charCodeAt(0));
+        console.log(str.charCodeAt(1));
+        console.log(str.charCodeAt(2));
+        console.log(str.charCodeAt(3));
+        console.log(str.charCodeAt(4));
+        console.log(str.charCodeAt(5));
+        // charCodeAt 将对应字符的unicode编码打印输出
+        // unicode编码  a-z 97-122   A-Z 65-90   0-9  48-57
+        console.log("----------------------");
+
+        console.log(String.fromCharCode(97));
+        // fromCharCode  根据unicode编码找到对应的字符  针对String对象使用
+    </script>
+</body>
+
+</html>

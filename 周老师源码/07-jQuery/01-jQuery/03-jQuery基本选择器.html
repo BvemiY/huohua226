@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // var div = $('#d1');// jQuery的伪数组
+      // var div2 = document.querySelector('#d1');
+      // document.querySelectorAll('.c1').forEach(function (v) {
+      //   v.style.color = 'red'
+      // })
+
+      $('#d1').css('color', 'blue');// id选择器
+
+      $('.c1').css('color', 'red');// class选择器,  伪数组 自带隐式迭代
+      $('.c2').css('color', 'green');
+      $('h2').css('color', 'orange'); // 元素选择器
+      $('*').css('color', 'blue'); // 通配符选择器
+
+    })
+
+  </script>
+  <h2> 行宫</h2>
+  <div id="d1">元稹 〔唐代〕</div>
+
+  <div class="c1">寥落古行宫，</div>
+  <div class="c2">宫花寂寞红。</div>
+  <div class="c1">白头宫女在，</div>
+  <div class="c2">闲坐说玄宗。</div>
+
+</body>
+
+</html>

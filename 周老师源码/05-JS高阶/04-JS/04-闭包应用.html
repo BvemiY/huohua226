@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    var lis = document.querySelectorAll('li');
+    for (let i = 0; i < lis.length; i++) {
+      lis[i].onclick = function (e) {
+        console.log(i);
+      };
+
+      //闭包词法环境 一般使用比较少, 过多会造成内存泄漏
+      (function (index) {
+        lis[index].onclick = function (e) {
+          console.log(index);
+        }
+      })(i)
+    }
+
+    //闭包环境
+    lis.forEach(function (v, i) {
+      v.onclick = function () {
+        console.log(i);
+      }
+    })
+  </script>
+</body>
+
+</html>

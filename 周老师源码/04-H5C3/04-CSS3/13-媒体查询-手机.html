@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="css/common.css"> -->
+  <!-- <link rel="stylesheet" href="css/a.css" media="(max-width:768px)">
+  <link rel="stylesheet" href="css/b.css" media="(min-width:768px)">
+  <link rel="stylesheet" href="css/c.css" media="(min-width:992px)">
+  <link rel="stylesheet" href="css/d.css" media="(mid-width:1200px)"> -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      margin: 0 auto;
+      height: 900px;
+      width: 900px;
+      /* background: skyblue; */
+    }
+
+    @media screen and (orientation: landscape) {
+      .box {
+        width: 900px;
+        background: pink;
+      }
+    }
+
+    @media screen and (orientation: portrait) {
+      .box {
+        width: 900px;
+        background: gold;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 引用本地jQuery -->
+  <!-- <script src="js/jquery-3.6.3.js"></script> -->
+  <!-- 使用CDN加速 七牛 -->
+  <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.js"></script>
+  <script>
+
+    //初始化
+    $(document).ready(function () {
+      console.log('引用jQuery-第一种');
+    })
+    // 初始化-第二种
+    $().ready(function () {
+      console.log('第二种引入');
+    })
+    //第三种
+    $(function () {
+      console.log('第三种');
+    })
+  </script>
+
+</body>
+
+</html>

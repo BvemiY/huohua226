@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(250, 98, 98);
+            /* position: relative; */
+            /* 相对定位   相对于原本自身的位置来进行新的位置的变换  
+            会保留原本的位置来进行新位置的定位  新位置是悬浮在最上面的*/
+            /* 需要些两个单独的属性   1.代表水平方向的位置 left  right   2.代表垂直方向的位置  top  bottom*/
+            /* 需要向哪个方向移动  可以设置相反方向的位置 */
+            /* left: 500px;
+            top: 150px; */
+
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(178, 251, 122);
+            /* margin-left: 10px; */
+            position: relative;
+            left: 300px;
+            top: 50px;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(99, 121, 230);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1">123123</div>
+    <div class="box2"></div>
+</body>
+
+</html>

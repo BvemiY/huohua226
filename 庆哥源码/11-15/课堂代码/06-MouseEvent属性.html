@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(94, 239, 237);
+            position: absolute;
+            top: 350px;
+            left: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+
+    <script>
+        var box = document.getElementsByClassName('box')[0];
+
+        box.onclick = function(e) {
+            // clientX,clientY 当前点击位置距离body可视区域的
+            // 左上角的x，y轴的距离坐标
+            // console.log(e.clientX);
+            // console.log(e.clientY);
+
+            // pageX,pageY  当前点击的位置距离页面最顶端
+            // 左上角的位置（包括被滚动条卷起来的部分）
+            // console.log(e.pageX);
+            // console.log(e.pageY);
+
+            // screenX,screenY  根据电脑屏幕左上角开始
+            // 计算的x，y轴坐标距离
+            // console.log(e.screenX);
+            // console.log(e.screenY);
+
+            // offsetX,offsetY  当前鼠标位置距离自身
+            // 盒子的左上角的坐标距离
+            console.log(e.offsetX);
+            console.log(e.offsetY);
+        }
+
+        box.onmousemove = function(e) {
+            console.log(e.offsetX);
+            console.log(e.offsetY);
+        }
+    </script>
+</body>
+
+</html>

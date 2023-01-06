@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text">
+    <script>
+        var arr = [1, 2, 3, 4, 5] //1-2-3-4-5
+        var str = "1-2-3-4-5";
+        var str1 = "12&34&5";
+        var str2 = "12=34!5";
+
+        // split( * separator * , * limit * )： 用于把一个字符串分割成字符串数组。
+        // 参数separator 指定从哪里开始分割 limit 设定分割后数组的最大长度
+        // 不会改变原字符串
+        // 返回值 返回分割之后的数组
+
+        // console.log(str.split());
+        // // 当不写参数的时候将字符串整体当作一个数组元素转换
+        // console.log(str.split("-"));
+        // console.log(str1.split("&"));
+        // console.log(str2.split("="));
+
+
+
+        var strr = str2.split("=")[1];
+
+        console.log(strr);
+
+        var strr2 = strr.split("!");
+        console.log(strr2[0]);
+
+
+        var str = "My name is qqqqq,welcome to Haogu";
+
+        console.log(str.split(""));
+        // 将字符串中的每一个字符都单独分割
+        console.log(str);
+    </script>
+</body>
+
+</html>

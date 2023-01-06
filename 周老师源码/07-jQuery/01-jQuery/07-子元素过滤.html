@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    p {
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h2>相思</h2>
+    <p>王维 〔唐代〕</p>
+
+    <p>红豆生南国，</p>
+    <p>春来发几枝。</p>
+    <p>愿君多采撷，</p>
+    <p>此物最相思。</p>
+
+    <h2>译文</h2>
+    <p>红豆生长在阳光明媚的南方，</p>
+    <p>每逢春天不知长多少新枝。</p>
+    <p>希望思念的人儿多多采摘，</p>
+    <p>因为它最能寄托相思之情。</p>
+    <h2>译文</h2>
+  </section>
+  <script src="./js/jquery-3.6.3.js"></script>
+  <script>
+    $(function () {
+      // $("p:first-child").css('color', 'blue');// 必须第一个是p元素
+      // $("p:last-child").css('color', 'blue');// 必须最后一个是p元素
+      // $("section p:first-of-type").css('color', 'blue');// 第一个是p元素
+      // $("section p:last-of-type").css('color', 'red');// 最后一个是p元素
+      // $("section p:nth-child(3)").css('color', 'red');// 子元素包含其他元素的
+      $("section p:nth-child(2n+1)").css('color', 'blue');//
+      // $("section p:nth-of-type(2n)").css('color', 'blue');// p元素的第n个
+
+    })
+  </script>
+</body>
+
+</html>

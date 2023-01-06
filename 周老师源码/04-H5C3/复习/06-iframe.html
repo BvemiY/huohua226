@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .main {
+      width: 100%;
+      height: 1000px;
+      display: flex;
+    }
+
+    .m-left {
+      background: pink;
+      flex: 1;
+    }
+
+    .m-left a {
+      margin: 10px;
+      display: block;
+    }
+
+    .m-right {
+      flex: 7;
+      background: skyblue;
+    }
+
+    iframe {
+      width: 100%;
+      height: 900px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+    <div class="m-left">
+      <a target="main" href="01-MouseEvent.html">01-MouseEvent.html</a>
+      <a target="main" href="02元素的offset.html">02元素的offset.html</a>
+      <a target="main" href="03.html">03.html</a>
+      <a target="main" href="04.html">04.html</a>
+      <a target="main" href="05.html">05.html</a>
+    </div>
+    <div class="m-right">
+      <!-- 内联框架 -->
+      <iframe src="01-MouseEvent.html" scroll="no" frameborder="0" name="main"></iframe>
+    </div>
+  </div>
+</body>
+
+</html>

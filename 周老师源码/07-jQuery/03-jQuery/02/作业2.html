@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input type="checkbox" name="hobby" value="苹果">苹果
+  <input type="checkbox" name="hobby" value="梨">梨
+  <input type="checkbox" name="hobby" value="香蕉">香蕉
+  <input type="checkbox" name="hobby" value="橙子">橙子
+  <div>
+    <button>全选</button>
+    <button>全不选</button>
+    <button>反选</button>
+    <button>获取值</button>
+  </div>
+  <script src="../js/jquery-3.6.3.js"></script>
+  <script>
+    $('button').eq(0).click(function (e) {
+      $('input[type="checkbox"]').prop('checked', true);
+    })
+    $('button').eq(1).click(function (e) {
+      $('input[type="checkbox"]').prop('checked', false);
+    })
+    $('button').eq(2).click(function (e) {
+      $('input[type="checkbox"]').each(function (index, ele) {
+        this.checked = !this.checked;
+      })
+    })
+    $('button').eq(3).click(function (e) {
+      $('input[type="checkbox"]').each(function (index, ele) {
+        if (this.checked) {
+          console.log(this.value);
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

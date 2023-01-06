@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ### 1. 根据url地址取出参数,并以对象的形式保存
+        // 'https://landing.zhaopin.com/register?utm_source=360pcpz&utm_medium=cpt&utm_provider=partner';
+
+        var str = 'https://landing.zhaopin.com/register?utm_source=360pcpz&utm_medium=cpt&utm_provider=partner';
+
+        var obj = {
+
+        };
+
+        // console.log(str.split("?"));
+        var str1 = str.split("?")[1];
+        // 第一次分割  通过问好  然后选取部分数组 
+        var str2 = str1.split("&");
+        // 第二次分割  通过 &
+
+
+        for (var i = 0; i < str2.length; i++) {
+
+            var str3 = str2[i].split("=");
+            // 第三次分割  通过=
+            obj[str3[0]] = str3[1];
+        }
+
+        console.log(obj);
+    </script>
+</body>
+
+</html>

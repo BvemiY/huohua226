@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 790px;
+      background: skyblue;
+      /* height: 600px; */
+      /* overflow: hidden; */
+      padding-bottom: 10px;
+    }
+
+    .box:after {
+      content: '';
+      display: block;
+      clear: both;
+      visibility: hidden;
+      height: 0;
+    }
+
+    .item {
+      width: 250px;
+      height: 250px;
+      background-color: pink;
+      float: left;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    .item:nth-child(even) {
+      background-color: goldenrod;
+    }
+
+    .f1 {
+      clear: both;
+      /**子元素浮动影响*/
+    }
+  </style>
+</head>
+
+<body>
+  <h1>页面排版布局:浮动 盒子模型 定位(局部定位) </h1>
+  <div class="box">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item f1">6</div>
+  </div>
+</body>
+
+</html>

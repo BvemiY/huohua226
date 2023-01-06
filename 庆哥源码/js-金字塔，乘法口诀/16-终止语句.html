@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <script>
+
+        for (var i = 6; i <= 10; i++) {
+            // continue;
+            // 当执行当前代码的时候 会终止当前轮次的循环 直接开始下一次的循环
+
+            // 逢七过
+            if(i % 7 == 0){
+                continue;
+            }
+            document.write(i);
+
+        }
+    </script>
+</body>
+
+</html>

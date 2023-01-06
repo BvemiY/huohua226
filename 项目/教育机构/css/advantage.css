@@ -1,0 +1,62 @@
+.advantage {
+    width: 1519px;
+    height: 640px;
+    padding: 60px 0px;
+    background-image: url(../img/1ubr.jpg);
+    background-size: 100% 100%;
+}
+
+.curriculum_top {
+    color: white;
+}
+
+.advantage .curriculum_top h1 {
+    color: white;
+    font-size: 35px
+}
+
+.advantage_bottom {
+    width: 1000px;
+    height: 530px;
+    margin: 30px auto;
+}
+
+.advantage_bottom_left {
+    width: 480px;
+    height: 510px;
+    background-image: url(../img/dcjr.png);
+    background-size: 100% 100%;
+    float: left;
+    margin: 10px 0px;
+}
+
+.advantage_bottom_right {
+    width: 480px;
+    height: 510px;
+    float: right;
+    margin: 10px 0px;
+}
+
+.advantage_bottom_right .advantage_bottom_box {
+    width: 418px;
+    height: 100px;
+    background-color: white;
+    margin-bottom: 35px;
+    line-height: 32px;
+    padding-left: 60px;
+    position: relative;
+}
+
+.advantage_bottom_box div {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 63px;
+    background-color: #F0AC07;
+    position: absolute;
+    top: 15px;
+    left: -35px;
+}

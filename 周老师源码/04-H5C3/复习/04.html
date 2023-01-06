@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .small-box {
+      position: relative;
+      top: 100px;
+      left: 200px;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="small-box"></div>
+
+  <script>
+    var box = document.getElementsByClassName('small-box')[0];
+    box.onmousedown = function (e) {
+      // console.log(e.offsetX, e.offsetY);
+      document.onmousemove = function (e2) {
+        console.log(e2.pageX, e2.pageY);
+        box.style.left = e2.pageX - e.offsetX + 'px';
+        box.style.top = e2.pageY - e.offsetY + 'px';
+      }
+      document.onmouseup = function () {
+        document.onmousemove = null;
+      }
+    }
+
+  </script>
+</body>
+
+</html>
